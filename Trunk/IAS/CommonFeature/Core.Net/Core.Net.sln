@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Core", "UIH.XR.Core\UIH.XR.Core.csproj", "{0728F070-23BE-4F16-AB5D-6B024966B768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Core.XApp", "UIH.XR.Core.XApp\UIH.XR.Core.XApp.csproj", "{2254C665-9115-4A0F-B9E9-D0E81F104F92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Core.Test", "UIH.XR.Core.Test\UIH.XR.Core.Test.csproj", "{076408E8-7570-4BFC-B4A8-932E459BAC0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XBoot", "UIH.XR.XBoot\UIH.XR.XBoot.csproj", "{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample", "UIH.XR.XSample\UIH.XR.XSample.csproj", "{C4E7E2AB-B623-44D2-BD82-392B114A3B14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.Views", "UIH.XR.XSample.Views\UIH.XR.XSample.Views.csproj", "{86D330B3-BA0F-4321-A10B-52C76F474FB4}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.united-imaging.com:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UIH.XR.Core\\UIH.XR.Core.csproj
+		SccProjectName1 = UIH.XR.Core
+		SccLocalPath1 = UIH.XR.Core
+		SccProjectUniqueName2 = UIH.XR.Core.Test\\UIH.XR.Core.Test.csproj
+		SccProjectName2 = UIH.XR.Core.Test
+		SccLocalPath2 = UIH.XR.Core.Test
+		SccProjectUniqueName3 = UIH.XR.XBoot\\UIH.XR.XBoot.csproj
+		SccProjectName3 = UIH.XR.XBoot
+		SccLocalPath3 = UIH.XR.XBoot
+		SccProjectUniqueName4 = UIH.XR.Core.XApp\\UIH.XR.Core.XApp.csproj
+		SccProjectName4 = UIH.XR.Core.XApp
+		SccLocalPath4 = UIH.XR.Core.XApp
+		SccProjectUniqueName5 = UIH.XR.XSample\\UIH.XR.XSample.csproj
+		SccProjectName5 = UIH.XR.XSample
+		SccLocalPath5 = UIH.XR.XSample
+		SccProjectUniqueName6 = UIH.XR.XSample.Views\\UIH.XR.XSample.Views.csproj
+		SccProjectName6 = UIH.XR.XSample.Views
+		SccLocalPath6 = UIH.XR.XSample.Views
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0728F070-23BE-4F16-AB5D-6B024966B768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0728F070-23BE-4F16-AB5D-6B024966B768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0728F070-23BE-4F16-AB5D-6B024966B768}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0728F070-23BE-4F16-AB5D-6B024966B768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0728F070-23BE-4F16-AB5D-6B024966B768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0728F070-23BE-4F16-AB5D-6B024966B768}.Release|x86.ActiveCfg = Release|Any CPU
+		{2254C665-9115-4A0F-B9E9-D0E81F104F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2254C665-9115-4A0F-B9E9-D0E81F104F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2254C665-9115-4A0F-B9E9-D0E81F104F92}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2254C665-9115-4A0F-B9E9-D0E81F104F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2254C665-9115-4A0F-B9E9-D0E81F104F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2254C665-9115-4A0F-B9E9-D0E81F104F92}.Release|x86.ActiveCfg = Release|Any CPU
+		{076408E8-7570-4BFC-B4A8-932E459BAC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{076408E8-7570-4BFC-B4A8-932E459BAC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{076408E8-7570-4BFC-B4A8-932E459BAC0B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{076408E8-7570-4BFC-B4A8-932E459BAC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{076408E8-7570-4BFC-B4A8-932E459BAC0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{076408E8-7570-4BFC-B4A8-932E459BAC0B}.Release|x86.ActiveCfg = Release|Any CPU
+		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|x86.ActiveCfg = Release|Any CPU
+		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

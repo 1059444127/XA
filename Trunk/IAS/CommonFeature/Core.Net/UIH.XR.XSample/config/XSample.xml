@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XAppConfig>
+  <Assemblies>
+    <Assembly>UIH.XR.Core.XApp</Assembly>
+    <Assembly>UIH.XR.XSample.Views</Assembly>
+  </Assemblies>
+  <Views>
+    <View Name="SampleView"></View>
+    <View Name="RedView" Region="UpRegion"></View>
+    <View Name="BlueView" Region="DownRegion"></View>
+  </Views>
+  <Shells>
+    <Shell ShowOnStartup="true" Name="MyShell" RootView="SampleView">
+    </Shell>
+  </Shells>
+</XAppConfig>

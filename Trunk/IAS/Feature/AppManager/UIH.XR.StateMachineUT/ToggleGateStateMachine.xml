@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StateMachine ActionPackage="UIH.XR.StateMachineUT.TestActions, UIH.XR.StateMachineUT">
+  <States>
+    <State ID="Initial" Category="INITIAL"></State>
+    <State ID="Open"></State>
+    <State ID="Close"></State>
+  </States>
+  <Transitions>
+    <Transition ID="start" From="Initial" To="Close"></Transition>
+    <Transition ID="open" From="Close" To="Open"></Transition>
+    <Transition ID="close" From="Open" To="Close"></Transition>
+  </Transitions>
+</StateMachine>
