@@ -6,10 +6,12 @@ using UIH.Mcsf.Log;
 
 namespace UIH.XR.AppManager
 {
-    public class AppManagerContainee : CLRContaineeBase, IAppReady
+    public class AppManagerContainee : CLRContaineeBase,IAppReady
     {
         private const int WAIT_TIME = 10000;//ms
-        IRemoteMethodInvoker _remoteInvoker;
+
+        public AppManager appManager;
+
         public override void DoWork()
         {
             try
@@ -18,7 +20,7 @@ namespace UIH.XR.AppManager
                 if (CheckAppsReady())
                 {
                     CLRLogger.GetInstance().LogDevInfo("All apps are ready.");
-                    _appManager.Invoke("ready", null);
+                  //  appManager.Invoke("ready", null);
                 }
             }
             catch (Exception ex)
@@ -28,28 +30,15 @@ namespace UIH.XR.AppManager
             }
         }
 
+
         public override void Startup()
         {
             try
             {
-                Console.WriteLine("appmanager Startup begin");
-
-                _appManager = new AppManager();
-
-                string appCfgPath = mcsf_clr_systemenvironment_config.GetApplicationPath() + @"xsample\config\AppManagerSample.xml";
-                XBootstrapper _bootstrapper = new XBootstrapper(appCfgPath, GetCommunicationProxy());
-                _bootstrapper.Run();
-
-                 _remoteInvoker = _bootstrapper.AppContext.Container.GetExportedValue<IRemoteMethodInvoker>();
-                 if (_remoteInvoker == null)
-                {
-                    CLRLogger.GetInstance().LogDevInfo("Begin Startup,_remoteInvoker is null.");
-                    Console.WriteLine("_remoteInvoker is null");
-                }
-
-                _remoteInvoker.RegisterServiceObject<IShellManager>(new XShellManager());
-                _remoteInvoker.RegisterServiceObject<IWorkflow>(_appManager);
-
+                Console.WriteLine("AppManagerContainee Startup begin");
+                appManager = new AppManager(GetCommunicationProxy());
+                appManager.Initialize();
+                appManager.Invoke("ready", null);
                 base.Startup();
             }
             catch (Exception ex)
@@ -58,8 +47,6 @@ namespace UIH.XR.AppManager
                 Console.WriteLine("AppManagerContainee Startup ex:" + ex.Message);
             }
         }
-
-        private AppManager _appManager;
 
         private bool paReady = false;
         private bool examReady = false;
@@ -89,13 +76,13 @@ namespace UIH.XR.AppManager
             //}
 
             //return paReady && examReady;
-            Console.WriteLine("appmanager CheckAppsReady ok");
+            Console.WriteLine("AppManagerContainee CheckAppsReady ok");
             return true;
         }
 
         public bool AppReady(string receiver)
         {
-            return (bool)_remoteInvoker.RemoteInvoke(receiver, new object());
+            return (bool)appManager._xshellManager._remoteInvoker.RemoteInvoke(receiver, new object());
         }
     }
 }

@@ -1,52 +1,45 @@
 ﻿using UIH.XR.Core;
 using System.Windows;
-using System.ComponentModel.Composition;
 
 namespace UIH.XR.AppManager
 {
-    [Export(typeof(IShell))]
     public class XShellProxy : Window,IShell
     {
-        [Import]
-        private IRemoteMethodInvoker RemoteMethodInvoker { get; set; }
-
-        private IShell shell;
-        private XShellManager _xShellManager;
+        private IRemoteMethodInvoker _remoteInvoker;
         private string _xreceiver;
 
-        public XShellProxy(string shellName,string receiver)
+        public XShellProxy(IRemoteMethodInvoker remoteMethodInvoker, string shellName, string receiver)
         {
+            _remoteInvoker = remoteMethodInvoker;
             _xreceiver = receiver;
             ShellName = shellName;
-            _xShellManager = new XShellManager();
-            shell = _xShellManager.GetShell(shellName);
         }
 
         public string ShellName { get; set; }
 
         public IShell GetSerializableShadow()
         {
-            return null;
+            return (IShell)_remoteInvoker.RemoteInvoke(_xreceiver,this);
         }
 
         public bool ShowShell()
         {
-            return (bool)RemoteMethodInvoker.RemoteInvoke(_xreceiver, shell);
+            return (bool)_remoteInvoker.RemoteInvoke(_xreceiver, this);
         }
 
         public bool HideShell()
         {
-            return (bool)RemoteMethodInvoker.RemoteInvoke(_xreceiver, shell);
+            return (bool)_remoteInvoker.RemoteInvoke(_xreceiver, this);
         }
 
         public bool BlockShell()
         {
-            return (bool)RemoteMethodInvoker.RemoteInvoke(_xreceiver, shell);
+            return (bool)_remoteInvoker.RemoteInvoke(_xreceiver, this);
         }
 
         public bool UnblockShell()
         {
-            return (bool)RemoteMethodInvoker.RemoteInvoke(_xreceiver, shell);
+            return (bool)_remoteInvoker.RemoteInvoke(_xreceiver, this);
         }
     }
 }

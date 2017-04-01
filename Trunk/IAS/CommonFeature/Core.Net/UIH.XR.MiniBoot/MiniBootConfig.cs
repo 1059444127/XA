@@ -14,6 +14,7 @@ using System.Text;
 
 namespace UIH.XR.MiniBoot
 {
+
     public class MiniBootConfig
     {
         public string ViewName { get; set; }
@@ -29,6 +30,15 @@ namespace UIH.XR.MiniBoot
             AssemblyList = new List<string>();
         }
 
+        /// <summary>
+        /// Set config
+        /// </summary>
+        /// <param name="args">
+        /// 0:  ViewName
+        /// 1:  WindowWidth
+        /// 2:  WindowHeight
+        /// 3~n:Component Assembly</param>
+        /// <returns></returns>
         public bool SetConfig(string[] args)
         {
             if (args.Length < 4)

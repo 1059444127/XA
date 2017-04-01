@@ -92,6 +92,10 @@
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UIH.XR.Core">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Reference Include="Microsoft.Practices.Prism">
@@ -118,6 +122,10 @@
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UIH.XR.Core">
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -135,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MiniBootConfig.cs" />
+    <Compile Include="MiniLogger.cs" />
     <Compile Include="MiniWindow.xaml.cs">
       <DependentUpon>MiniWindow.xaml</DependentUpon>
     </Compile>

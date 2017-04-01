@@ -9,7 +9,7 @@ namespace UIH.XR.AppManager.Actions
         public EnterIdleAction()
             : base("shellName", "receiver")
         {
-            Console.WriteLine("EnterIdleAction 构造 ");
+            Console.WriteLine("EnterIdleAction 构造 " + this.xShellProxy.ShowShell());
         }
 
         public override bool CanExecute(object arg)

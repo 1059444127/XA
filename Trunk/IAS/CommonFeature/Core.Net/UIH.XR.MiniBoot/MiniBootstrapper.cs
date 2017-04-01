@@ -42,8 +42,10 @@ namespace UIH.XR.MiniBoot
 
         protected override void ConfigureAggregateCatalog()
         {
-            // Add UIH.XR.Core
+            // UIH.XR.Core
             this.AggregateCatalog.Catalogs.Add(new System.ComponentModel.Composition.Hosting.AssemblyCatalog(System.Reflection.Assembly.Load("UIH.XR.Core")));
+            // UIH.XR.MiniBoot
+            this.AggregateCatalog.Catalogs.Add(new System.ComponentModel.Composition.Hosting.AssemblyCatalog(System.Reflection.Assembly.Load("UIH.XR.MiniBoot")));
 
             List<string> assemblyList = _config.AssemblyList;
             foreach (var assemblyName in assemblyList)
@@ -69,6 +71,12 @@ namespace UIH.XR.MiniBoot
         protected override void InitializeModules()
         {
             base.InitializeModules();
+        }
+
+        public override void RegisterDefaultTypesIfMissing()
+        {
+            base.RegisterDefaultTypesIfMissing();
+            
         }
     }
 }
