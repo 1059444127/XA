@@ -17,6 +17,18 @@ namespace UIH.XR.StateMachine.Default
 {
     public class State : IState
     {
+        private Dictionary<string, ITransition> _transitions = new Dictionary<string, ITransition>();
+
+        private List<IAction> _actionsOnEntry = new List<IAction>();
+
+        private List<IAction> _actionsOnExit = new List<IAction>();
+
+        private ActionBuilder _actionBuilder;
+
+        public StateCategory Category { get; set; }
+
+        public string ID { get; private set; }
+
         public State(ActionBuilder actionBuilder)
         {
             Category = StateCategory.NORMAL;
@@ -58,10 +70,6 @@ namespace UIH.XR.StateMachine.Default
                 }
             }
         }
-
-        public StateCategory Category { get; set; }
-
-        public string ID { get; private set; }
 
         public IState Transit(string transitionID, object eventArgs)
         {
@@ -123,14 +131,6 @@ namespace UIH.XR.StateMachine.Default
         {
             return FindTransition(transitionID) != null;
         }
-
-        private Dictionary<string, ITransition> _transitions = new Dictionary<string, ITransition>();
-
-        private List<IAction> _actionsOnEntry = new List<IAction>();
-
-        private List<IAction> _actionsOnExit = new List<IAction>();
-
-        private ActionBuilder _actionBuilder;
 
         private ITransition FindTransition(string transitionID)
         {

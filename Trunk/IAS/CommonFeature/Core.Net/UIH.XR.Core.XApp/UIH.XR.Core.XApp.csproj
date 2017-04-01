@@ -55,6 +55,10 @@
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
       <Private>False</Private>
     </Reference>
+	<Reference Include="UIH.XR.GlobalParameter">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.GlobalParameter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Reference Include="Microsoft.Practices.Prism">
@@ -75,6 +79,10 @@
     </Reference>
 	<Reference Include="UIH.Mcsf.Log.Logger">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.GlobalParameter">
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.GlobalParameter.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

@@ -55,7 +55,6 @@
   <ItemGroup>
     <Compile Include="Default\ActionBuilder.cs" />
     <Compile Include="Default\ActionDefinition.cs" />
-    <Compile Include="Default\ConsoleLogger.cs" />
     <Compile Include="Default\DefaultStateMachine.cs" />
     <Compile Include="Default\DefaultStateMachineFactory.cs" />
     <Compile Include="Default\State.cs" />

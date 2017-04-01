@@ -1,20 +1,23 @@
 ﻿using UIH.XR.Core;
-using System.ComponentModel.Composition;
-using System;
-using UIH.XR.AppManager.Actions;
+using UIH.XR.StateMachine.Default;
+using System.Reflection;
+using System.IO;
+using UIH.XR.StateMachine;
+using UIH.Mcsf.Log;
 
 namespace UIH.XR.AppManager
 {
-    public class AppManager:IAppManager
+    public class AppManager : IWorkflow
     {
         public string CurrentProcedure { get; set; }
-
-        [Import("Transit")]
-        private Action<string, object> Transit { get; set; }
-
+        
         public bool Invoke(string transitionID, object context)
         {
-            Transit(transitionID, context);
+            CLRLogger.GetInstance().LogDevInfo(string.Format("AppManager begin Invoke,transitionID:{0}", transitionID));
+            Assembly asm = Assembly.GetExecutingAssembly();
+            Stream fs = asm.GetManifestResourceStream("UIH.XR.AppManager.SimpleStateMachine.xml");
+            IStateMachine sm = new DefaultStateMachineFactory().CreateStateMachineFromXml(fs);
+            sm.Transit(transitionID, context);
             return true;
         }
     }

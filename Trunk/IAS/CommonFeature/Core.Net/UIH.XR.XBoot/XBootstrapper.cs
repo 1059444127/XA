@@ -123,10 +123,13 @@ namespace UIH.XR.Core
 
         private void RegisterViews()
         {
-            foreach (XViewConfig viewCfg in _cfg.Views)
+            if (null != _cfg.Views)
             {
-                RegisterView(viewCfg);
-            }                
+                foreach (XViewConfig viewCfg in _cfg.Views)
+                {
+                    RegisterView(viewCfg);
+                } 
+            }            
         }
 
         private void RegisterView(XViewConfig cfg)

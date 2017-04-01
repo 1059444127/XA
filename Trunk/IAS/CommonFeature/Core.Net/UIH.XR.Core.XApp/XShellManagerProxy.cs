@@ -6,13 +6,14 @@
 /// </description>
 /// ------------------------------------------------------------------------------
 using System.ComponentModel.Composition;
+using UIH.XR.GlobalParameter;
 
 namespace UIH.XR.Core.XApp
 {
     [Export(typeof(IShellManager))]
     public class XShellManagerProxy : IShellManager
     {
-        static string APP_MANAGER_NAME = UIH.XR.Core.Properties.CommunicationResource.CommunicationNode_AppManager;
+        static string APP_MANAGER_NAME = CommunicationNode.AppManager;
         [Import]
         private IRemoteMethodInvoker RemoteMethodInvoker { get; set; }
 

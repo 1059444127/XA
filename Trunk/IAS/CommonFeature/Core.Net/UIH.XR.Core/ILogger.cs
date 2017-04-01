@@ -9,7 +9,7 @@ using System;
 
 namespace UIH.XR.Core
 {
-    interface ILogger
+    public interface ILogger
     {
         string LoggerName { get; set; }
 

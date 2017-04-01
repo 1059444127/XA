@@ -20,6 +20,12 @@ namespace UIH.XR.StateMachine.Default
     {
         const int PACKAGE_PART_COUNT = 2;
 
+        private string _namesapce;//namespace contains the action type
+
+        private string _module;//assembly contains the action type
+
+        private Func<IAction, IAction> _initializer;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -70,11 +76,5 @@ namespace UIH.XR.StateMachine.Default
                 throw new StateMachineException(string.Format("Invalid ActionDefinition {0}", className), ex);
             }
         }
-
-        private string _namesapce;//namespace contains the action type
-
-        private string _module;//assembly contains the action type
-
-        private Func<IAction, IAction> _initializer;
     }
 }

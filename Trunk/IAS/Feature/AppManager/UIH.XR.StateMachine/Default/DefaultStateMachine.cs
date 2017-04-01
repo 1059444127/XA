@@ -18,7 +18,32 @@ namespace UIH.XR.StateMachine.Default
     public class DefaultStateMachine : IStateMachine
     {
         const int ACTION_HEARBEAT_COUNT = 10;
+
         const int ACTION_HEATBEAT_INTERVAL = 1000;//ms
+
+        private bool _isBusy = false;
+
+        public bool IsBusy
+        {
+            get
+            {
+                lock (this)
+                {
+                    return _isBusy;
+                }
+            }
+            set
+            {
+                lock (this)
+                {
+                    _isBusy = value;
+                }
+            }
+        }
+
+        public IState CurrentState { get; private set; }
+
+        public HashSet<State> States { get; private set; }
 
         public DefaultStateMachine()
         {
@@ -88,30 +113,6 @@ namespace UIH.XR.StateMachine.Default
             CurrentState.Enter(args);
             CLRLogger.GetInstance().LogDevInfo(string.Format("End transition {0}, state = {1}", transitionID, CurrentState.ID));
         }
-
-        private bool _isBusy = false;
-
-        public bool IsBusy
-        {
-            get 
-            {
-                lock (this)
-                {
-                    return _isBusy;
-                }
-            }
-            set
-            {
-                lock (this)
-                {
-                    _isBusy = value;
-                }
-            }
-        }
-
-        public IState CurrentState { get; private set; }
-
-        public HashSet<State> States { get; private set; }
 
         private ActionBuilder _actionBuilder;
 

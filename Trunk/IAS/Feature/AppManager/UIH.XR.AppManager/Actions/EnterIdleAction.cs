@@ -9,6 +9,7 @@ namespace UIH.XR.AppManager.Actions
         public EnterIdleAction()
             : base("shellName", "receiver")
         {
+            Console.WriteLine("EnterIdleAction 构造 ");
         }
 
         public override bool CanExecute(object arg)

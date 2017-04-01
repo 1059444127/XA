@@ -46,11 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAppReady.cs" />
-    <Compile Include="Properties\CommunicationResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CommunicationResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="CommunicationException.cs" />
     <Compile Include="IAppContext.cs" />
     <Compile Include="ICommunicator.cs" />
@@ -64,21 +59,6 @@
     <Compile Include="IWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteMethodInvoker\IRemoteMethodInvokerClient.cs" />
-    <Compile Include="Properties\StateMachineResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StateMachineResource.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\CommunicationResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CommunicationResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\StateMachineResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>StateMachineResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -34,6 +34,90 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\..\UIH\bin_debug\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\..\..\..\UIH\bin_debug\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.Mcsf.Core.NetBase">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
+      <Private>False</Private>	  
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+      <Private>False</Private>	  
+    </Reference>
+	<Reference Include="UIH.Mcsf.Log.Logger">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.GlobalParameter">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.GlobalParameter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.StateMachine">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.StateMachine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.XBoot">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.XBoot.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.Core">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\..\..\UIH\bin\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\..\..\..\UIH\bin\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.Mcsf.Core.NetBase">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
+      <Private>False</Private>	  
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+      <Private>False</Private>	  
+    </Reference>
+	<Reference Include="UIH.Mcsf.Log.Logger">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.GlobalParameter">
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.GlobalParameter.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.StateMachine">
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.StateMachine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.XBoot">
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.XBoot.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.XR.Core">
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+	<Reference Include="UIH.Mcsf.Core.ContaineeBase">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -46,10 +130,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UIH.XR.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Core.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -75,7 +155,15 @@
     <Compile Include="XShellProxy.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="config\AppManagerSample.xml" />
+    <Content Include="config\AppManagerSampleContainee.xml" />
+    <EmbeddedResource Include="SimpleStateMachine.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy $(ProjectDir)config $(ProjectDir)..\..\..\..\UIH\appdata\xsample\config /EY</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
