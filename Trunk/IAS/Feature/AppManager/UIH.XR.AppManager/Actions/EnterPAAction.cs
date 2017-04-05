@@ -5,14 +5,9 @@ namespace UIH.XR.AppManager.Actions
 {
     public class EnterPAAction : ActionBase
     {
-        public EnterPAAction()
-            : base("shellName", "receiver")
-        {
-        }
-
         public override bool CanExecute(object arg)
         {
-            Console.WriteLine("EnterPAAction CanExecute,shellName is:" + this.xShellProxy.ShellName);
+            Console.WriteLine("EnterPAAction CanExecute,shellName is:" + this.xshellManager.GetShell("shellName"));
             return true;
         }
 

@@ -5,14 +5,9 @@ namespace UIH.XR.AppManager.Actions
 {
     public class ReviewImageAction : ActionBase
     {
-        public ReviewImageAction()
-            : base("shellName", "receiver")
-        {
-        }
-
         public override bool CanExecute(object arg)
         {
-            Console.WriteLine("ReviewImageAction CanExecute,shellName is:" + this.xShellProxy.ShellName);
+            Console.WriteLine("ReviewImageAction CanExecute,shellName is:" + this.xshellManager.GetShell("shellName"));
             return true;
         }
 

@@ -5,14 +5,9 @@ namespace UIH.XR.AppManager.Actions
 {
     public class ExitPAAction : ActionBase
     {
-        public ExitPAAction()
-            : base("shellName", "receiver")
-        {
-        }
-
         public override bool CanExecute(object arg)
         {
-            Console.WriteLine("ExitPAAction CanExecute,shellName is:" + this.xShellProxy.ShellName);
+            Console.WriteLine("ExitPAAction CanExecute,shellName is:" + this.xshellManager.GetShell("shellName"));
             return true;
         }
 

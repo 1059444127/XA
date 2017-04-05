@@ -8,14 +8,12 @@ namespace UIH.XR.AppManager
 {
     public class XShellManager:IShellManager
     {
-        public IRemoteMethodInvoker _remoteInvoker;
+        private static readonly object lockHelper = new object();
         private string appCfgPath = mcsf_clr_systemenvironment_config.GetApplicationPath() + @"xsample\config\AppManagerSample.xml";
-        private IDictionary<string, IShell> _shellCollection;
-        private IDictionary<string, IShell> ShellCollection
-        {
-            get { return _shellCollection; }
-            set { _shellCollection = value; }
-        }
+        private volatile static XShellManager _xshellManager = null;
+        private static IDictionary<string, IShell> _shellCollection;
+
+        public IRemoteMethodInvoker _remoteInvoker;
 
         public void Initialize(ICommunicationProxy communicationProxy)
         {
@@ -23,47 +21,57 @@ namespace UIH.XR.AppManager
 
             XBootstrapper _bootstrapper = new XBootstrapper(appCfgPath, communicationProxy);
             _bootstrapper.Run();
-
             _remoteInvoker = _bootstrapper.AppContext.Container.GetExportedValue<IRemoteMethodInvoker>();
             if (null == _remoteInvoker)
             {
                 CLRLogger.GetInstance().LogDevInfo("Begin Startup,_remoteInvoker is null.");
                 Console.WriteLine("_remoteInvoker is null");
+                return;
             }
-           
             _remoteInvoker.RegisterServiceObject<IShellManager>(this);
         }
 
-     
-        public XShellProxy _xshellProxy;
-        public XShellManager()
+        private XShellManager()
         {
-            Console.WriteLine("XShellManager construct");
             _shellCollection = new Dictionary<string, IShell>();
         }
 
+        public static XShellManager GetInstance()
+        {
+            if (null==_xshellManager)
+            {
+                lock (lockHelper)
+                {
+                    if (null==_xshellManager)
+                    {
+                        Console.WriteLine("XShellManager construct");
+                        _xshellManager = new XShellManager();
+                    }
+                }
+            }
+            return _xshellManager;
+        }
+
         /// <summary>
-        /// Get shell by shellName
+        /// return xshellproxy
         /// </summary>
         /// <param name="shellName">shellName</param>
-        /// <returns>success:shellname
-        ///          fail:null
-        /// </returns>
+        /// <returns>Ishellproxy</returns>
         public IShell GetShell(string shellName)
         {
-            return ShellCollection.ContainsKey(shellName) ? ShellCollection[shellName] : null;
+            return _shellCollection.ContainsKey(shellName) ? _shellCollection[shellName] : null;
         }
 
         public bool RegisterShell(IShell shell)
         {
-            ShellCollection.Add(shell.ShellName, shell);
-             _xshellProxy = new XShellProxy(_remoteInvoker,shell.ShellName,"");//需要根据shell来判断receiver
-            return true;
+             string appCommunicationProxyName = _remoteInvoker.GetCurrentRemoteInvoker();
+             _shellCollection.Add(shell.ShellName, new XShellProxy(_remoteInvoker, shell.ShellName, appCommunicationProxyName));
+             return true;
         }
 
         public bool UnregisterShell(IShell shell)
         {
-            return ShellCollection.ContainsKey(shell.ShellName)?ShellCollection.Remove(shell.ShellName):false;
+            return _shellCollection.ContainsKey(shell.ShellName) ? _shellCollection.Remove(shell.ShellName) : false;
         }
     }
 }

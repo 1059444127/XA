@@ -8,7 +8,7 @@
     </State>
     <State ID="Idle">
       <ActionsOnEntry>
-        <Action Class="ExitServiceAction"></Action>
+        <Action Class="CompleteStudyAction"></Action>
       </ActionsOnEntry>
     </State>
     <State ID="InPA"></State>
@@ -21,7 +21,7 @@
   <Transitions>
     <Transition ID="ready" From="Initial" To="Idle">
       <Actions>
-        <Action Class="ExitServiceAction"></Action>
+        <Action Class="CompleteStudyAction"></Action>
       </Actions>
     </Transition>
     <Transition ID="emergency" From="Idle" To="InExam"></Transition>

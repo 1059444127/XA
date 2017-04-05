@@ -1,15 +1,12 @@
 ﻿
-using UIH.XR.Core;
 using UIH.Mcsf.Core;
 using System;
 using UIH.Mcsf.Log;
 
 namespace UIH.XR.AppManager
 {
-    public class AppManagerContainee : CLRContaineeBase,IAppReady
+    public class AppManagerContainee : CLRContaineeBase
     {
-        private const int WAIT_TIME = 10000;//ms
-
         public AppManager appManager;
 
         public override void DoWork()
@@ -20,7 +17,7 @@ namespace UIH.XR.AppManager
                 if (CheckAppsReady())
                 {
                     CLRLogger.GetInstance().LogDevInfo("All apps are ready.");
-                  //  appManager.Invoke("ready", null);
+                    appManager.Invoke("ready", null);
                 }
             }
             catch (Exception ex)
@@ -30,7 +27,6 @@ namespace UIH.XR.AppManager
             }
         }
 
-
         public override void Startup()
         {
             try
@@ -38,7 +34,6 @@ namespace UIH.XR.AppManager
                 Console.WriteLine("AppManagerContainee Startup begin");
                 appManager = new AppManager(GetCommunicationProxy());
                 appManager.Initialize();
-                appManager.Invoke("ready", null);
                 base.Startup();
             }
             catch (Exception ex)
@@ -48,41 +43,16 @@ namespace UIH.XR.AppManager
             }
         }
 
-        private bool paReady = false;
-        private bool examReady = false;
-        string examReceiver =""; 
-        string paReceiver = "";
-
-        private bool CheckAppsReady()//如何异步实现每个app的检测？
+        /// <summary>
+        /// //所有的app启动完成后，由systemmanager广播消息，appmanager接受到消息返回ture
+        /// </summary>
+        /// <returns>true:all apps are ready
+        ///          false：all apps are not ready
+        /// </returns>
+        private bool CheckAppsReady()
         {
-            //for (int i = WAIT_TIME; i >= 0; i -= 200)
-            //{
-            //    if (AppReady(examReceiver))
-            //    {
-            //        examReady = true;
-            //        break;
-            //    }
-            //    Thread.Sleep(200);
-            //}
-
-            //for (int i = WAIT_TIME; i >= 0; i -= 200)
-            //{
-            //    if (AppReady(paReceiver))
-            //    {
-            //        paReady = true;
-            //        break;
-            //    }
-            //    Thread.Sleep(200);
-            //}
-
-            //return paReady && examReady;
             Console.WriteLine("AppManagerContainee CheckAppsReady ok");
             return true;
-        }
-
-        public bool AppReady(string receiver)
-        {
-            return (bool)appManager._xshellManager._remoteInvoker.RemoteInvoke(receiver, new object());
         }
     }
 }

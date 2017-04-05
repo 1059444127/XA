@@ -5,17 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0728F070-23BE-4F16-AB5D-6B024966B768}</ProjectGuid>
+    <ProjectGuid>{2193398D-00A7-4770-8144-5BC56D8B0DA1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UIH.XR.Core</RootNamespace>
-    <AssemblyName>UIH.XR.Core</AssemblyName>
+    <RootNamespace>UIH.XR.Setting.View</RootNamespace>
+    <AssemblyName>UIH.XR.Setting.View</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,36 +24,68 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="UIH.XR.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.XR.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.XR.GlobalParameter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.GlobalParameter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="UIH.XR.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XR.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.XR.GlobalParameter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.GlobalParameter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommunicationException.cs" />
-    <Compile Include="IAppContext.cs" />
-    <Compile Include="ICommunicator.cs" />
-    <Compile Include="IInput.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvoker.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvokerServer.cs" />
-    <Compile Include="Shell\IShell.cs" />
-    <Compile Include="Shell\IShellFactory.cs" />
-    <Compile Include="Shell\IShellManager.cs" />
-    <Compile Include="IWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvokerClient.cs" />
+    <Compile Include="SettingNavigationUserControl.xaml.cs">
+      <DependentUpon>SettingNavigationUserControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SettingNavigationUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

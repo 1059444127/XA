@@ -5,17 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0728F070-23BE-4F16-AB5D-6B024966B768}</ProjectGuid>
+    <ProjectGuid>{0A333850-945D-4870-AB78-1C710EA798FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UIH.XR.Core</RootNamespace>
-    <AssemblyName>UIH.XR.Core</AssemblyName>
+    <RootNamespace>UIH.XR.Setting.ViewModel</RootNamespace>
+    <AssemblyName>UIH.XR.Setting.ViewModel</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,12 +24,41 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="UIH.XR.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.XR.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XR.GlobalParameter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.GlobalParameter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="UIH.XR.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XR.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XR.GlobalParameter">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.GlobalParameter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -45,19 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommunicationException.cs" />
-    <Compile Include="IAppContext.cs" />
-    <Compile Include="ICommunicator.cs" />
-    <Compile Include="IInput.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvoker.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvokerServer.cs" />
-    <Compile Include="Shell\IShell.cs" />
-    <Compile Include="Shell\IShellFactory.cs" />
-    <Compile Include="Shell\IShellManager.cs" />
-    <Compile Include="IWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvokerClient.cs" />
+    <Compile Include="SettingItem.cs" />
+    <Compile Include="SettingNavigationViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

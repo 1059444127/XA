@@ -5,20 +5,37 @@ namespace UIH.XR.AppManager.Actions
 {
     public class CompleteStudyAction : ActionBase
     {
-        public CompleteStudyAction()
-            : base("shellName", "receiver")
+        public CompleteStudyAction():base()
         {
+            Console.WriteLine("CompleteStudyAction construct.");
         }
 
         public override bool CanExecute(object arg)
         {
-            Console.WriteLine("CompareImageAction CanExecute,shellName is:" + this.xShellProxy.ShellName);
-            return true;
+            try
+            {
+                Console.WriteLine("CompleteStudyAction CanExecute,shellName is:" + this.xshellManager.GetShell("shellName"));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("CompleteStudyAction CanExecute ex:" +ex.Message);
+                return false;
+            }
+          
         }
 
         public override void Execute(object arg)
         {
-            Console.WriteLine("CompleteStudyAction ok");
+            try
+            {
+                bool resut = this.xshellManager.GetShell("").ShowShell();
+                Console.WriteLine("CompleteStudyAction resut:" + resut);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("CompleteStudyAction Execute ex:" + ex.Message);
+            }
         }
     }
 }
