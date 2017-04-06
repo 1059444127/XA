@@ -8,7 +8,7 @@ namespace UIH.XR.AppManager
 
         public abstract void Execute(object arg);
 
-        public XShellManager xshellManager { get; set; }
+        public XShellManager xshellManager { get;private set; }
 
         public ActionBase()
         {

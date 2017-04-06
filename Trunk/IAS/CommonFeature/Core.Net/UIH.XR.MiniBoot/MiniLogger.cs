@@ -21,18 +21,21 @@ namespace UIH.XR.MiniBoot
     public class MiniLogger:ILogger
     {
 
-        public bool LogDevError(string description)
+        public bool LogDevError(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Dev", "Error", description);
         }
 
-        public bool LogDevInfo(string description)
+        public bool LogDevInfo(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Dev", "Info", description);
         }
 
-        public bool LogDevWarning(string description)
+        public bool LogDevWarning(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Dev", "Warning", description);
         }
 
@@ -42,33 +45,39 @@ namespace UIH.XR.MiniBoot
             return true;
         }
 
-        public bool LogSvcError(string description)
+        public bool LogSvcError(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Svc", "Error", description);
         }
 
-        public bool LogSvcInfo(string description)
+        public bool LogSvcInfo(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Svc", "Info", description);
         }
 
-        public bool LogSvcWarning(string description)
+        public bool LogSvcWarning(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Svc", "Warning", description);
         }
 
-        public bool LogTraceError(string description)
+        public bool LogTraceError(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Trace", "Error", description);
         }
 
-        public bool LogTraceInfo(string description)
+        public bool LogTraceInfo(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Trace", "Info", description);
         }
 
-        public bool LogTraceWarning(string description)
+        public bool LogTraceWarning(string format, params object[] args)
         {
+            string description = string.Format(format, args);
             return LogConsole(LoggerName, "Trace", "Warning", description);
         }
 

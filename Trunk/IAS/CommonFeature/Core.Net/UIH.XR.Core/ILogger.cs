@@ -15,23 +15,23 @@ namespace UIH.XR.Core
 
         ulong LogUID { get; set; }
 
-        bool LogDevInfo(string description);
+        bool LogDevInfo(string format, params object[] args);
 
-        bool LogDevWarning(string description);
+        bool LogDevWarning(string format, params object[] args);
 
-        bool LogDevError(string description);
+        bool LogDevError(string format, params object[] args);
 
-        bool LogSvcInfo(string description);
+        bool LogSvcInfo(string format, params object[] args);
 
-        bool LogSvcWarning(string description);
+        bool LogSvcWarning(string format, params object[] args);
 
-        bool LogSvcError(string description);
+        bool LogSvcError(string format, params object[] args);
 
-        bool LogTraceInfo(string description);
+        bool LogTraceInfo(string format, params object[] args);
 
-        bool LogTraceWarning(string description);
+        bool LogTraceWarning(string format, params object[] args);
 
-        bool LogTraceError(string description);
+        bool LogTraceError(string format, params object[] args);
 
         bool LogException(Exception ex);
     }

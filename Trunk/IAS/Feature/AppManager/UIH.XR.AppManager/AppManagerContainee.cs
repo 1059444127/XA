@@ -1,5 +1,4 @@
-﻿
-using UIH.Mcsf.Core;
+﻿using UIH.Mcsf.Core;
 using System;
 using UIH.Mcsf.Log;
 
@@ -7,18 +6,12 @@ namespace UIH.XR.AppManager
 {
     public class AppManagerContainee : CLRContaineeBase
     {
-        public AppManager appManager;
-
         public override void DoWork()
         {
             try
             {
                 Console.WriteLine("appmanager DoWork begin");
-                if (CheckAppsReady())
-                {
-                    CLRLogger.GetInstance().LogDevInfo("All apps are ready.");
-                    appManager.Invoke("ready", null);
-                }
+                GetCommunicationProxy().RegisterEventHandler(ChannelID, AppReadyEventID, new StringEventHandler(HandleAppReadyEvent));
             }
             catch (Exception ex)
             {
@@ -32,8 +25,6 @@ namespace UIH.XR.AppManager
             try
             {
                 Console.WriteLine("AppManagerContainee Startup begin");
-                appManager = new AppManager(GetCommunicationProxy());
-                appManager.Initialize();
                 base.Startup();
             }
             catch (Exception ex)
@@ -43,16 +34,16 @@ namespace UIH.XR.AppManager
             }
         }
 
-        /// <summary>
-        /// //所有的app启动完成后，由systemmanager广播消息，appmanager接受到消息返回ture
-        /// </summary>
-        /// <returns>true:all apps are ready
-        ///          false：all apps are not ready
-        /// </returns>
-        private bool CheckAppsReady()
+        private static int AppReadyEventID = 50011;//待systemmanager定义
+        private static int ChannelID = 50012;//待systemmanager定义
+
+        private void HandleAppReadyEvent(string sender, string content)
         {
-            Console.WriteLine("AppManagerContainee CheckAppsReady ok");
-            return true;
+            Console.WriteLine(string.Format("All apps are ready,Sender is {0}, Content = {1}", sender, content));
+            CLRLogger.GetInstance().LogDevInfo(string.Format("All apps are ready,Sender is {0}, Content = {1}", sender, content));
+            AppManager appManager = new AppManager(GetCommunicationProxy());
+            appManager.Initialize();
+            appManager.Invoke("ready", null);
         }
     }
 }

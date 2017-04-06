@@ -1,0 +1,34 @@
+﻿using System;
+
+namespace uDicom.WorkQueue.Service.Interface
+{
+    /// <summary>
+    /// Interface for processors of WorkItem items
+    /// </summary>
+    public interface IWorkItemProcessor : IDisposable
+    {
+        #region Properties
+
+        string Name { get; }
+
+        WorkItemStatusProxy Proxy { get; set; }
+
+        #endregion
+
+        #region Methods
+
+        bool Initialize(WorkItemStatusProxy proxy);
+
+        void Process();
+
+        void Cancel();
+
+        void Pause();
+
+        void Stop();
+
+        void Delete();
+
+        #endregion
+    }
+}

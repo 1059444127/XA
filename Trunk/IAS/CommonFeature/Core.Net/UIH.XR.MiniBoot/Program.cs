@@ -18,7 +18,7 @@ namespace UIH.XR.MiniBoot
                 MiniApp app = new MiniApp();
                 app.Run();
             }));
-            appThread.ApartmentState = ApartmentState.STA;
+            appThread.SetApartmentState(ApartmentState.STA);
             appThread.Start();
 
         }

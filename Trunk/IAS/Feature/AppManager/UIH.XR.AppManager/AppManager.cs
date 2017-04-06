@@ -15,7 +15,7 @@ namespace UIH.XR.AppManager
 
         public XShellManager _xshellManager;
 
-        private ICommunicationProxy _communicationProxy;
+        public ICommunicationProxy _communicationProxy{get;private set;}
 
         public AppManager(ICommunicationProxy communicationProxy)
         {
@@ -52,5 +52,7 @@ namespace UIH.XR.AppManager
 
             return true;
         }
+
+        
     }
 }
