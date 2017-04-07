@@ -17,7 +17,7 @@ namespace UIH.XR.Core
         /// <summary>
         /// Get ShellName
         /// </summary>
-        string ShellName { get; }
+        string ShellName { get; set; }
 
         /// <summary>
         /// ShowShell
@@ -42,7 +42,5 @@ namespace UIH.XR.Core
         /// </summary>
         /// <returns></returns>
         bool UnblockShell();
-
-        IShell GetSerializableShadow();
     }
 }

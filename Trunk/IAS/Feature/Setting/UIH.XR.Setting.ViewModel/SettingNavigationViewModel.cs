@@ -19,7 +19,7 @@ using UIH.XR.GlobalParameter;
 
 namespace UIH.XR.Setting.ViewModel
 {
-    [Export(ComponentContract.SettingNavigationViewModelName, typeof(NotificationObject))]
+    [Export(ComponentContract.Setting.ViewModelName, typeof(NotificationObject))]
     public class SettingNavigationViewModel : NotificationObject
     {
         #region Properties
@@ -42,8 +42,8 @@ namespace UIH.XR.Setting.ViewModel
         public SettingNavigationViewModel([Import(typeof(ILogger))]ILogger logger)
         {
             Logger = logger;
-            Logger.LoggerName = ComponentContract.SettingLogSource;
-            Logger.LogUID = ComponentContract.SettingLogUID;
+            Logger.LoggerName = ComponentContract.Setting.LogSource;
+            Logger.LogUID = ComponentContract.Setting.LogUID;
 
             SettingItemCollection = new ObservableCollection<SettingItem>();
             SettingItemCollection.Add(new SettingItem() { Title = "DESIGN1" });

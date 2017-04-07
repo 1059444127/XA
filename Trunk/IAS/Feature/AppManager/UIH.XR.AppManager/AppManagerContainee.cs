@@ -29,7 +29,7 @@ namespace UIH.XR.AppManager
             }
             catch (Exception ex)
             {
-                CLRLogger.GetInstance().LogDevError("Startup error:"+ex.Message);
+                CLRLogger.GetInstance().LogDevError("Startup error:" + ex.Message);
                 Console.WriteLine("AppManagerContainee Startup ex:" + ex.Message);
             }
         }
@@ -41,9 +41,9 @@ namespace UIH.XR.AppManager
         {
             Console.WriteLine(string.Format("All apps are ready,Sender is {0}, Content = {1}", sender, content));
             CLRLogger.GetInstance().LogDevInfo(string.Format("All apps are ready,Sender is {0}, Content = {1}", sender, content));
-            AppManager appManager = new AppManager(GetCommunicationProxy());
-            appManager.Initialize();
-            appManager.Invoke("ready", null);
+            AppManager _appManager = new AppManager(GetCommunicationProxy());
+            _appManager.Initialize();
+            _appManager.Invoke("ready", null);
         }
     }
 }

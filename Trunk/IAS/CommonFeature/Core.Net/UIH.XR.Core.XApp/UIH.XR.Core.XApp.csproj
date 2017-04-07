@@ -43,19 +43,19 @@
       <HintPath>..\..\..\..\UIH\bin_debug\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.Mcsf.Core.NetBase">
+    <Reference Include="UIH.Mcsf.Core.NetBase">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
-      <Private>False</Private>	  
+      <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
-      <Private>False</Private>	  
+      <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.Mcsf.Log.Logger">
+    <Reference Include="UIH.Mcsf.Log.Logger">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.XR.GlobalParameter">
+    <Reference Include="UIH.XR.GlobalParameter">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.GlobalParameter.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -69,19 +69,19 @@
       <HintPath>..\..\..\..\UIH\bin\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.Mcsf.Core.NetBase">
+    <Reference Include="UIH.Mcsf.Core.NetBase">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
-      <Private>False</Private>	  
+      <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
-      <Private>False</Private>	  
+      <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.Mcsf.Log.Logger">
+    <Reference Include="UIH.Mcsf.Log.Logger">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.XR.GlobalParameter">
+    <Reference Include="UIH.XR.GlobalParameter">
       <HintPath>..\..\..\..\UIH\bin\UIH.XR.GlobalParameter.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -110,6 +110,7 @@
     <Compile Include="XShell.cs" />
     <Compile Include="XShellFactory.cs" />
     <Compile Include="XShellManagerProxy.cs" />
+    <Compile Include="XShellShadow.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UIH.XR.Core\UIH.XR.Core.csproj">

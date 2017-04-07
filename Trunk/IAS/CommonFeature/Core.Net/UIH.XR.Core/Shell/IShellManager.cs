@@ -28,5 +28,13 @@ namespace UIH.XR.Core
         /// <returns></returns>
         bool UnregisterShell(IShell shell);
 
+
+        /// <summary>
+        /// Get Shell
+        /// </summary>
+        /// <param name="shellName"></param>
+        /// <returns>Shell instance</returns>
+        IShell GetShell(string shellName);
+
     }
 }

@@ -19,29 +19,34 @@ namespace UIH.XR.GlobalParameter
 
         #region Setting
 
-        /// <summary>
-        /// The Contract Name of Setting View
-        /// </summary>
-        public const string SettingViewName = "Setting";
+        public class Setting
+        {
+            /// <summary>
+            /// The Contract Name of View
+            /// </summary>
+            public const string ViewName = "Setting";
 
-        /// <summary>
-        /// The Contract Name of SettingNavigation ViewModel
-        /// </summary>
-        public const string SettingNavigationViewModelName = "SettingNavigationViewModel";
+            /// <summary>
+            /// The Contract Name of ViewModel
+            /// </summary>
+            public const string ViewModelName = "SettingViewModel";
 
-        /// <summary>
-        /// The Contract Name of Setting View
-        /// </summary>
-        public static readonly string SettingLogSource = "Setting";
+            /// <summary>
+            /// The Contract Name of View
+            /// </summary>
+            public static readonly string LogSource = "Setting";
 
-        /// <summary>
-        /// The Contract Name of SettingNavigation ViewModel
-        /// </summary>
-        public static readonly ulong SettingLogUID = 1;
+            /// <summary>
+            /// The Contract Name of ViewModel
+            /// </summary>
+            public static readonly ulong LogUID = 1;
+        }
 
 
         #endregion
 
     }
+
+
 
 }

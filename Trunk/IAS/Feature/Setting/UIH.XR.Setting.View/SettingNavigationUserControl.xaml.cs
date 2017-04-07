@@ -21,7 +21,7 @@ namespace UIH.XR.Setting.View
     /// <summary>
     /// Interaction logic for SettingNavigationUserControl.xaml
     /// </summary>
-    [Export(ComponentContract.SettingViewName, typeof(UserControl))]
+    [Export(ComponentContract.Setting.ViewName, typeof(UserControl))]
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public partial class SettingNavigationUserControl : UserControl
     {
@@ -38,10 +38,10 @@ namespace UIH.XR.Setting.View
         #region Constructor
 
         [ImportingConstructor]
-        public SettingNavigationUserControl([Import(ComponentContract.SettingNavigationViewModelName, typeof(NotificationObject))]NotificationObject viewModel, [Import(typeof(ILogger))]ILogger logger)
+        public SettingNavigationUserControl([Import(ComponentContract.Setting.ViewModelName, typeof(NotificationObject))]NotificationObject viewModel, [Import(typeof(ILogger))]ILogger logger)
         {
             Logger = logger;
-            Logger.LoggerName = ComponentContract.SettingLogSource;
+            Logger.LoggerName = ComponentContract.Setting.LogSource;
 
             InitializeComponent();
             this.DataContext = viewModel;

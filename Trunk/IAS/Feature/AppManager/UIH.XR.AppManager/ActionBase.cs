@@ -8,16 +8,12 @@ namespace UIH.XR.AppManager
 
         public abstract void Execute(object arg);
 
-        public XShellManager xshellManager { get;private set; }
+        public XShellManager xshellManager { get; private set; }
 
         public ActionBase()
         {
             Console.WriteLine("ActionBase begin construct");
             xshellManager = XShellManager.GetInstance();
-            if (null == xshellManager)
-            {
-                Console.WriteLine("ActionBase xshellManager is null");
-            }
         }
     }
 }

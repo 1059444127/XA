@@ -5,45 +5,43 @@
 /// <description>
 /// </description>
 /// ------------------------------------------------------------------------------
+
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows;
-using System.ComponentModel.Composition;
 
 namespace UIH.XR.Core.XApp
 {
-    public class XShell : Window, IShell
+    [Serializable]
+    public class XShellShadow : IShell
     {
+        public XShellShadow(string shellName)
+        {
+            ShellName = shellName;
+        }
+
         public string ShellName { get; set; }
 
-        public virtual bool ShowShell()
+        public bool ShowShell()
         {
-            this.Show();
-            this.Activate();
-            return true;
+            throw new NotImplementedException();
         }
 
-        public virtual bool HideShell()
+        public bool HideShell()
         {
-            this.Hide();
-            return true;
+            throw new NotImplementedException();
         }
 
-        public virtual bool BlockShell()
+        public bool BlockShell()
         {
-            this.IsEnabled = false;
-            return true;
+            throw new NotImplementedException();
         }
 
-        public virtual bool UnblockShell()
+        public bool UnblockShell()
         {
-            this.IsEnabled = true;
-            return true;
+            throw new NotImplementedException();
         }
-
     }
-
-    
 }

@@ -157,7 +157,7 @@
   <ItemGroup>
     <Content Include="config\AppManagerSample.xml" />
     <Content Include="config\AppManagerSampleContainee.xml" />
-    <EmbeddedResource Include="SimpleStateMachine.xml" />
+    <EmbeddedResource Include="config\SimpleStateMachine.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
