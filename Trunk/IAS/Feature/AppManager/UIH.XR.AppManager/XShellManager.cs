@@ -15,6 +15,10 @@ namespace UIH.XR.AppManager
 
         public IRemoteMethodInvoker _remoteInvoker;
 
+        /// <summary>
+        /// Initialize,used by AppManager
+        /// </summary>
+        /// <param name="communicationProxy"></param>
         public void Initialize(ICommunicationProxy communicationProxy)
         {
             Console.WriteLine("XShellManager Initialize");
@@ -31,11 +35,18 @@ namespace UIH.XR.AppManager
             _remoteInvoker.RegisterServiceObject<IShellManager>(this);
         }
 
+        /// <summary>
+        /// consturct
+        /// </summary>
         private XShellManager()
         {
             _shellCollection = new Dictionary<string, IShell>();
         }
 
+        /// <summary>
+        /// Get XShellManager instance
+        /// </summary>
+        /// <returns></returns>
         public static XShellManager GetInstance()
         {
             if (null==_xshellManager)

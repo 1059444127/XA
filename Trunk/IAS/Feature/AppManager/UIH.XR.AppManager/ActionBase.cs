@@ -1,4 +1,5 @@
 ﻿using System;
+using UIH.XR.StateMachine;
 
 namespace UIH.XR.AppManager
 {
@@ -10,6 +11,9 @@ namespace UIH.XR.AppManager
 
         public XShellManager xshellManager { get; private set; }
 
+        /// <summary>
+        /// construct
+        /// </summary>
         public ActionBase()
         {
             Console.WriteLine("ActionBase begin construct");

@@ -27,15 +27,7 @@ namespace UIH.XR.AppManager.Actions
 
         public override void Execute(object arg)
         {
-            try
-            {
-                bool resut = this.xshellManager.GetShell("").ShowShell();
-                Console.WriteLine("CompleteStudyAction resut:" + resut);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("CompleteStudyAction Execute ex:" + ex.Message);
-            }
+          
         }
     }
 }

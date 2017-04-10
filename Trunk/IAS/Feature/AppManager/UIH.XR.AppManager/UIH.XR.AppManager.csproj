@@ -148,7 +148,6 @@
     <Compile Include="AppManagerContainee.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="IAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XShellManager.cs" />
     <Compile Include="XShellProxy.cs" />

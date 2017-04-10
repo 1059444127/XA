@@ -35,7 +35,7 @@ namespace UIH.XR.AppManager
         }
 
         private static int AppReadyEventID = 50011;//待systemmanager定义
-        private static int ChannelID = 50012;//待systemmanager定义
+        private static int ChannelID = 16;//待systemmanager定义
 
         private void HandleAppReadyEvent(string sender, string content)
         {
@@ -43,7 +43,8 @@ namespace UIH.XR.AppManager
             CLRLogger.GetInstance().LogDevInfo(string.Format("All apps are ready,Sender is {0}, Content = {1}", sender, content));
             AppManager _appManager = new AppManager(GetCommunicationProxy());
             _appManager.Initialize();
-            _appManager.Invoke("ready", null);
+            bool result= _appManager.Invoke("ready", new object());
+            Console.WriteLine(string.Format("curretn invoke result:{0},curretn procedure:{1}", result, _appManager.CurrentProcedure));
         }
     }
 }
