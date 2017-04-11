@@ -12,10 +12,10 @@ namespace UIH.XR.Core
         [XmlArray, XmlArrayItem("Assembly")]
         public string[] Assemblies { get; set; }
 
-        [XmlArray, XmlArrayItem("View")]
-        public XViewConfig[] Views { get; set; }
-
         [XmlArray, XmlArrayItem("Shell")]
         public XShellConfig[] Shells { get; set; }
+
+        [XmlArray, XmlArrayItem("Region")]
+        public XRegionConfig[] Regions { get; set; }
     }
 }

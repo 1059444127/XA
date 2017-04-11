@@ -22,16 +22,24 @@ using System.Reflection;
 using System.ComponentModel.Composition;
 using Microsoft.Practices.Prism.Regions;
 using System.Windows.Controls;
+using System.ComponentModel;
 
 namespace UIH.XR.Core
 {
     public class XBootstrapper : MefBootstrapper
     {
+        #region Properties
+
         private string _configPath;
         private XAppConfig _cfg;
-        private List<IShell> _shells = new List<IShell>();
         private ICommunicationProxy _communicationProxy;
         private XAppContext _appContext;
+        public IAppContext AppContext { get { return _appContext; } }
+
+        #endregion
+
+
+        #region Constructor
 
         public XBootstrapper(string configPath, ICommunicationProxy communicationProxy)
         {
@@ -39,7 +47,12 @@ namespace UIH.XR.Core
             _communicationProxy = communicationProxy;
         }
 
-        public IAppContext AppContext { get { return _appContext; } }
+        #endregion
+
+
+        #region Methods
+
+        #region Override base
 
         protected override void ConfigureAggregateCatalog()
         {
@@ -63,24 +76,24 @@ namespace UIH.XR.Core
             InitAppContext();
             if (_cfg == null) return null;
             if (_cfg.Shells == null) return null;
+
+            IShellManager shellManager = Container.GetExportedValue<IShellManager>();
             foreach (XShellConfig shellCfg in _cfg.Shells)
             {
-                IShellFactory shellFactory = Container.GetExportedValue<IShellFactory>();
-                IShell shell = shellFactory.CreateShell(shellCfg.Name);
-                _shells.Add(shell);
+                string shellName = shellCfg.Name;
+                IShell shell = Container.GetExportedValue<IShell>(shellName);
+                shell.ShellName = shellName;
+                shellManager.RegisterShell(shell);
                 if (shellCfg.ShowOnStartup)
                 {
                     shell.ShowShell();
                 }
-                if (!string.IsNullOrWhiteSpace(shellCfg.RootView) && shell is Window)
-                {
-                    (shell as Window).Content = Container.GetExportedValue<object>(shellCfg.RootView);
-                    (shell as Window).Show();
-                }
             }
-            IShell mainShell = _shells.FirstOrDefault();
-            RegisterShellAsRemoteService();
-            return mainShell as DependencyObject;
+
+            //IShell mainShell = shellManager.FirstOrDefault();
+            //RegisterShellAsRemoteService();
+            //return mainShell as DependencyObject;
+            return null;
         }
 
         protected override ILoggerFacade CreateLogger()
@@ -92,16 +105,20 @@ namespace UIH.XR.Core
             return base.CreateLogger();
         }
 
-        private void RegisterShellAsRemoteService()
+        protected override void InitializeModules()
         {
-            if (_communicationProxy == null) return;
-            foreach (IShell shell in _shells)
-            {
-                IRemoteMethodInvoker remoteInvoker = Container.GetExportedValue<IRemoteMethodInvoker>();
-                remoteInvoker.RegisterServiceObject<IShell>(shell, shell.ShellName);
-            }
+            base.InitializeModules();
+            RegisterViews();
         }
 
+        #endregion
+
+
+        #region Deriverd
+
+        /// <summary>
+        /// Init AppContext
+        /// </summary>
         private void InitAppContext()
         {
             _appContext = Container.GetExportedValue<IAppContext>() as XAppContext;
@@ -109,44 +126,76 @@ namespace UIH.XR.Core
             _appContext.Container = Container;
         }
 
+
+        /// <summary>
+        /// Register View to Region
+        /// </summary>
+        private void RegisterViews()
+        {
+            if (null != _cfg.Regions)
+            {
+                foreach (XRegionConfig regionCfg in _cfg.Regions)
+                {
+                    RegisterView(regionCfg);
+                } 
+            }            
+        }
+
+        /// <summary>
+        /// Register View to Region
+        /// </summary>
+        /// <param name="cfg">Region config item</param>
+        private void RegisterView(XRegionConfig cfg)
+        {
+            var registry = this.Container.GetExportedValue<IRegionViewRegistry>();
+            string regionName = cfg.Name;
+            if (cfg.IsNavigable)
+            {
+                foreach (var view in cfg.Views)
+                {
+                    RegisterView(registry, regionName, view.View, view.DataContext);
+                }
+            }
+            else
+            {
+                RegisterView(registry, regionName, cfg.View, cfg.DataContext);
+            }
+        }
+
+        /// <summary>
+        /// Register View to Region
+        /// </summary>
+        /// <param name="regionRegistry"></param>
+        /// <param name="regionName"></param>
+        /// <param name="viewName"></param>
+        /// <param name="dataContextName"></param>
+        private void RegisterView(IRegionViewRegistry regionRegistry,string regionName,string viewName,string dataContextName)
+        {
+            if (!string.IsNullOrWhiteSpace(regionName) && !string.IsNullOrWhiteSpace(viewName))
+            {
+                regionRegistry.RegisterViewWithRegion(regionName, () =>
+                {
+                    object view = Container.GetExportedValue<object>(viewName);
+                    if (view is Control && !string.IsNullOrWhiteSpace(dataContextName))
+                    {
+                        (view as Control).DataContext = Container.GetExportedValue<object>(dataContextName);
+                    }
+                    return view;
+                });
+            }
+        }
+
+        #endregion
+
+
+
+        [System.Obsolete]
         public object GetInstance(Type type, string contractName)
         {
             string contract = string.IsNullOrEmpty(contractName) ? AttributedModelServices.GetContractName(type) : contractName;
             return Container.GetExportedValue<object>(contract);
         }
 
-        protected override void InitializeModules()
-        {
-            base.InitializeModules();
-            RegisterViews();
-        }
-
-        private void RegisterViews()
-        {
-            if (null != _cfg.Views)
-            {
-                foreach (XViewConfig viewCfg in _cfg.Views)
-                {
-                    RegisterView(viewCfg);
-                } 
-            }            
-        }
-
-        private void RegisterView(XViewConfig cfg)
-        {
-            var registry = this.Container.GetExportedValue<IRegionViewRegistry>();
-            if (!string.IsNullOrWhiteSpace(cfg.Name) && !string.IsNullOrWhiteSpace(cfg.Region))
-            {
-                registry.RegisterViewWithRegion(cfg.Region, () =>
-                {
-                    object view = Container.GetExportedValue<object>(cfg.Name);
-                    if (view is Control && !string.IsNullOrWhiteSpace(cfg.DataContext))
-                    {
-                        (view as Control).DataContext = Container.GetExportedValue<object>(cfg.DataContext);
-                    }
-                    return view;
-                });
-            }
-        }
+        #endregion
     }
 }

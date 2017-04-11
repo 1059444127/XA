@@ -43,21 +43,21 @@
       <HintPath>..\..\..\..\UIH\bin_debug\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="Microsoft.Practices.ServiceLocation">
+    <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\..\..\..\UIH\bin_debug\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.Mcsf.Core.NetBase">
+    <Reference Include="UIH.Mcsf.Core.NetBase">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
-	  <Private>False</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
-	  <Private>False</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Log.Logger">
-	  <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
-	  <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -73,17 +73,17 @@
       <HintPath>..\..\..\..\UIH\bin\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>False</Private>
     </Reference>
-	<Reference Include="UIH.Mcsf.Core.NetBase">
+    <Reference Include="UIH.Mcsf.Core.NetBase">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
-	  <Private>False</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
-	  <Private>False</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Log.Logger">
-	  <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
-	  <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -108,12 +108,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="XApp.cs" />
-    <Compile Include="XAppConfig.cs" />
+    <Compile Include="AppConfig\XAppConfig.cs" />
     <Compile Include="XAppContext.cs" />
     <Compile Include="XBootLogger.cs" />
     <Compile Include="XBootstrapper.cs" />
-    <Compile Include="XShellConfig.cs" />
-    <Compile Include="XViewConfig.cs" />
+    <Compile Include="AppConfig\XRegionConfig.cs" />
+    <Compile Include="AppConfig\XShellConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UIH.XR.Core\UIH.XR.Core.csproj">

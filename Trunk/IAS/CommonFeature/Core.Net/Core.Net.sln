@@ -9,15 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Core.Test", "UIH.XR.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XBoot", "UIH.XR.XBoot\UIH.XR.XBoot.csproj", "{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample", "UIH.XR.XSample\UIH.XR.XSample.csproj", "{C4E7E2AB-B623-44D2-BD82-392B114A3B14}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.Views", "UIH.XR.XSample.Views\UIH.XR.XSample.Views.csproj", "{86D330B3-BA0F-4321-A10B-52C76F474FB4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.MiniBoot", "UIH.XR.MiniBoot\UIH.XR.MiniBoot.csproj", "{D373010C-1B0A-4E19-9768-ED1B400DE247}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
+		SccNumberOfProjects = 6
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
@@ -33,15 +29,9 @@ Global
 		SccProjectUniqueName4 = UIH.XR.Core.XApp\\UIH.XR.Core.XApp.csproj
 		SccProjectName4 = UIH.XR.Core.XApp
 		SccLocalPath4 = UIH.XR.Core.XApp
-		SccProjectUniqueName5 = UIH.XR.XSample\\UIH.XR.XSample.csproj
-		SccProjectName5 = UIH.XR.XSample
-		SccLocalPath5 = UIH.XR.XSample
-		SccProjectUniqueName6 = UIH.XR.XSample.Views\\UIH.XR.XSample.Views.csproj
-		SccProjectName6 = UIH.XR.XSample.Views
-		SccLocalPath6 = UIH.XR.XSample.Views
-		SccProjectUniqueName7 = UIH.XR.MiniBoot\\UIH.XR.MiniBoot.csproj
-		SccProjectName7 = UIH.XR.MiniBoot
-		SccLocalPath7 = UIH.XR.MiniBoot
+		SccProjectUniqueName5 = UIH.XR.MiniBoot\\UIH.XR.MiniBoot.csproj
+		SccProjectName5 = UIH.XR.MiniBoot
+		SccLocalPath5 = UIH.XR.MiniBoot
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,26 +82,6 @@ Global
 		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}.Release|x86.ActiveCfg = Release|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14}.Release|x86.ActiveCfg = Release|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4}.Release|x86.ActiveCfg = Release|Any CPU
 		{D373010C-1B0A-4E19-9768-ED1B400DE247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D373010C-1B0A-4E19-9768-ED1B400DE247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D373010C-1B0A-4E19-9768-ED1B400DE247}.Debug|Mixed Platforms.ActiveCfg = Debug|x86

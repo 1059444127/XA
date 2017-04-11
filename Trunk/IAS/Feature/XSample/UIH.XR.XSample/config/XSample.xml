@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XAppConfig>
+  <Assemblies>
+    <Assembly>UIH.XR.Core</Assembly>
+    <Assembly>UIH.XR.Core.Test</Assembly>
+    <Assembly>UIH.XR.XSample.Shells</Assembly>
+    <Assembly>UIH.XR.XSample.Views</Assembly>
+    <Assembly>UIH.XR.XSample.ViewModels</Assembly>
+  </Assemblies>
+  <Regions>
+    <Region Name="MainLeftRegion" View="RedView" DataContext="RichViewModel" />
+    <Region Name="MainRightUpRegion">
+      <Views>
+        <View View="YellowView" DataContext="SmartViewModel"></View>
+        <View View="BlueView" DataContext="HandsomeViewModel"></View>
+      </Views>
+    </Region>
+    <Region Name="MainRightDownRegion" View="BlueView" DataContext="HandsomeViewModel" />
+    <Region Name="RegionWindowOne" View="BlackView" DataContext="RichViewModel" />
+    <Region Name="RegionWindowTwo" View="WhiteView" DataContext="RichViewModel" />
+  </Regions>
+  <Shells>
+    <Shell ShowOnStartup="true" Name="MainShell" />
+    <Shell Name="WindowOne" />
+    <Shell Name="WindowTwo" />
+  </Shells>
+</XAppConfig>

@@ -107,8 +107,6 @@
     <Compile Include="RemoteMethodInvoker.cs" />
     <Compile Include="XAppModule.cs" />
     <Compile Include="XCommunicator.cs" />
-    <Compile Include="XShell.cs" />
-    <Compile Include="XShellFactory.cs" />
     <Compile Include="XShellManagerProxy.cs" />
     <Compile Include="XShellShadow.cs" />
   </ItemGroup>

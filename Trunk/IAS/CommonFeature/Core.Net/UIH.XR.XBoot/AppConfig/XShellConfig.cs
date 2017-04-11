@@ -14,8 +14,8 @@ namespace UIH.XR.Core
         [XmlAttribute]
         public bool ShowOnStartup { get; set; }
 
-        [XmlAttribute]
-        public string RootView { get; set; }
+        //[XmlAttribute]
+        //public string RootView { get; set; }
 
     }
 }

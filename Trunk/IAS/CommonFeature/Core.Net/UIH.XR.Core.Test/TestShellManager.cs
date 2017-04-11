@@ -6,19 +6,14 @@
 /// </description>
 /// ------------------------------------------------------------------------------
 using System.ComponentModel.Composition;
-using UIH.XR.GlobalParameter;
 using System.Collections.Generic;
 
-namespace UIH.XR.Core.XApp
+namespace UIH.XR.Core.Test
 {
     [Export(typeof(IShellManager))]
-    public class XShellManagerProxy : IShellManager
+    public class TestShellManager : IShellManager
     {
         #region Properties
-
-        static string APP_MANAGER_NAME = CommunicationNode.AppManager;
-        [Import]
-        private IRemoteMethodInvoker RemoteMethodInvoker { get; set; }
 
         /// <summary>
         /// Shell collection (local)
@@ -33,13 +28,12 @@ namespace UIH.XR.Core.XApp
         /// <summary>
         /// Constructor
         /// </summary>
-        public XShellManagerProxy()
+        public TestShellManager()
         {
             ShellCollectin = new Dictionary<string, IShell>();
         }
 
         #endregion
-
 
 
         #region Methods
@@ -51,14 +45,8 @@ namespace UIH.XR.Core.XApp
         /// <returns></returns>
         public bool RegisterShell(IShell shell)
         {
-            XShellShadow shellShadow = new XShellShadow(shell.ShellName);
-            RemoteMethodInvoker.RegisterServiceObject<IShell>(shell, shell.ShellName);
-            bool result= (bool)RemoteMethodInvoker.RemoteInvoke(APP_MANAGER_NAME, shellShadow);
-
-            if (result)
-                AddShell(shell);
-
-            return result;
+            AddShell(shell);
+            return true;
         }
 
         /// <summary>
@@ -68,13 +56,8 @@ namespace UIH.XR.Core.XApp
         /// <returns></returns>
         public bool UnregisterShell(IShell shell)
         {
-            XShellShadow shellShadow = new XShellShadow(shell.ShellName);
-            bool result = (bool)RemoteMethodInvoker.RemoteInvoke(APP_MANAGER_NAME, shellShadow);
-
-            if (result)
-                RemoveShell(shell);
-
-            return result;
+            RemoveShell(shell);
+            return true;
         }
 
         /// <summary>
