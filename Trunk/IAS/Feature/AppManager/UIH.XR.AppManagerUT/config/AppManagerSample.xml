@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XAppConfig>
+  <Assemblies>
+    <Assembly>UIH.XR.Core.XApp</Assembly>
+  </Assemblies>
+</XAppConfig>

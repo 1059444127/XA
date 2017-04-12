@@ -1,46 +1,38 @@
 ﻿using UIH.XR.Core;
-using System;
 
 namespace UIH.XR.AppManager
 {
     public class XShellProxy :IShell
     {
         private IRemoteMethodInvoker _remoteInvoker;
-
-        private string appCommunicationProxyName;
-
+        private string _receiver;
         public string ShellName { get; set; }
 
-        public XShellProxy(IRemoteMethodInvoker remoteMethodInvoker, string shellName, string receiver)
+        public XShellProxy(IRemoteMethodInvoker remoteMethodInvoker, string shellName, string appCommunicationProxyName)
         {
             _remoteInvoker = remoteMethodInvoker;
-            appCommunicationProxyName = receiver;
+            _receiver = appCommunicationProxyName;
             ShellName = shellName;
-        }
-
-        public IShell GetSerializableShadow()
-        {
-            throw new Exception();
         }
 
         public bool ShowShell()
         {
-            return (bool)_remoteInvoker.RemoteInvoke(appCommunicationProxyName, this);
+            return (bool)_remoteInvoker.RemoteInvoke(_receiver, ShellName, this);
         }
 
         public bool HideShell()
         {
-            return (bool)_remoteInvoker.RemoteInvoke(appCommunicationProxyName, this);
+            return (bool)_remoteInvoker.RemoteInvoke(_receiver, ShellName, this);
         }
 
         public bool BlockShell()
         {
-            return (bool)_remoteInvoker.RemoteInvoke(appCommunicationProxyName, this);
+            return (bool)_remoteInvoker.RemoteInvoke(_receiver, ShellName, this);
         }
 
         public bool UnblockShell()
         {
-            return (bool)_remoteInvoker.RemoteInvoke(appCommunicationProxyName, this);
+            return (bool)_remoteInvoker.RemoteInvoke(_receiver, ShellName, this);
         }
     }
 }

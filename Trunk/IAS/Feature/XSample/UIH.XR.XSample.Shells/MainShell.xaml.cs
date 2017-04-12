@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -25,10 +26,11 @@ namespace UIH.XR.XSample.Shells
     {
         public MainShell()
         {
+            Debugger.Launch();
             InitializeComponent();
-            RegionManager.SetRegionName(contentLeft, "MainLeftRegion");
-            RegionManager.SetRegionName(contentRightUp, "MainRightUpRegion");
-            RegionManager.SetRegionName(contentRightDown, "MainRightDownRegion");
+            //RegionManager.SetRegionName(contentLeft, "MainLeftRegion");
+            //RegionManager.SetRegionName(contentRightUp, "MainRightUpRegion");
+            //RegionManager.SetRegionName(contentRightDown, "MainRightDownRegion");
         }
     }
 }

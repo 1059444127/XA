@@ -1,28 +1,12 @@
 ﻿
-using System;
 
 namespace UIH.XR.AppManager.Actions
 {
     public class CompleteStudyAction : ActionBase
     {
-        public CompleteStudyAction():base()
-        {
-            Console.WriteLine("CompleteStudyAction construct.");
-        }
-
         public override bool CanExecute(object arg)
         {
-            try
-            {
-                Console.WriteLine("CompleteStudyAction CanExecute,shellName is:" + this.xshellManager.GetShell("shellName"));
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("CompleteStudyAction CanExecute ex:" +ex.Message);
-                return false;
-            }
-          
+            return true;
         }
 
         public override void Execute(object arg)

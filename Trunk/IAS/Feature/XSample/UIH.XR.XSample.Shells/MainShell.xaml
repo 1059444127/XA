@@ -1,8 +1,8 @@
 ﻿<local:XShell x:Class="UIH.XR.XSample.Shells.MainShell"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="clr-namespace:UIH.XR.XSample.Shells"    
-        Title="MainShell" Height="600" Width="800">
+        xmlns:local="clr-namespace:UIH.XR.XSample.Shells"
+              xmlns:Region="clr-namespace:UIH.XR.Common.Region;assembly=UIH.XR.Common" Title="MainShell" Height="600" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -13,8 +13,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <ContentControl x:Name="contentLeft" Grid.RowSpan="2"></ContentControl>
+        <!--<ContentControl x:Name="contentLeft" Grid.RowSpan="2"></ContentControl>
         <ContentControl x:Name="contentRightUp" Grid.Column="1"></ContentControl>
-        <ContentControl x:Name="contentRightDown" Grid.Column="1" Grid.Row="1"></ContentControl>
+        <ContentControl x:Name="contentRightDown" Grid.Column="1" Grid.Row="1"></ContentControl>-->
+
+        <ContentControl Region:RegionNameHelper.RegionName="MainLeftRegion"  Grid.RowSpan="2"></ContentControl>
+        <ContentControl Region:RegionNameHelper.RegionName="MainRightUpRegion"  Grid.Column="1"></ContentControl>
+        <ContentControl Region:RegionNameHelper.RegionName="MainRightDownRegion"  Grid.Column="1" Grid.Row="1"></ContentControl>
     </Grid>
 </local:XShell>

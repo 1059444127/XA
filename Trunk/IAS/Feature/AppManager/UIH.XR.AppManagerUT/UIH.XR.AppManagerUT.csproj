@@ -55,6 +55,10 @@
     <Reference Include="UIH.XR.Core">
       <HintPath>..\..\..\..\UIH\bin\UIH.XR.Core.dll</HintPath>
     </Reference>
+    <Reference Include="UIH.XR.Core.XApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XR.Core.XApp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
@@ -66,7 +70,11 @@
     <Compile Include="TestAppManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config\AppManagerSampleContainee.xml" />
+    <EmbeddedResource Include="config\AppManagerSampleContainee.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="config\AppManagerSample.xml" />
+    <EmbeddedResource Include="config\SimpleStateMachine.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

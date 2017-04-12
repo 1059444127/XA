@@ -1,6 +1,6 @@
 ﻿using UIH.Mcsf.Core;
-using System;
 using UIH.Mcsf.Log;
+using UIH.XR.Core;
 
 namespace UIH.XR.AppManager
 {
@@ -8,43 +8,32 @@ namespace UIH.XR.AppManager
     {
         public override void DoWork()
         {
-            try
-            {
-                Console.WriteLine("appmanager DoWork begin");
-                GetCommunicationProxy().RegisterEventHandler(ChannelID, AppReadyEventID, new StringEventHandler(HandleAppReadyEvent));
-            }
-            catch (Exception ex)
-            {
-                CLRLogger.GetInstance().LogDevError("DoWork error:" + ex.Message);
-                Console.WriteLine("AppManagerContainee DoWork ex:" + ex.Message);
-            }
+            IRemoteMethodInvoker remoteInvoker = _bootstrapper.AppContext.Container.GetExportedValue<IRemoteMethodInvoker>();
+            _appManager = new AppManager();
+            _appManager.Initialize(remoteInvoker);
+            _iCommunicationProxy.RegisterEventHandler(ChannelID, AppReadyEventID, new StringEventHandler(HandleAppReadyEvent));
         }
 
         public override void Startup()
         {
-            try
-            {
-                Console.WriteLine("AppManagerContainee Startup begin");
-                base.Startup();
-            }
-            catch (Exception ex)
-            {
-                CLRLogger.GetInstance().LogDevError("Startup error:" + ex.Message);
-                Console.WriteLine("AppManagerContainee Startup ex:" + ex.Message);
-            }
+            base.Startup();
+            _iCommunicationProxy = GetCommunicationProxy();
+            _bootstrapper = new XBootstrapper(appCfgPath, _iCommunicationProxy);
+            _bootstrapper.Run();
         }
+
+        private XBootstrapper _bootstrapper;
+        private string appCfgPath = mcsf_clr_systemenvironment_config.GetApplicationPath() + @"xsample\config\AppManagerSample.xml";
+        private ICommunicationProxy _iCommunicationProxy;
+        private AppManager _appManager;
 
         private static int AppReadyEventID = 50011;//待systemmanager定义
         private static int ChannelID = 16;//待systemmanager定义
 
         private void HandleAppReadyEvent(string sender, string content)
         {
-            Console.WriteLine(string.Format("All apps are ready,Sender is {0}, Content = {1}", sender, content));
-            CLRLogger.GetInstance().LogDevInfo(string.Format("All apps are ready,Sender is {0}, Content = {1}", sender, content));
-            AppManager _appManager = new AppManager(GetCommunicationProxy());
-            _appManager.Initialize();
             bool result= _appManager.Invoke("ready", new object());
-            Console.WriteLine(string.Format("curretn invoke result:{0},curretn procedure:{1}", result, _appManager.CurrentProcedure));
+            CLRLogger.GetInstance().LogDevInfo(string.Format("All apps are ready,Sender is {0}, Content = {1}, invoke result:{2},curretn procedure:{3}",sender, content, result, _appManager.CurrentProcedure));
         }
     }
 }
