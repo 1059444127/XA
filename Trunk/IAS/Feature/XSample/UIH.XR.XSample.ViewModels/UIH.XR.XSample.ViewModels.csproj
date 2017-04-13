@@ -47,15 +47,24 @@
     <Reference Include="UIH.XR.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HandsomeViewModel.cs" />
     <Compile Include="NotificationObject.cs" />
+    <Compile Include="PatientViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RichViewModel.cs" />
     <Compile Include="SampleCommand.cs" />
     <Compile Include="SmartViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.XR.XSample.BusinessInterface\UIH.XR.XSample.BusinessLogicInterface.csproj">
+      <Project>{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}</Project>
+      <Name>UIH.XR.XSample.BusinessLogicInterface</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

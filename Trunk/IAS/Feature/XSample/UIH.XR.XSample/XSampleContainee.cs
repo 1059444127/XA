@@ -13,7 +13,6 @@ namespace UIH.XR.XSample
     {
         public override void DoWork()
         {
-            Debugger.Launch();
             string appCfgPath = mcsf_clr_systemenvironment_config.GetApplicationPath() + @"\xsample\config\XSample.xml";
             XApp app = new XApp(appCfgPath, GetCommunicationProxy());
             app.Run();            

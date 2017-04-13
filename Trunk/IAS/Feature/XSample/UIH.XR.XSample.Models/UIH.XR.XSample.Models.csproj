@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B162D2E5-254F-4D45-90FA-6D849DCCBD2D}</ProjectGuid>
+    <ProjectGuid>{288F3887-BDE1-4264-AB4E-3A60E2DD0658}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UIH.XR.GlobalParameter</RootNamespace>
-    <AssemblyName>UIH.XR.GlobalParameter</AssemblyName>
+    <RootNamespace>UIH.XR.XSample.Models</RootNamespace>
+    <AssemblyName>UIH.XR.XSample.Models</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -36,19 +36,35 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIH.Mcsf.Core.NetBase, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XR.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommunicationNode.cs" />
-    <Compile Include="ComponentContract.cs" />
+    <Compile Include="PatientSourceAccessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegionNames.cs" />
-    <Compile Include="ShellNames.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIH.XR.XSample.BusinessInterface\UIH.XR.XSample.BusinessLogicInterface.csproj">
+      <Project>{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}</Project>
+      <Name>UIH.XR.XSample.BusinessLogicInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UIH.XR.XSample.BusinessLogicExcutor\UIH.XR.XSample.BusinessLogicExcutor.csproj">
+      <Project>{C67939FC-7637-49A2-934F-9037DE434B8A}</Project>
+      <Name>UIH.XR.XSample.BusinessLogicExcutor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

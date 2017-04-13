@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Container>
-  <Configuration Name='AppManager' Version='0.1'></Configuration>
+  <Configuration Name='AppManager@@' Version='0.1'></Configuration>
   <ListenAddress>
     <Host>127.0.0.1</Host>
     <Port>0</Port>

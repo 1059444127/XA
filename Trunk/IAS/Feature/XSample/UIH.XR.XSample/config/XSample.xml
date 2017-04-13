@@ -6,6 +6,7 @@
     <Assembly>UIH.XR.XSample.Shells</Assembly>
     <Assembly>UIH.XR.XSample.Views</Assembly>
     <Assembly>UIH.XR.XSample.ViewModels</Assembly>
+    <Assembly>UIH.XR.XSample.Models</Assembly>
   </Assemblies>
   <Regions>
     <Region Name="MainLeftRegion" View="RedView" DataContext="RichViewModel" />
@@ -17,7 +18,7 @@
     </Region>
     <Region Name="MainRightDownRegion" View="BlueView" DataContext="HandsomeViewModel" />
     <Region Name="RegionWindowOne" View="BlackView" DataContext="RichViewModel" />
-    <Region Name="RegionWindowTwo" View="WhiteView" DataContext="RichViewModel" />
+    <Region Name="RegionWindowTwo" View="WhiteView" DataContext="PatientViewModel" />
   </Regions>
   <Shells>
     <Shell ShowOnStartup="true" Name="MainShell" />

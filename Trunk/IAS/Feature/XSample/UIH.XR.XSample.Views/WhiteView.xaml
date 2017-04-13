@@ -7,7 +7,59 @@
              xmlns:prism="http://www.codeplex.com/prism"
              d:DesignHeight="300" d:DesignWidth="300" >
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
         <TextBlock Text="{Binding Description}" Foreground="Pink" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock>Patient ID:</TextBlock>
+            <TextBox Grid.Column="1" Text="{Binding PresentPatient.PatientID}" Height="28"></TextBox>
+
+            <TextBlock Grid.Row="1">Patient Name:</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding PresentPatient.PatientName}" Height="28"></TextBox>
+
+            <TextBlock Grid.Row="2">Patient Age:</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding PresentPatient.PatientAge}" Height="28"></TextBox>
+
+            <TextBlock Grid.Row="3">Patient Sex:</TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding PresentPatient.PatientSex}" Height="28"></TextBox>
+
+        </Grid>
+        
+        
+        <Grid Grid.Row="2">
+            <DataGrid ItemsSource="{Binding PatientItemSource}" SelectedItem="{Binding CurrentPatient}" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding PatientID}" Width="*" Header="ID" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding PatientName}" Width="*" Header="Name" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding PatientAge}" Width="*" Header="Age" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding PatientSex}" Width="*" Header="Sex" IsReadOnly="True"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        
+        
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <Button Height="28" Width="80" Margin="5" Command="{Binding NewCommand}" Content="New"></Button>
+            <Button Height="28" Width="80" Margin="5" Command="{Binding ModifyCommand}" Content="Modity"></Button>
+            <Button Height="28" Width="80" Margin="5" Command="{Binding DeleteCommand}" Content="Delete"></Button>
+        </StackPanel>
+        
         
     </Grid>
 </UserControl>

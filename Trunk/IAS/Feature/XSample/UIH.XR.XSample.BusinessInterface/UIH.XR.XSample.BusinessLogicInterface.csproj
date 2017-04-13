@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B162D2E5-254F-4D45-90FA-6D849DCCBD2D}</ProjectGuid>
+    <ProjectGuid>{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UIH.XR.GlobalParameter</RootNamespace>
-    <AssemblyName>UIH.XR.GlobalParameter</AssemblyName>
+    <RootNamespace>UIH.XR.XSample.BusinessLogicInterface</RootNamespace>
+    <AssemblyName>UIH.XR.XSample.BusinessLogicInterface</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommunicationNode.cs" />
-    <Compile Include="ComponentContract.cs" />
+    <Compile Include="IPatientSource.cs" />
+    <Compile Include="Patient.cs" />
+    <Compile Include="PatientRemoteObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegionNames.cs" />
-    <Compile Include="ShellNames.cs" />
+    <Compile Include="SerializeObj.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

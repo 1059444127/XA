@@ -88,9 +88,7 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>rd /s /q $(ProjectDir)..\..\..\..\UIH\appdata\xsample\config
-md $(ProjectDir)..\..\..\..\UIH\appdata\xsample\config
-xcopy $(ProjectDir)config $(ProjectDir)..\..\..\..\UIH\appdata\xsample\config /EY</PostBuildEvent>
+    <PostBuildEvent>xcopy $(ProjectDir)config $(ProjectDir)..\..\..\..\UIH\appdata\xsample\config /s /e /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

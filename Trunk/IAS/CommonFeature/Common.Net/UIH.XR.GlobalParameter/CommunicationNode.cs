@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace UIH.XR.GlobalParameter
 {
     public class CommunicationNode
@@ -26,6 +22,11 @@ namespace UIH.XR.GlobalParameter
         /// The CommunicationProxy Name of PatientAdmin
         /// </summary>
         public static readonly string PatientAdmin = "PA@@";
+
+        /// <summary>
+        /// The CommunicationProxy Name of SystemSessionManager
+        /// </summary>
+        public static readonly string SystemSessionManager = "SessionManager@@";
 
     }
 }
