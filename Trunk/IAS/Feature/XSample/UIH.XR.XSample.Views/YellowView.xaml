@@ -8,9 +8,10 @@
              d:DesignHeight="300" d:DesignWidth="300" Background="Yellow">
     <Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="{Binding Description}" Foreground="White" FontSize="20" ></TextBlock>
-            <Button Height="30" Width="80" Content="One" Margin="5" Command="{Binding OneCommand}"></Button>
-            <Button Height="30" Width="80" Content="Two" Margin="5" Command="{Binding TwoCommand}"></Button>
+            <TextBlock  x:Name="txtTitle" Text="{Binding Description}" Foreground="White" FontSize="20" ></TextBlock>
+            <Button x:Name="btnOne" Height="30" Width="80" Content="One" Margin="5" Command="{Binding OneCommand}"></Button>
+            <Button x:Name="btnTwo" Height="30" Width="80" Content="Two" Margin="5" ></Button>
+            <!-- Command="{Binding TwoCommand}"-->
         </StackPanel>
     </Grid>
 </UserControl>

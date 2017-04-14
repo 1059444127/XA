@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ComponentModel.Composition;
+using UIH.XR.XSample.Utility;
 
 namespace UIH.XR.XSample.Views
 {
@@ -25,6 +26,24 @@ namespace UIH.XR.XSample.Views
         public YellowView()
         {
             InitializeComponent();
+            this.Loaded += new RoutedEventHandler(YellowView_Loaded);
         }
+
+        void YellowView_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+            
+            IList<Button> btnList = VisualElementHepler.FindVisualChild<Button>(this);
+            foreach (var btn in btnList)
+            {
+                ButtonBehavior bb1 = new ButtonBehavior();
+                ButtonBehavior bb2 = new ButtonBehavior();
+                bb2.OutputFormat = "{0}.{1} click record.";
+                bb1.Attach(btn);
+                bb2.Attach(btn);
+            }
+        }
+
+
     }
 }
