@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Resource.en.US", "UIH.XR.Resource.en.US\UIH.XR.Resource.en.US.csproj", "{48B2FFB1-7435-4859-A8CC-D977CA39FAF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Resource.zh.CN", "UIH.XR.Resource.zh.CN\UIH.XR.Resource.zh.CN.csproj", "{558C80C2-CEC2-46A4-B12D-B3CA6EF047BE}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UIH.XR.Resource.en.US\\UIH.XR.Resource.en.US.csproj
+		SccProjectName1 = UIH.XR.Resource.en.US
+		SccLocalPath1 = UIH.XR.Resource.en.US
+		SccProjectUniqueName2 = UIH.XR.Resource.zh.CN\\UIH.XR.Resource.zh.CN.csproj
+		SccProjectName2 = UIH.XR.Resource.zh.CN
+		SccLocalPath2 = UIH.XR.Resource.zh.CN
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48B2FFB1-7435-4859-A8CC-D977CA39FAF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B2FFB1-7435-4859-A8CC-D977CA39FAF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B2FFB1-7435-4859-A8CC-D977CA39FAF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B2FFB1-7435-4859-A8CC-D977CA39FAF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{558C80C2-CEC2-46A4-B12D-B3CA6EF047BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{558C80C2-CEC2-46A4-B12D-B3CA6EF047BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{558C80C2-CEC2-46A4-B12D-B3CA6EF047BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{558C80C2-CEC2-46A4-B12D-B3CA6EF047BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
