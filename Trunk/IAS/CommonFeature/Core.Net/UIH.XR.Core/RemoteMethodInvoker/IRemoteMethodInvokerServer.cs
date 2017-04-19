@@ -17,7 +17,7 @@ namespace UIH.XR.Core
         void RegisterServiceObject<T>(T obj, string name = null) where T : class;
 
         /// <summary>
-        /// Get current remote invoker which communicates with me.
+        /// GetObject current remote invoker which communicates with me.
         /// </summary>
         /// <returns>remote invoker's name</returns>
         string GetCurrentRemoteInvoker();

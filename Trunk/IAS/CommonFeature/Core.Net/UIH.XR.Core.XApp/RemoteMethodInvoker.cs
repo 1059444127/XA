@@ -17,6 +17,7 @@ using System.IO;
 using System.ComponentModel.Composition;
 using System.Threading;
 using UIH.Mcsf.Log;
+using UIH.XR.GlobalParameter;
 
 namespace UIH.XR.Core.XApp
 {
@@ -38,7 +39,8 @@ namespace UIH.XR.Core.XApp
         [ImportingConstructor]
         public RemoteMethodInvoker(IAppContext appContext)
         {
-            _communicationProxy = appContext.DefaultCLRCommunicationProxy as CLRCommunicationProxy;
+            //_communicationProxy = appContext.DefaultCLRCommunicationProxy as CLRCommunicationProxy;
+            _communicationProxy = appContext.GetObject<ICommunicationProxy>(AppContextObjectName.DefaultCommunicationProxy);
             if (_communicationProxy != null)
             {
                 _communicationProxy.RegisterCommandHandlerEx(COMMUNICATION_ID, HandleRemoteInvoke);

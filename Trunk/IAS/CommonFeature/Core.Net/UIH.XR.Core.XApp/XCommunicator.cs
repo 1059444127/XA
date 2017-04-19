@@ -8,6 +8,7 @@
 using System;
 using UIH.Mcsf.Core;
 using System.ComponentModel.Composition;
+using UIH.XR.GlobalParameter;
 
 namespace UIH.XR.Core.XApp
 {
@@ -21,7 +22,8 @@ namespace UIH.XR.Core.XApp
         [ImportingConstructor]
         public XCommunicator(IAppContext appContext)
         {
-            _communicationProxy = appContext.DefaultCLRCommunicationProxy as ICommunicationProxy;
+            //_communicationProxy = appContext.DefaultCLRCommunicationProxy as ICommunicationProxy;
+            _communicationProxy = appContext.GetObject<ICommunicationProxy>(AppContextObjectName.DefaultCommunicationProxy);
         }
 
         public void SendEvent(string sender, int eventID, string eventContent)

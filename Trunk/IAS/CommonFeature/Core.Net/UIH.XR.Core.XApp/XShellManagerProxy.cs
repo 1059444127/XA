@@ -78,7 +78,7 @@ namespace UIH.XR.Core.XApp
         }
 
         /// <summary>
-        /// Get Shell instance by shell name
+        /// GetObject Shell instance by shell name
         /// </summary>
         /// <param name="shellName"></param>
         /// <returns></returns>
@@ -104,7 +104,7 @@ namespace UIH.XR.Core.XApp
         }
 
         /// <summary>
-        /// Remove shell from local collection
+        /// RemoveObject shell from local collection
         /// </summary>
         /// <param name="shell"></param>
         private void RemoveShell(IShell shell)

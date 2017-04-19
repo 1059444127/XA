@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0728F070-23BE-4F16-AB5D-6B024966B768}</ProjectGuid>
+    <ProjectGuid>{04375A5B-7520-4926-97DA-AE87658736F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UIH.XR.Core</RootNamespace>
-    <AssemblyName>UIH.XR.Core</AssemblyName>
+    <RootNamespace>UIH.XR.DataContract</RootNamespace>
+    <AssemblyName>UIH.XR.DataContract</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -28,7 +28,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,20 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommunicationException.cs" />
-    <Compile Include="IAppContext.cs" />
-    <Compile Include="IAppRegionManager.cs" />
-    <Compile Include="ICommunicator.cs" />
-    <Compile Include="IInput.cs" />
-    <Compile Include="IIoC.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvoker.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvokerServer.cs" />
-    <Compile Include="Shell\IShell.cs" />
-    <Compile Include="Shell\IShellManager.cs" />
-    <Compile Include="IWorkflow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoteMethodInvoker\IRemoteMethodInvokerClient.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

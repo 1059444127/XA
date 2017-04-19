@@ -1,24 +1,11 @@
-﻿//////////////////////////////////////////////////////////////////////////
-/// Copyright, (c) Shanghai United Imaging Healthcare Inc., 2011
-/// All rights reserved.
-///
-/// \author Jinyang Li     jinyang.li@united-imaging.com
-//
-/// \file XAppContext.cs
-///
-/// \brief  This Class is Generalize the Interface IAppContext
-///
-/// \version 1
-/// \date Apr  , 2017
-/////////////////////////////////////////////////////////////////////////
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Text;
 
-namespace UIH.XR.Core
+namespace UIH.XR.Core.XApp
 {
     [Export(typeof(IAppContext))]
     public class XAppContext : IAppContext
@@ -28,7 +15,6 @@ namespace UIH.XR.Core
         private readonly ConcurrentDictionary<string, object> _concurrentDictionary = new ConcurrentDictionary<string, object>();
 
         #endregion
-
 
 
         #region Implementation of IAppContext
@@ -47,9 +33,6 @@ namespace UIH.XR.Core
                 return default(T);
             }
         }
-        #endregion
-
-
 
         public bool AddObject<T>(string objName, T objInstance)
         {
@@ -64,5 +47,22 @@ namespace UIH.XR.Core
                 return false;
             }
         }
+
+        public bool RemoveObject<T>(string objName)
+        {
+            object obj;
+            if (this._concurrentDictionary.TryRemove(objName, out obj))
+            {
+                return true;
+            }
+            else
+            {
+                //todo;
+                return false;
+            }
+        }
+
+
+        #endregion
     }
 }

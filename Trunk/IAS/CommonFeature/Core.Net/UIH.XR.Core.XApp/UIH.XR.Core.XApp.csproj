@@ -105,7 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoteMethodInvokeArgument.cs" />
     <Compile Include="RemoteMethodInvoker.cs" />
+    <Compile Include="XAppIoC.cs" />
     <Compile Include="XAppModule.cs" />
+    <Compile Include="XAppRegionManager.cs" />
     <Compile Include="XCommunicator.cs" />
     <Compile Include="XShellManagerProxy.cs" />
     <Compile Include="XShellShadow.cs" />

@@ -15,7 +15,7 @@ namespace UIH.XR.Core
     public interface IShell
     {
         /// <summary>
-        /// Get ShellName
+        /// GetObject ShellName
         /// </summary>
         string ShellName { get; set; }
 

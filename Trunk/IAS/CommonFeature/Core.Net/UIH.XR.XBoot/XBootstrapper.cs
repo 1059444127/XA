@@ -23,6 +23,7 @@ using System.ComponentModel.Composition;
 using Microsoft.Practices.Prism.Regions;
 using System.Windows.Controls;
 using System.ComponentModel;
+using UIH.XR.GlobalParameter;
 
 namespace UIH.XR.Core
 {
@@ -33,7 +34,9 @@ namespace UIH.XR.Core
         private string _configPath;
         private XAppConfig _cfg;
         private ICommunicationProxy _communicationProxy;
-        private XAppContext _appContext;
+        private IAppContext _appContext;
+        private IIoC<CompositionContainer> _ioC;
+        public IIoC<CompositionContainer> IoC { get { return this._ioC; } }
         public IAppContext AppContext { get { return _appContext; } }
 
         #endregion
@@ -90,9 +93,6 @@ namespace UIH.XR.Core
                 }
             }
 
-            //IShell mainShell = shellManager.FirstOrDefault();
-            //RegisterShellAsRemoteService();
-            //return mainShell as DependencyObject;
             return null;
         }
 
@@ -121,9 +121,12 @@ namespace UIH.XR.Core
         /// </summary>
         private void InitAppContext()
         {
-            _appContext = Container.GetExportedValue<IAppContext>() as XAppContext;
-            _appContext.DefaultCLRCommunicationProxy = _communicationProxy;
-            _appContext.Container = Container;
+            _appContext = Container.GetExportedValue<IAppContext>();
+            (_appContext as XAppContext).AddObject<ICommunicationProxy>(AppContextObjectName.DefaultCommunicationProxy, this._communicationProxy);
+
+
+            this._ioC = this.Container.GetExportedValue<IIoC<CompositionContainer>>();
+            this._ioC.Container = this.Container;
         }
 
 
@@ -137,8 +140,8 @@ namespace UIH.XR.Core
                 foreach (XRegionConfig regionCfg in _cfg.Regions)
                 {
                     RegisterView(regionCfg);
-                } 
-            }            
+                }
+            }
         }
 
         /// <summary>
@@ -169,7 +172,7 @@ namespace UIH.XR.Core
         /// <param name="regionName"></param>
         /// <param name="viewName"></param>
         /// <param name="dataContextName"></param>
-        private void RegisterView(IRegionViewRegistry regionRegistry,string regionName,string viewName,string dataContextName)
+        private void RegisterView(IRegionViewRegistry regionRegistry, string regionName, string viewName, string dataContextName)
         {
             if (!string.IsNullOrWhiteSpace(regionName) && !string.IsNullOrWhiteSpace(viewName))
             {
@@ -186,15 +189,6 @@ namespace UIH.XR.Core
         }
 
         #endregion
-
-
-
-        [System.Obsolete]
-        public object GetInstance(Type type, string contractName)
-        {
-            string contract = string.IsNullOrEmpty(contractName) ? AttributedModelServices.GetContractName(type) : contractName;
-            return Container.GetExportedValue<object>(contract);
-        }
 
         #endregion
     }

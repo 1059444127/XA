@@ -34,6 +34,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="UIH.Mcsf.Core.File.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.File.Parser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="UIH.Mcsf.Core.File.Parser">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.File.Parser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +58,7 @@
   <ItemGroup>
     <Compile Include="SerializeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlSerializerHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

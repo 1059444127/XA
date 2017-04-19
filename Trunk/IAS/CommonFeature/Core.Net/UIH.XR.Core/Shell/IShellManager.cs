@@ -30,7 +30,7 @@ namespace UIH.XR.Core
 
 
         /// <summary>
-        /// Get Shell
+        /// GetObject Shell
         /// </summary>
         /// <param name="shellName"></param>
         /// <returns>Shell instance</returns>

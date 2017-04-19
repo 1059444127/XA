@@ -4,29 +4,26 @@
 ///
 /// \author Jinyang Li     jinyang.li@united-imaging.com
 //
-/// \file IAppContext.cs
+/// \file AppContextObjectName.cs
 ///
-/// \brief  This Interface is used to Get Application Context Object,and
-/// the Object is added When Application is Running
+/// \brief  This Class is Annotate the Application Context Object Name
 ///
 /// \version 1
 /// \date Apr  , 2017
 /////////////////////////////////////////////////////////////////////////
+/// 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace UIH.XR.Core
+namespace UIH.XR.GlobalParameter
 {
-    public interface IAppContext
+    public class AppContextObjectName
     {
         /// <summary>
-        /// Get a Application Context Object by Name
+        /// the name of default communication proxy
         /// </summary>
-        /// <typeparam name="T">Object Type</typeparam>
-        /// <param name="objName">Object Name</param>
-        /// <returns></returns>
-        T GetObject<T>(string objName);
+        public static readonly string DefaultCommunicationProxy = "DefaultCommunicationProxy";
     }
 }
