@@ -9,14 +9,22 @@
     <Assembly>UIH.XR.XSample.Models</Assembly>
   </Assemblies>
   <Regions>
-    <Region Name="MainLeftRegion" View="RedView" DataContext="RichViewModel" />
+    <Region Name="MainLeftUpRegion" View="RedView" DataContext="RichViewModel" />
+    <Region Name ="MainLeftDownRegion" View="ComboBoxView" DataContext="ComboBoxViewModel"/>
+    
     <Region Name="MainRightUpRegion">
       <Views>
         <View View="YellowView" DataContext="SmartViewModel"></View>
         <View View="BlueView" DataContext="HandsomeViewModel"></View>
       </Views>
     </Region>
-    <Region Name="MainRightDownRegion" View="BlueView" DataContext="HandsomeViewModel" />
+
+    <Region Name ="MainRightDownRegionNavigate">
+      <Views>
+        <View View="NavigatorPreviousView" DataContext="NavigatorPreviousViewViewModel"></View>
+        <View View="NavigatorNextView" DataContext="NavigatorNextViewViewModel"></View>
+      </Views>
+    </Region> 
     <Region Name="RegionWindowOne" View="BlackView" DataContext="RichViewModel" />
     <Region Name="RegionWindowTwo" View="WhiteView" DataContext="PatientViewModel" />
   </Regions>

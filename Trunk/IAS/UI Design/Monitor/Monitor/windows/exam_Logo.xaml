@@ -1,0 +1,11 @@
+﻿<Window x:Class="Monitor.windows.exam_Logo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:Logo="clr-namespace:Monitor.SubWindow"
+        Title="exam_Logo"
+        Height="300" 
+        Width="300">
+    <Grid>
+        <Logo:Logo></Logo:Logo>
+    </Grid>
+</Window>

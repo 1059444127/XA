@@ -1,0 +1,16 @@
+﻿<Application x:Class="Monitor.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Startup="App_OnStartup">
+    <Application.Resources>
+        <!-- 应该在此定义应用程序级的资源。-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/monitor.Theme;component/Path_Color.xaml"/>
+                <ResourceDictionary Source="/monitor.Theme;component/WinStyle.xaml"/>
+                <ResourceDictionary Source="/monitor.Theme;component/Public.xaml"/>
+                <ResourceDictionary Source="/monitor.Theme;component/C_Style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

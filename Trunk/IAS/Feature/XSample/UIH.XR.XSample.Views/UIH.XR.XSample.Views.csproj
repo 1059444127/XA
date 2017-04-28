@@ -54,6 +54,19 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIH.XR.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.XR.Core">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.XR.XBoot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -66,6 +79,18 @@
     <Page Include="BlackView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ComboBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatorView\NavigatorNextView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NavigatorView\NavigatorPreviousView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WhiteView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +109,15 @@
     </Compile>
     <Compile Include="BlackView.xaml.cs">
       <DependentUpon>BlackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxView.xaml.cs">
+      <DependentUpon>ComboBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatorView\NavigatorNextView.xaml.cs">
+      <DependentUpon>NavigatorNextView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NavigatorView\NavigatorPreviousView.xaml.cs">
+      <DependentUpon>NavigatorPreviousView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WhiteView.xaml.cs">
       <DependentUpon>WhiteView.xaml</DependentUpon>

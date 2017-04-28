@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Monitor.SubWindow.EHC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignWidth="460" Background="#FF162127" Effect="{DynamicResource DialogEffect}">
+    <ItemsControl Name="EhcList">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Image Height="30" Width="30" Margin="16,0" Source="/Image/Icon.JPG"></Image>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="XXXXXXXX" Style="{DynamicResource Title}" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Text="XXXXXX" Style="{DynamicResource Sub}" Margin="0,0,10,0" VerticalAlignment="Bottom"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center">
+                    <TextBlock Text="XXXXXXXXXX" Style="{DynamicResource Content}" Margin="0,0,10,0"/>
+                    <TextBlock Text="XXXXXXXX" Style="{DynamicResource FontSub}" Margin="0,0,10,0"/>
+                    <TextBlock Text="XXXXXX" Style="{DynamicResource Sub}" Margin="0,0,10,0" VerticalAlignment="Bottom"/>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="Button" Grid.Column="2" Background="#FF1C2930" Width="90">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Content="Close" Name="CloseBtn" Click="CloseBtn_OnClick" Height="Auto" BorderThickness="0" HorizontalAlignment="Center"></Button>
+                <Rectangle Fill="#33FFFFFF" Height="1" Margin="4,0" Grid.Row="1"/>
+                <Button Content="Solve" Name="SolveBtn" Click="SolveBtn_OnClick" Height="Auto" BorderThickness="0" Grid.Row="2" HorizontalAlignment="Center"></Button>
+            </Grid>
+        </Grid>
+    </ItemsControl>
+</UserControl>

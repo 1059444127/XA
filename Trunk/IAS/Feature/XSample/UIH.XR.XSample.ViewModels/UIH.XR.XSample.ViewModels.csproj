@@ -44,6 +44,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIH.XR.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Common.dll</HintPath>
+    </Reference>
     <Reference Include="UIH.XR.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
@@ -51,7 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboBoxViewModel.cs" />
     <Compile Include="HandsomeViewModel.cs" />
+    <Compile Include="NavigatorNextViewViewModel.cs" />
+    <Compile Include="NavigatorPreviousViewViewModel.cs" />
     <Compile Include="NotificationObject.cs" />
     <Compile Include="PatientViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

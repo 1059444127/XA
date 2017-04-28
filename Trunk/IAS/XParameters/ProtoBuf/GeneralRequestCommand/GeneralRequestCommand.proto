@@ -1,0 +1,6 @@
+package UIH.XR.Basis.Proto;
+message GeneralRequestCommand
+{
+   required int32 CommandId = 1;
+   optional bytes Parameters = 2;
+}

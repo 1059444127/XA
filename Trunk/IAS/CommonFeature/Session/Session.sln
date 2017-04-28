@@ -1,0 +1,130 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.SessionManager", "UIH.XR.SessionManager\UIH.XR.SessionManager.csproj", "{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.ProcessCacheProxy", "UIH.XR.ProcessCacheProxy\UIH.XR.ProcessCacheProxy.csproj", "{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.SessionUtility", "UIH.XR.SessionUtility\UIH.XR.SessionUtility.csproj", "{587B2535-9AB3-4B8D-B8DC-5012E31653C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.SystemCacheProxy", "UIH.XR.SystemCacheProxy\UIH.XR.SystemCacheProxy.csproj", "{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XRProcessCacheProxy", "XRProcessCacheProxy\XRProcessCacheProxy.vcxproj", "{D1C9914A-E603-4AF4-98DD-236DE1421166}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XRSessionUtility", "XRSessionUtility\XRSessionUtility.vcxproj", "{14B66605-0581-4F21-BE78-8E5A4F926070}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XRSystemCacheProxy", "XRSystemCacheProxy\XRSystemCacheProxy.vcxproj", "{F95773BB-5555-45C6-89C0-6885A3E65BC7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D1C9914A-E603-4AF4-98DD-236DE1421166} = {D1C9914A-E603-4AF4-98DD-236DE1421166}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.united-imaging.com:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UIH.XR.ProcessCacheProxy\\UIH.XR.ProcessCacheProxy.csproj
+		SccProjectName1 = UIH.XR.ProcessCacheProxy
+		SccLocalPath1 = UIH.XR.ProcessCacheProxy
+		SccProjectUniqueName2 = UIH.XR.SessionManager\\UIH.XR.SessionManager.csproj
+		SccProjectName2 = UIH.XR.SessionManager
+		SccLocalPath2 = UIH.XR.SessionManager
+		SccProjectUniqueName3 = UIH.XR.SessionUtility\\UIH.XR.SessionUtility.csproj
+		SccProjectName3 = UIH.XR.SessionUtility
+		SccLocalPath3 = UIH.XR.SessionUtility
+		SccProjectUniqueName4 = UIH.XR.SystemCacheProxy\\UIH.XR.SystemCacheProxy.csproj
+		SccProjectName4 = UIH.XR.SystemCacheProxy
+		SccLocalPath4 = UIH.XR.SystemCacheProxy
+		SccProjectUniqueName5 = XRProcessCacheProxy\\XRProcessCacheProxy.vcxproj
+		SccProjectName5 = XRProcessCacheProxy
+		SccLocalPath5 = XRProcessCacheProxy
+		SccProjectUniqueName6 = XRSessionUtility\\XRSessionUtility.vcxproj
+		SccProjectName6 = XRSessionUtility
+		SccLocalPath6 = XRSessionUtility
+		SccProjectUniqueName7 = XRSystemCacheProxy\\XRSystemCacheProxy.vcxproj
+		SccProjectName7 = XRSystemCacheProxy
+		SccLocalPath7 = XRSystemCacheProxy
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Win32.ActiveCfg = Release|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Release|Win32.ActiveCfg = Release|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{587B2535-9AB3-4B8D-B8DC-5012E31653C6}.Release|Win32.ActiveCfg = Release|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}.Release|Win32.ActiveCfg = Release|Any CPU
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Debug|Any CPU.Build.0 = Debug|x64
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Release|Any CPU.ActiveCfg = Release|x64
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Release|Any CPU.Build.0 = Release|x64
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{D1C9914A-E603-4AF4-98DD-236DE1421166}.Release|Win32.ActiveCfg = Release|Win32
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Debug|Any CPU.Build.0 = Debug|x64
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Debug|Win32.ActiveCfg = Debug|Win32
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Release|Any CPU.ActiveCfg = Release|x64
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Release|Any CPU.Build.0 = Release|x64
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{14B66605-0581-4F21-BE78-8E5A4F926070}.Release|Win32.ActiveCfg = Release|Win32
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Debug|Any CPU.Build.0 = Debug|x64
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Release|Any CPU.ActiveCfg = Release|x64
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Release|Any CPU.Build.0 = Release|x64
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

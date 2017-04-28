@@ -38,6 +38,7 @@
     <Reference Include="UIH.Mcsf.Core.File.Parser">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.File.Parser.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">

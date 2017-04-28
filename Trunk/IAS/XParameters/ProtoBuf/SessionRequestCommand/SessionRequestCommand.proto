@@ -1,0 +1,6 @@
+package UIH.XR.Basis.Proto;
+message SessionRequestCommand
+{
+   required int32 CommandId = 1;
+   repeated string Parameters = 2;
+}

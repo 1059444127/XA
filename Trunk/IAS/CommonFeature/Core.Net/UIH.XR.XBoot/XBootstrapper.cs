@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Microsoft.Practices.Prism.MefExtensions;
@@ -150,18 +151,18 @@ namespace UIH.XR.Core
         /// <param name="cfg">Region config item</param>
         private void RegisterView(XRegionConfig cfg)
         {
-            var registry = this.Container.GetExportedValue<IRegionViewRegistry>();
+            var registry = this.Container.GetExportedValue<IAppRegionManager>();
             string regionName = cfg.Name;
             if (cfg.IsNavigable)
             {
                 foreach (var view in cfg.Views)
                 {
-                    RegisterView(registry, regionName, view.View, view.DataContext);
+                    this.RegisterView(registry, regionName, view.View, view.DataContext);
                 }
             }
             else
             {
-                RegisterView(registry, regionName, cfg.View, cfg.DataContext);
+                this.RegisterView(registry, regionName, cfg.View, cfg.DataContext);
             }
         }
 
@@ -172,13 +173,13 @@ namespace UIH.XR.Core
         /// <param name="regionName"></param>
         /// <param name="viewName"></param>
         /// <param name="dataContextName"></param>
-        private void RegisterView(IRegionViewRegistry regionRegistry, string regionName, string viewName, string dataContextName)
+        private void RegisterView(IAppRegionManager appRegionManager, string regionName, string viewName, string dataContextName)
         {
             if (!string.IsNullOrWhiteSpace(regionName) && !string.IsNullOrWhiteSpace(viewName))
             {
-                regionRegistry.RegisterViewWithRegion(regionName, () =>
+                appRegionManager.RegisterViewToRegion(regionName, () =>
                 {
-                    object view = Container.GetExportedValue<object>(viewName);
+                    var view = Container.GetExportedValue<object>(viewName);
                     if (view is Control && !string.IsNullOrWhiteSpace(dataContextName))
                     {
                         (view as Control).DataContext = Container.GetExportedValue<object>(dataContextName);
@@ -187,7 +188,6 @@ namespace UIH.XR.Core
                 });
             }
         }
-
         #endregion
 
         #endregion

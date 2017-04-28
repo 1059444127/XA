@@ -1,0 +1,39 @@
+﻿<Window x:Class="Monitor.windows.exam_ImageBroswer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="exam_ImageBroswer" 
+        mc:Ignorable="d"
+        d:DesignWidth="1720" 
+        d:DesignHeight="1440"
+        x:Name="Window"
+	    WindowStartupLocation="CenterScreen"
+        MouseDown="drag"
+        ResizeMode="CanResizeWithGrip">
+    <Window.Style>
+        <StaticResource ResourceKey="WindowStyle"/>
+    </Window.Style>
+    <Grid>
+      <Grid.RowDefinitions>
+          <RowDefinition/>
+          <RowDefinition/>
+      </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <GroupBox Header="ReferenceImage">
+                <ItemsControl>
+                    
+                </ItemsControl>
+            </GroupBox>
+            <GroupBox Header="AllImage">
+                <ItemsControl>
+                    
+                </ItemsControl>
+            </GroupBox>
+        </StackPanel>
+        <DockPanel Grid.Row="1">
+            <Button Content="Compared" Name="ComparedBtn" Click="ComparedBtn_OnClick"  DockPanel.Dock="Left"/>
+            <Button  Content="Select" Name="SelectBtn" Click="SelectBtn_OnClick" DockPanel.Dock="Right"/>
+        </DockPanel>
+    </Grid>
+</Window>

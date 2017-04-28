@@ -8,7 +8,7 @@ using System.IO;
 
 namespace UIH.XR.Utility
 {
-    public class SerializeHelper
+    public static class SerializeHelper
     {
         /// <summary>
         /// Serialize Object to Buffer

@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="Monitor.PA.PatientInformation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1000">
+    <Grid>
+        <Expander IsExpanded="True">
+           <Expander.Header>
+               <TextBlock Text="AAAA"></TextBlock>
+           </Expander.Header>
+            <Expander.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Patient Information">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Name" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <TextBox Grid.Column="1" Margin="0,0,0,30"></TextBox>
+                            <TextBlock Text="Data Of Birth" Grid.Column="3" Margin="0,13,0,0"></TextBlock>
+                            <TextBox Grid.Column="4" Margin="0,0,0,30"></TextBox>
+
+                            <TextBlock Text="ID" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,13,0,0"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,0,30"></TextBox>
+                            <TextBlock Text="Age" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" Margin="0,13,0,0"/>
+                            <TextBox Grid.Row="1" Grid.Column="4" Margin="0,0,0,30"></TextBox>
+
+                            <TextBlock Text="Gender" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Margin="0,0,0,30">
+                                <RadioButton GroupName="Gender" Margin="0,10,0,0">Male</RadioButton>
+                                <RadioButton GroupName="Gender" Margin="0,10,0,0">Female</RadioButton>
+                                <RadioButton GroupName="Gender">Other</RadioButton>
+                            </StackPanel>
+                            <TextBlock Text="Heigth" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <StackPanel Grid.Row="2" Grid.Column="4" Margin="0,0,0,30">
+                                <TextBox Margin="0,10,0,0"></TextBox>
+                                <Image></Image>
+                            </StackPanel>
+
+                            <TextBlock Text="Study ID" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <TextBox Grid.Row="3" Grid.Column="1" Margin="0,0,0,30"></TextBox>
+                            <TextBlock Text="Weight" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <StackPanel Grid.Row="3" Grid.Column="4" Margin="0,0,0,30">
+                                <TextBox Margin="0,10,0,0"></TextBox>
+                                <Image></Image>
+                            </StackPanel>
+
+                            <TextBlock Text="PID" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,0,30"></TextBox>
+                            <TextBlock Text="Annotation" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <RichTextBox Grid.Row="4" Grid.Column="4" Margin="0,0,0,30" Grid.RowSpan="2"></RichTextBox>
+
+                            <TextBlock Text="Accession NO" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,13,0,0"></TextBlock>
+                            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,0,30"></TextBox>
+                        </Grid>
+                    </GroupBox>
+                    <Separator VerticalAlignment="Bottom"/>
+                    <GroupBox Header="Hospital Information" Grid.Row="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="60"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Hospital Name" HorizontalAlignment="Right" Grid.Column="0" Margin="0,13,0,0"></TextBlock>
+                            <TextBox Grid.Column="1" Margin="0,0,0,30"></TextBox>
+                            <TextBlock Text="Departments" Grid.Column="3" Margin="0,13,0,0"></TextBlock>
+                            <TextBox Grid.Column="4" Margin="0,0,0,30"></TextBox>
+
+                            <TextBlock Text="Doctor" Grid.Row="1" HorizontalAlignment="Right" Grid.Column="0" Margin="0,13,0,0"></TextBlock>
+                            <StackPanel Grid.Row="1"  Grid.Column="1" Margin="0,0,0,30">
+                                <TextBox Margin="0,10,0,0"></TextBox>
+                                <Path Data=""></Path>
+                            </StackPanel>
+                            <TextBlock Text="Technician" Grid.Row="1" Grid.Column="3" Margin="0,13,0,0"></TextBlock>
+                            <StackPanel Grid.Row="1"  Grid.Column="4" Margin="0,0,0,30">
+                                <TextBox Margin="0,10,0,0"></TextBox>
+                                <Path Data=""></Path>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </Expander.Content>
+        </Expander>
+    </Grid>
+</UserControl>

@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="Monitor.Review.ViewerToolBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:review="clr-namespace:Monitor.Review"
+             mc:Ignorable="d" 
+             x:Name="ViewerControlPanel"
+             d:DesignWidth="280" d:DesignHeight="700"
+             Loaded="ViewerToolBox_OnLoaded">
+    <UserControl.Resources>
+        <DataTemplate x:Key="ButtonDataTemplate">
+            <Border>
+                <Button Content="{Binding Name}" Margin="8" BorderThickness="0" HorizontalAlignment="Center"/>
+            </Border>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ToggleButtonDataTemplate">
+            <Border>
+                <TextBlock Text="{Binding Name}" Margin="20"  HorizontalAlignment="Center"/>
+            </Border>
+        </DataTemplate>
+
+        <review:ControlDataTemplateSelector x:Key="Templates"
+                                            ControlDataTemplate="{StaticResource ButtonDataTemplate}"
+                                            ContentDataTemplate="{StaticResource ToggleButtonDataTemplate}"/>
+      
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <review:ViewerToolBoxViewModel/>
+    </UserControl.DataContext>
+    <!--ViewerControlPanel-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox  HorizontalAlignment="Center" Name="ViewerToolBoxPanel">
+            <!--ViewerToolBox-->
+            <ItemsControl Name="ItemContainer" ItemsSource="{Binding ViewerToolBoxItemList}"
+                          ItemTemplateSelector="{StaticResource Templates}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!--定义一行N个主要是Column控制-->
+                        <UniformGrid  IsItemsHost="True" Name="PanelUniformGrid"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                 <Style>
+                        <Setter Property="UniformGrid.Columns" Value="{Binding UniformGridColumn}"></Setter>
+                 </Style>
+                </ItemsControl.ItemContainerStyle>
+                <!--<ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="review:ItemViewModel">
+                        <Button Content="{Binding Name}"></Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>-->
+                <!--<Button  Margin="8" BorderThickness="0" HorizontalAlignment="Center">
+                    <Button.Content>
+                        <Image Source="/Image/One.JPG"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="8" BorderThickness="0" HorizontalAlignment="Center">
+                    <Button.Content>
+                        <Image Source="/Image/Two.JPG"></Image>
+                    </Button.Content>
+                </Button>
+                <ToggleButton Content="Toggle" Margin="8" BorderThickness="0" HorizontalAlignment="Center"/>
+                <Button Margin="8" BorderThickness="0" HorizontalAlignment="Center">
+                    <Button.Content>
+                        <Image Source="/Image/Four.JPG"></Image>
+                    </Button.Content>
+                </Button>
+                <Button Margin="8" BorderThickness="0" HorizontalAlignment="Center">
+                    <Button.Content>
+                        <Image Source="/Image/Three.JPG"></Image>
+                    </Button.Content>
+                </Button>-->
+                <!--<ListBoxItem>
+                    <Button Content="71643"/>
+                </ListBoxItem>-->
+            </ItemsControl>
+        </GroupBox>
+        <!--<GroupBox Header="Tools" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <ItemsControl>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="2" IsItemsHost="True"/>
+                        
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <Button Content="Button" Margin="8" BorderThickness="0" HorizontalAlignment="Center"/>
+                <Button Content="Button" Margin="8" BorderThickness="0" HorizontalAlignment="Center"/>
+                <ToggleButton Content="Toggle" Margin="8" BorderThickness="0" HorizontalAlignment="Center"/>
+                <Button Content="Button" Margin="8" BorderThickness="0" HorizontalAlignment="Center"/>
+                <ToggleButton Content="Toggle" Margin="8" BorderThickness="0" HorizontalAlignment="Center"/>
+                <ComboBox Style="{StaticResource ToolsComboBoxStyle}" Width="100" Height="36">
+                    <ComboBoxItem Content="ComboBoxItem"/>
+                    <ComboBoxItem Content="ComboBoxItem"/>
+                    <ComboBoxItem Content="ComboBoxItem"/>
+                </ComboBox>
+            </ItemsControl>
+        </GroupBox>-->
+    </Grid>
+</UserControl>

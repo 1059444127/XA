@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UIH.XR.GlobalParameter;
 using UIH.XR.XSample.BusinessLogicInterface;
 using System.ComponentModel.Composition;
 using UIH.XR.Core;
@@ -73,7 +74,7 @@ namespace UIH.XR.XSample.Models
                 context.iWaitTime = 30000;
 
 
-            CLRCommunicationProxy proxy=_appContext.DefaultCLRCommunicationProxy as CLRCommunicationProxy;
+               CLRCommunicationProxy proxy = _appContext.GetObject<ICommunicationProxy>(AppContextObjectName.DefaultCommunicationProxy) as CLRCommunicationProxy;
 
              ISyncResult result=   proxy.SyncSendCommand(context);
 

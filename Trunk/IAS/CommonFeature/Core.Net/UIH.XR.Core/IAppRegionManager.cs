@@ -18,6 +18,7 @@ using System.Text;
 
 namespace UIH.XR.Core
 {
+
     public interface IAppRegionManager
     {
         /// <summary>

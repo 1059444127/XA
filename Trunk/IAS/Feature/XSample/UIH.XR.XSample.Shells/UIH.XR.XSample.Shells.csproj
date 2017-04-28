@@ -113,6 +113,8 @@
     <Reference Include="UIH.XR.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XR.XBoot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />

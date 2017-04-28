@@ -114,6 +114,8 @@
     <Compile Include="XApp.cs" />
     <Compile Include="AppConfig\XAppConfig.cs" />
     <Compile Include="XAppContext.cs" />
+    <Compile Include="XAppIoC.cs" />
+    <Compile Include="XAppRegionRegister.cs" />
     <Compile Include="XBootLogger.cs" />
     <Compile Include="XBootstrapper.cs" />
     <Compile Include="AppConfig\XRegionConfig.cs" />

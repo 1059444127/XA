@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="Monitor.Exam.ParametersPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="1440" d:DesignWidth="250">
+    <Grid x:Name="LeftTools" Width="280">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="48"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Margin="14,20,14,0">
+            <Button ContentTemplate="{DynamicResource DataTemplate}" Content="Patient List"
+                    Name="ShowPaWindowBtn" Click="ShowPaWindowBtn_OnClick"/>
+            <DockPanel>
+                <Label Content="Eva Green" FontWeight="Bold"/>
+                <AccessText HorizontalAlignment="Right" Text="M23" DockPanel.Dock="Right" FontSize="24"/>
+            </DockPanel>
+            <TextBlock Text="1024563578" Style="{DynamicResource FontSub}" HorizontalAlignment="Stretch"/>
+            <Border CornerRadius="2" Background="#FF0D191E" Margin="0,10">
+                <StackPanel >
+                    <Image Height="100" Margin="0,20" HorizontalAlignment="Center" Source="/Image/delivery.JPG"/>
+                    <TextBlock TextWrapping="Wrap" Text="Irradiation on in delivery!" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <Border Grid.Row="1" Background="#1c2930" CornerRadius="2" ScrollViewer.CanContentScroll="True" Margin="14,0" VerticalAlignment="Top">
+            <ScrollViewer>
+                <StackPanel>
+                    <GroupBox Header="place">
+                        <StackPanel>
+                            <Image Height="70" Width="80" Margin="0,10" Source="/Image/Fluorscop.JPG"/>
+                            <TextBlock Text="ORTHOPAEDICS" Style="{StaticResource FontSub}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <Separator Margin="5,0"/>
+                    <GroupBox Header="place">
+                        <StackPanel>
+                            <Image Height="70" Width="80" Margin="0,10" Source="/Image/Fluorscop.JPG"/>
+                            <TextBlock Text="FLUORSCOP SPINE" Style="{StaticResource FontSub}"/>
+                        </StackPanel>
+                    </GroupBox>
+                    <Separator Margin="5,0"/>
+                    <GroupBox Header="Operation mode">
+                        <Grid>
+                            <StackPanel>
+                                <Path Data="M1,34 L20,34 20,1 40,1 40,34 60,34 60,1 80,1 80,34 100,34" HorizontalAlignment="Center" Height="35" Stroke="White" Width="100" Margin="0,30,0,10"/>
+                                <TextBlock Text="PULSE" Style="{StaticResource FontSub}"/>
+                            </StackPanel>
+                            <TextBlock Text="8p/s" HorizontalAlignment="Right" />
+                        </Grid>
+                    </GroupBox>
+                    <Separator Margin="5,0"/>
+                    <GroupBox Header="Dose level">
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,20">
+                                <Rectangle Height="9" Width="50" Margin="0.5,0" Fill="White"/>
+                                <Rectangle Height="9" Width="50" Margin="0.5,0" Fill="#19FFFFFF"/>
+                                <Rectangle Height="9" Width="50" Margin="0.5,0" Fill="#19FFFFFF"/>
+                            </StackPanel>
+                            <TextBlock Style="{StaticResource FontSub}" Text="low"/>
+                        </DockPanel>
+                    </GroupBox>
+                    <Separator Margin="5,0"/>
+                    <GroupBox Header="Air kerma" Padding="0,6">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Margin="0,10,0,20">
+                                <AccessText Text="235" HorizontalAlignment="Center" Margin="0,16"/>
+                                <TextBlock Text="mGy/min" Style="{StaticResource FontSub}"/>
+                            </StackPanel>
+                            <StackPanel Margin="0,10,0,20" Grid.Column="1">
+                                <AccessText Text="0.21" HorizontalAlignment="Center" Margin="0,16"/>
+                                <TextBlock Text="mGy" Style="{StaticResource FontSub}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Margin="0,10,0,20">
+                                <AccessText Text="0.39" HorizontalAlignment="Center" Margin="0,16"/>
+                                <TextBlock Text="mGy/min" Style="{StaticResource FontSub}"/>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+        <Button Grid.Row="2" Name="SystemSettingBtn" Margin="14,0,14,10" ContentTemplate="{StaticResource DataTemplate}" Content="Configuration"/>
+        <Button Grid.Row="3" Margin="14,0,14,20" ContentTemplate="{StaticResource DataTemplate}" Content="Infomation" Uid="3" Name="InformationBtn"/>
+        <Grid Grid.Row="4" Background="#FF24363E">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="/Image/Wifi.JPG" Margin="20,0" VerticalAlignment="Center"></Image>
+            <Separator FlowDirection="RightToLeft" HorizontalAlignment="Right" Margin="0,10"/>
+            <Image Source="/Image/Percentage.JPG" Margin="15,0" Grid.Column="1" VerticalAlignment="Center"></Image>
+            <Separator FlowDirection="RightToLeft" HorizontalAlignment="Right" Margin="0,10" Grid.Column="1"/>
+            <Image Source="/Image/Degree.JPG" Grid.Column="2" VerticalAlignment="Center" Margin="0,10"></Image>
+        </Grid>
+        <Rectangle Grid.Row="5" Fill="#FF0D1316"/>
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock TextWrapping="NoWrap" Text="2017.02.24" Margin="10,0" FontSize="20"/>
+            <TextBlock TextWrapping="NoWrap" Text="14:45pm" Margin="10,0" FontSize="20"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

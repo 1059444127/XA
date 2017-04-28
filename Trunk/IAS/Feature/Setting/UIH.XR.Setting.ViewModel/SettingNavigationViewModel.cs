@@ -16,10 +16,11 @@ using System.ComponentModel.Composition;
 using System.Collections.ObjectModel;
 using UIH.XR.Core;
 using UIH.XR.GlobalParameter;
+using System.ComponentModel;
 
 namespace UIH.XR.Setting.ViewModel
 {
-    [Export(ComponentContract.Setting.ViewModelName, typeof(NotificationObject))]
+    [Export(ComponentContract.Setting.ViewModelName, typeof(INotifyPropertyChanged))]
     public class SettingNavigationViewModel : NotificationObject
     {
         #region Properties
