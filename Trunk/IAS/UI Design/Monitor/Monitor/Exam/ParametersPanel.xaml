@@ -91,8 +91,8 @@
                 </StackPanel>
             </ScrollViewer>
         </Border>
-        <Button Grid.Row="2" Name="SystemSettingBtn" Margin="14,0,14,10" ContentTemplate="{StaticResource DataTemplate}" Content="Configuration"/>
-        <Button Grid.Row="3" Margin="14,0,14,20" ContentTemplate="{StaticResource DataTemplate}" Content="Infomation" Uid="3" Name="InformationBtn"/>
+        <Button Grid.Row="2" Name="SystemSettingBtn" Margin="14,0,14,10" ContentTemplate="{StaticResource DataTemplate}" Content="Configuration" Click="SystemSettingBtn_OnClick"/>
+        <Button Grid.Row="3" Margin="14,0,14,20" ContentTemplate="{StaticResource DataTemplate}" Content="Infomation" Uid="3" Name="InformationBtn" Click="InformationBtn_OnClick"/>
         <Grid Grid.Row="4" Background="#FF24363E">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

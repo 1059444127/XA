@@ -26,7 +26,7 @@ namespace Monitor.Review
 
         private void ViewerToolBox_OnLoaded(object sender, RoutedEventArgs e)
         {
-            ViewerToolBoxPanel.Header = "Tools";
+            
         }
     }
 }

@@ -3,37 +3,105 @@
 	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:Monitor.ViewModel"
         Title="exam_ImageBroswer" 
         mc:Ignorable="d"
-        d:DesignWidth="1720" 
-        d:DesignHeight="1440"
+        Width="1404" 
+        Height="1124"
         x:Name="Window"
 	    WindowStartupLocation="CenterScreen"
         MouseDown="drag"
         ResizeMode="CanResizeWithGrip">
+    <Window.DataContext>
+        <viewModel:ImageBroswerViewModel/>
+    </Window.DataContext>
     <Window.Style>
         <StaticResource ResourceKey="WindowStyle"/>
     </Window.Style>
-    <Grid>
-      <Grid.RowDefinitions>
-          <RowDefinition/>
-          <RowDefinition/>
-      </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical">
-            <GroupBox Header="ReferenceImage">
-                <ItemsControl>
-                    
-                </ItemsControl>
-            </GroupBox>
-            <GroupBox Header="AllImage">
-                <ItemsControl>
-                    
-                </ItemsControl>
-            </GroupBox>
-        </StackPanel>
-        <DockPanel Grid.Row="1">
-            <Button Content="Compared" Name="ComparedBtn" Click="ComparedBtn_OnClick"  DockPanel.Dock="Left"/>
-            <Button  Content="Select" Name="SelectBtn" Click="SelectBtn_OnClick" DockPanel.Dock="Right"/>
-        </DockPanel>
-    </Grid>
+    <Border Padding="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="Header">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="ImageLibrary" Text="Image Library" FontWeight="Light" FontSize="24" Style="{StaticResource H1}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="close" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" BorderThickness="0" Padding="10,0" Click="Close_OnClick">
+                    <Path Data="M0,2 L2,0 8,6 14,0 16,2 10,8 16,14 14,16 8,10 2,16 0,14 6,8 z" Fill="#FFF4F4F5" Stretch="Fill" Width="14" Height="14"/>
+                </Button>
+            </Grid>
+            <Separator VerticalAlignment="Bottom" Margin="15,3,15,0"/>
+            <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,15" >
+                <GroupBox Header="ReferenceImage" Visibility="{Binding GroupBoxVisibility}">
+                    <ListBox Name="ReferenceImageList" Style="{StaticResource ListImgStyle}" ItemsSource="{Binding ReferenceImageList}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock x:Name="Referenceicon" Width="196" Height="166" Grid.ColumnSpan="3" Text="{Binding Name}" MouseDown="Referenceicon_OnMouseDown"/>
+                                    <Ellipse Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Visibility="{Binding  Visibility}">
+                                        <Ellipse.Fill>
+                                            <RadialGradientBrush>
+                                                <GradientStop Color="#FF29BBDD"/>
+                                                <GradientStop Color="#7F318BC1" Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <TextBlock Text="{Binding Type}" Style="{DynamicResource FontSub}" Grid.Row="1" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding StudyID}" Style="{DynamicResource FontSub}" Grid.Row="1" Grid.Column="2" Margin="0,0,20,0"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </GroupBox>
+                <GroupBox Header="AllImage">
+                    <ListBox Name="ImageList" Style="{StaticResource ListImgStyle}" ItemsSource="{Binding AllImageList}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock x:Name="icon" Width="196" Height="166" Grid.ColumnSpan="3" Text="{Binding Name}" MouseDown="Icon_OnMouseDown"/>
+                                    <Ellipse Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Visibility="{Binding  Visibility}">
+                                        <Ellipse.Fill>
+                                            <RadialGradientBrush>
+                                                <GradientStop Color="#FF29BBDD"/>
+                                                <GradientStop Color="#7F318BC1" Offset="1"/>
+                                            </RadialGradientBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <TextBlock Text="{Binding Type}" Style="{DynamicResource FontSub}" Grid.Row="1" Grid.Column="1"/>
+                                    <TextBlock Text="{Binding StudyID}" Style="{DynamicResource FontSub}" Grid.Row="1" Grid.Column="2" Margin="0,0,20,0"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </GroupBox>
+            </StackPanel>
+            <DockPanel Grid.Row="2">
+                <Button Content="Compared" Name="ComparedBtn" DockPanel.Dock="Left" Click="ComparedBtn_OnClick"/>
+                <Button  Content="Select" Name="SelectBtn" DockPanel.Dock="Right" Margin="1150,0,0,0" HorizontalContentAlignment="Center"/>
+            </DockPanel>
+        </Grid>
+    </Border>
 </Window>

@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.GlobalParameter", "UIH.XR.GlobalParameter\UIH.XR.GlobalParameter.csproj", "{B162D2E5-254F-4D45-90FA-6D849DCCBD2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.GlobalParameter", "GlobalParameter\UIH.XA.GlobalParameter.csproj", "{B162D2E5-254F-4D45-90FA-6D849DCCBD2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Common", "UIH.XR.Common\UIH.XR.Common.csproj", "{A4C0305C-0966-4FB7-8C77-D315E486810C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.Common", "Common\UIH.XA.Common.csproj", "{A4C0305C-0966-4FB7-8C77-D315E486810C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Utility", "UIH.XR.Utility\UIH.XR.Utility.csproj", "{E802AAAD-A950-4C56-945B-4DDB31B72A49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.Utility", "Utility\UIH.XA.Utility.csproj", "{E802AAAD-A950-4C56-945B-4DDB31B72A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.DataContract", "UIH.XR.DataContract\UIH.XR.DataContract.csproj", "{04375A5B-7520-4926-97DA-AE87658736F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.DataContract", "DataContract\UIH.XA.DataContract.csproj", "{04375A5B-7520-4926-97DA-AE87658736F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Common_UT", "UIH.XR.Common_UT\UIH.XR.Common_UT.csproj", "{9EDF62BE-E429-448A-80A6-23D640DB5788}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.Common_UT", "Common_UT\UIH.XA.Common_UT.csproj", "{9EDF62BE-E429-448A-80A6-23D640DB5788}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6F4CD79-6A4D-45C4-A41A-4BA81EA58AB6}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,21 +24,21 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = UIH.XR.GlobalParameter\\UIH.XR.GlobalParameter.csproj
-		SccProjectName1 = UIH.XR.GlobalParameter
-		SccLocalPath1 = UIH.XR.GlobalParameter
-		SccProjectUniqueName2 = UIH.XR.Common\\UIH.XR.Common.csproj
+		SccProjectUniqueName1 = UIH.XR.Utility\\UIH.XA.Utility.csproj
+		SccProjectName1 = UIH.XR.Utility
+		SccLocalPath1 = UIH.XR.Utility
+		SccProjectUniqueName2 = UIH.XR.Common\\UIH.XA.Common.csproj
 		SccProjectName2 = UIH.XR.Common
 		SccLocalPath2 = UIH.XR.Common
-		SccProjectUniqueName3 = UIH.XR.Utility\\UIH.XR.Utility.csproj
-		SccProjectName3 = UIH.XR.Utility
-		SccLocalPath3 = UIH.XR.Utility
-		SccProjectUniqueName4 = UIH.XR.DataContract\\UIH.XR.DataContract.csproj
+		SccProjectUniqueName3 = UIH.XR.Common_UT\\UIH.XA.Common_UT.csproj
+		SccProjectName3 = UIH.XR.Common_UT
+		SccLocalPath3 = UIH.XR.Common_UT
+		SccProjectUniqueName4 = UIH.XR.DataContract\\UIH.XA.DataContract.csproj
 		SccProjectName4 = UIH.XR.DataContract
 		SccLocalPath4 = UIH.XR.DataContract
-		SccProjectUniqueName5 = UIH.XR.Common_UT\\UIH.XR.Common_UT.csproj
-		SccProjectName5 = UIH.XR.Common_UT
-		SccLocalPath5 = UIH.XR.Common_UT
+		SccProjectUniqueName5 = UIH.XR.GlobalParameter\\UIH.XA.GlobalParameter.csproj
+		SccProjectName5 = UIH.XR.GlobalParameter
+		SccLocalPath5 = UIH.XR.GlobalParameter
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Common.Net.vsmdi

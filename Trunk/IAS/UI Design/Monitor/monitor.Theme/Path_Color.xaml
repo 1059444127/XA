@@ -41,7 +41,7 @@
 		<Grid>
 			<StackPanel Orientation="Horizontal">
 				<Image Height="24" Width="24" VerticalAlignment="Center" Margin="14,0"/>
-				<TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center"/>
+				<TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" Margin="0,0,20,0"/>
 			</StackPanel>
 			<Border x:Name="border" BorderThickness="1" HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" Width="20" Background="#FFDF5656" CornerRadius="10">
 				<TextBlock Text="{TemplateBinding Uid}" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource white}"/>

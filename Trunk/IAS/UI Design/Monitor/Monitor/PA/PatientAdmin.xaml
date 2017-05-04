@@ -3,38 +3,75 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:PA="clr-namespace:Monitor.PA"
+             xmlns:PA="clr-namespace:Monitor.PA" 
+             xmlns:viewModel="clr-namespace:Monitor.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1000">
+             d:DesignHeight="900"
+             d:DesignWidth="1000">
+    
+    <UserControl.Resources>
+        <DataTemplate x:Key="ImgDataTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="icon" Width="196" Height="166" Grid.ColumnSpan="3" Text="{Binding Name}" MouseDown="Icon_OnMouseDown"/>
+                <Ellipse Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Visibility="{Binding  Visibility}">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF29BBDD"/>
+                            <GradientStop Color="#7F318BC1" Offset="1"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Text="{Binding Type}" Style="{DynamicResource FontSub}" Grid.Row="1" Grid.Column="1"/>
+                <TextBlock Text="{Binding StudyID}" Style="{DynamicResource FontSub}" Grid.Row="1" Grid.Column="2" Margin="0,0,20,0"/>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="AddDataTemplate">
+            <StackPanel>
+                <Button BorderThickness="0" Height="196" Width="196">
+                        <Path Data="M42,0 L48,0 48,42 90,42 90,48 48,48 48,90 42,90 42,48 0,48 0,42 42,42 z" Fill="{StaticResource white20_BG}"
+                              Stretch="Fill" Width="90" Height="90"/>
+                    </Button>
+            </StackPanel>
+        </DataTemplate>
+
+        <PA:ListItemDataTemplateSelector x:Key="TemplateSlector"
+                                          AddItemDataTemplate="{StaticResource AddDataTemplate}"
+                                          ImgItemDataTemplate="{StaticResource ImgDataTemplate}"/>
+        
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <viewModel:PatientAdminViewModel/>
+    </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="310"/>
+            <ColumnDefinition Width="325"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <PA:PatientPanel Grid.Column="0"></PA:PatientPanel>
+        <PA:PatientPanel Margin="0,0,15,0"></PA:PatientPanel>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition />
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <PA:PatientInformation></PA:PatientInformation>
-            <Button Grid.Row="1" Content="Save" HorizontalAlignment="Right"></Button>
-            <GroupBox Header="Image" Grid.Row="2">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <ListBox Grid.Column="1" Name="ImageList">
-                        <ListBoxItem>
-                            <Button  Content="AddImage"></Button>
-                        </ListBoxItem>
-                        <ListBoxItem/>
-                    </ListBox>
-                    <Button  Content="Exam" Style="{StaticResource HighlightButton}"></Button>
-                </Grid>
+            <PA:PatientInformationExpander></PA:PatientInformationExpander>
+            <GroupBox Header="Image" Grid.Row="1">
+                <ListBox Name="ImageList" Style="{StaticResource ListImgStyle}" ItemsSource="{Binding ListItems}" 
+                         ItemTemplateSelector="{StaticResource TemplateSlector}">
+                </ListBox>
             </GroupBox>
+            <Button Grid.Row="2" Content="Dose Report" ContentTemplate="{StaticResource DataTemplate}" HorizontalAlignment="Left"></Button>
+            <Button Grid.Row="2" Content="Exam" Style="{StaticResource HighlightButton}" HorizontalAlignment="Right" Name ="Exam" Click="Exam_OnClick"></Button>
         </Grid>
     </Grid>
 </UserControl>

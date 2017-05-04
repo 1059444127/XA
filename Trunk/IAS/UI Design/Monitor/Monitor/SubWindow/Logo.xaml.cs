@@ -23,5 +23,10 @@ namespace Monitor.SubWindow
         {
             InitializeComponent();
         }
+        private void MainWindow(object sender, System.Windows.RoutedEventArgs e)
+        {
+            MainWindow wnd = new MainWindow();// 在此处添加事件处理程序实现。
+            wnd.Show();
+        }
     }
 }

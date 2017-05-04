@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Setting.View", "UIH.XR.Setting.View\UIH.XR.Setting.View.csproj", "{2193398D-00A7-4770-8144-5BC56D8B0DA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setting.View", "Setting.View\Setting.View.csproj", "{2193398D-00A7-4770-8144-5BC56D8B0DA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Setting.ViewModel", "UIH.XR.Setting.ViewModel\UIH.XR.Setting.ViewModel.csproj", "{0A333850-945D-4870-AB78-1C710EA798FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setting.ViewModel", "Setting.ViewModel\Setting.ViewModel.csproj", "{0A333850-945D-4870-AB78-1C710EA798FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Setting.Model", "UIH.XR.Setting.Model\UIH.XR.Setting.Model.csproj", "{D83D1E90-7A2B-4BD6-888B-370BAC351693}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setting.Model", "Setting.Model\Setting.Model.csproj", "{D83D1E90-7A2B-4BD6-888B-370BAC351693}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -13,15 +13,15 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = UIH.XR.Setting.View\\UIH.XR.Setting.View.csproj
-		SccProjectName1 = UIH.XR.Setting.View
-		SccLocalPath1 = UIH.XR.Setting.View
-		SccProjectUniqueName2 = UIH.XR.Setting.ViewModel\\UIH.XR.Setting.ViewModel.csproj
-		SccProjectName2 = UIH.XR.Setting.ViewModel
-		SccLocalPath2 = UIH.XR.Setting.ViewModel
-		SccProjectUniqueName3 = UIH.XR.Setting.Model\\UIH.XR.Setting.Model.csproj
-		SccProjectName3 = UIH.XR.Setting.Model
-		SccLocalPath3 = UIH.XR.Setting.Model
+		SccProjectUniqueName1 = Setting.View\\Setting.View.csproj
+		SccProjectName1 = Setting.View
+		SccLocalPath1 = Setting.View
+		SccProjectUniqueName2 = Setting.Model\\Setting.Model.csproj
+		SccProjectName2 = Setting.Model
+		SccLocalPath2 = Setting.Model
+		SccProjectUniqueName3 = Setting.ViewModel\\Setting.ViewModel.csproj
+		SccProjectName3 = Setting.ViewModel
+		SccLocalPath3 = Setting.ViewModel
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

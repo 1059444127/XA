@@ -1,0 +1,120 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.Interface", "ViewerToolKit.Interface\ViewerToolKit.Interface.csproj", "{E23BBF6E-8CF8-4E31-8EDF-1A9E802C91AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.View", "ViewerToolKit.View\ViewerToolKit.View.csproj", "{F4DB00C7-CD36-4387-92F5-6547B98C2D90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ViewerTool", "ViewerToolKit.ViewerTool\ViewerToolKit.ViewerTool.csproj", "{BA4F7A09-2FC5-4969-95F6-839A55063964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ViewModel", "ViewerToolKit.ViewModel\ViewerToolKit.ViewModel.csproj", "{3142388D-EC8A-4B2A-A786-C0A913BED127}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.Model", "ViewerToolKit.Model\ViewerToolKit.Model.csproj", "{A5653799-9008-44EB-98B1-E3803F2D7FAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.Config", "ViewerToolKit.Config\ViewerToolKit.Config.csproj", "{1378F9CC-A6FA-45EB-B639-7B53B962D1F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ContaineeStub", "ViewerToolKit.ContaineeStub\ViewerToolKit.ContaineeStub.csproj", "{08CC8022-893E-4828-A57C-B4414CEB6CD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.GlobalDefinition", "ViewerToolKit.GlobalDefinition\ViewerToolKit.GlobalDefinition.csproj", "{72440AE0-5084-4B76-8AE7-9DF514A15E64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VieweToolKit.Utility", "VieweToolKit.Utility\VieweToolKit.Utility.csproj", "{04386291-56EB-4526-9DE6-FAE7D2914DDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ViewModelTest", "ViewerToolKit.ViewModelTest\ViewerToolKit.ViewModelTest.csproj", "{E467AD4F-D214-4ACC-B972-8CC02A01393C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4D51DE8-2ECE-4051-80D7-DFA8420DC2FD}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		ViewerToolKit.vsmdi = ViewerToolKit.vsmdi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 11
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ViewerToolKit.Interface\\ViewerToolKit.Interface.csproj
+		SccProjectName1 = ViewerToolKit.Interface
+		SccLocalPath1 = ViewerToolKit.Interface
+		SccProjectUniqueName2 = ViewerToolKit.View\\ViewerToolKit.View.csproj
+		SccProjectName2 = ViewerToolKit.View
+		SccLocalPath2 = ViewerToolKit.View
+		SccProjectUniqueName3 = ViewerToolKit.ViewerTool\\ViewerToolKit.ViewerTool.csproj
+		SccProjectName3 = ViewerToolKit.ViewerTool
+		SccLocalPath3 = ViewerToolKit.ViewerTool
+		SccProjectUniqueName4 = ViewerToolKit.ViewModel\\ViewerToolKit.ViewModel.csproj
+		SccProjectName4 = ViewerToolKit.ViewModel
+		SccLocalPath4 = ViewerToolKit.ViewModel
+		SccProjectUniqueName5 = ViewerToolKit.Model\\ViewerToolKit.Model.csproj
+		SccProjectName5 = ViewerToolKit.Model
+		SccLocalPath5 = ViewerToolKit.Model
+		SccProjectUniqueName6 = ViewerToolKit.Config\\ViewerToolKit.Config.csproj
+		SccProjectName6 = ViewerToolKit.Config
+		SccLocalPath6 = ViewerToolKit.Config
+		SccProjectUniqueName7 = ViewerToolKit.ContaineeStub\\ViewerToolKit.ContaineeStub.csproj
+		SccProjectName7 = ViewerToolKit.ContaineeStub
+		SccLocalPath7 = ViewerToolKit.ContaineeStub
+		SccProjectUniqueName8 = ViewerToolKit.GlobalDefinition\\ViewerToolKit.GlobalDefinition.csproj
+		SccProjectName8 = ViewerToolKit.GlobalDefinition
+		SccLocalPath8 = ViewerToolKit.GlobalDefinition
+		SccProjectUniqueName9 = VieweToolKit.Utility\\VieweToolKit.Utility.csproj
+		SccProjectName9 = VieweToolKit.Utility
+		SccLocalPath9 = VieweToolKit.Utility
+		SccProjectUniqueName10 = ViewerToolKit.ViewModelTest\\ViewerToolKit.ViewModelTest.csproj
+		SccProjectName10 = ViewerToolKit.ViewModelTest
+		SccLocalPath10 = ViewerToolKit.ViewModelTest
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = ViewerToolKit.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E23BBF6E-8CF8-4E31-8EDF-1A9E802C91AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23BBF6E-8CF8-4E31-8EDF-1A9E802C91AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23BBF6E-8CF8-4E31-8EDF-1A9E802C91AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E23BBF6E-8CF8-4E31-8EDF-1A9E802C91AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4DB00C7-CD36-4387-92F5-6547B98C2D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DB00C7-CD36-4387-92F5-6547B98C2D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DB00C7-CD36-4387-92F5-6547B98C2D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DB00C7-CD36-4387-92F5-6547B98C2D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4F7A09-2FC5-4969-95F6-839A55063964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4F7A09-2FC5-4969-95F6-839A55063964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4F7A09-2FC5-4969-95F6-839A55063964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4F7A09-2FC5-4969-95F6-839A55063964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3142388D-EC8A-4B2A-A786-C0A913BED127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3142388D-EC8A-4B2A-A786-C0A913BED127}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3142388D-EC8A-4B2A-A786-C0A913BED127}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3142388D-EC8A-4B2A-A786-C0A913BED127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5653799-9008-44EB-98B1-E3803F2D7FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5653799-9008-44EB-98B1-E3803F2D7FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5653799-9008-44EB-98B1-E3803F2D7FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5653799-9008-44EB-98B1-E3803F2D7FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1378F9CC-A6FA-45EB-B639-7B53B962D1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1378F9CC-A6FA-45EB-B639-7B53B962D1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1378F9CC-A6FA-45EB-B639-7B53B962D1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1378F9CC-A6FA-45EB-B639-7B53B962D1F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08CC8022-893E-4828-A57C-B4414CEB6CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08CC8022-893E-4828-A57C-B4414CEB6CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08CC8022-893E-4828-A57C-B4414CEB6CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08CC8022-893E-4828-A57C-B4414CEB6CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72440AE0-5084-4B76-8AE7-9DF514A15E64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72440AE0-5084-4B76-8AE7-9DF514A15E64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72440AE0-5084-4B76-8AE7-9DF514A15E64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72440AE0-5084-4B76-8AE7-9DF514A15E64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E467AD4F-D214-4ACC-B972-8CC02A01393C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E467AD4F-D214-4ACC-B972-8CC02A01393C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E467AD4F-D214-4ACC-B972-8CC02A01393C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E467AD4F-D214-4ACC-B972-8CC02A01393C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -23,5 +23,17 @@ namespace Monitor.PA
         {
             InitializeComponent();
         }
+
+        private void Emergency_OnClick(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in Application.Current.Windows)
+            {
+                var itemWindow = item as Window;
+                if (itemWindow.Title.Equals("exam_PA"))
+                {
+                    itemWindow.Close();
+                }
+            }
+        }
     }
 }

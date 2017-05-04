@@ -1,0 +1,21 @@
+<ViewerToolBoxs>
+    <ViewerToolBox Name="Layout" Available="true">
+        <Layout Available="true" Rows="1" Columns="1"/>
+        <Layout Available="true" Rows="2" Columns="2"/>
+        <Layout Available="true" Rows="3" Columns="3"/>
+        <Layout Available="true" Rows="4" Columns="4"/>
+    </ViewerToolBox>
+    <ViewerToolBox Name="Tools" Available="true">
+        <ClockwiseRotation Available="true" />
+        <CounterclockwiseRotation Available="true" />
+        <Flip Available="true" />
+        <Roll Available="true" />
+        <LLabel Available="true" />
+        <RLabel Available="true" />
+        <Arrow Group="AnnotationTool" Available="true" />
+        <Polygone Group="AnnotationTool" Available="true" />
+        <Line Group="AnnotationTool" Available="true" />
+        <Ruler Group="MeasuringTool" Available="true" />
+        <Angle Group="MeasuringTool" Available="true" />
+    </ViewerToolBox>
+</ViewerToolBoxs>

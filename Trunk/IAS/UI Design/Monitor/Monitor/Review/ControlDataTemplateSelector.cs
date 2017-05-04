@@ -9,29 +9,41 @@ namespace Monitor.Review
 {
     public class ControlDataTemplateSelector : DataTemplateSelector
     {
-        private DataTemplate _controlDataTemplate = null;
-        public DataTemplate ControlDataTemplate
+        private DataTemplate _buttonItemDataTemplate = null;
+        public DataTemplate ButtonItemDataTemplate
         {
-            get { return _controlDataTemplate; }
-            set { _controlDataTemplate = value; }
+            get { return _buttonItemDataTemplate; }
+            set { _buttonItemDataTemplate = value; }
         }
 
-        private DataTemplate _contentDataTemplate = null;
-        public DataTemplate ContentDataTemplate
+        private DataTemplate _toggleButtonDataTemplate = null;
+        public DataTemplate ToggleButtonDataTemplate
         {
-            get { return _contentDataTemplate; }
-            set { _contentDataTemplate = value; }
+            get { return _toggleButtonDataTemplate; }
+            set { _toggleButtonDataTemplate = value; }
+        }
+
+        private DataTemplate _comBoxDataTemplate = null;
+        public DataTemplate ComBoxDataTemplate
+        {
+            get { return _comBoxDataTemplate; }
+            set { _comBoxDataTemplate = value; }
         }
 
          public override DataTemplate SelectTemplate(object item, DependencyObject container)
          {
-             if ((item as ItemViewModel) != null)
+             var dataItem = item as IDataItem;
+             if (dataItem != null && dataItem.GetItemType().Equals("Button"))
              {
-                 return ControlDataTemplate;
+                 return ButtonItemDataTemplate;
              }
-             else if ((item as ContentViewModel) != null)
+             else if (dataItem != null && dataItem.GetItemType().Equals("ToggleButton"))
              {
-                 return ContentDataTemplate;
+                 return ToggleButtonDataTemplate;
+             }
+             else if (dataItem != null && dataItem.GetItemType().Equals("ComBox"))
+             {
+                 return ComBoxDataTemplate;
              }
              return base.SelectTemplate(item, container);
          }

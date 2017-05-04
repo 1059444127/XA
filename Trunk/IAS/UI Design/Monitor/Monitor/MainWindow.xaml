@@ -4,15 +4,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         x:Class="Monitor.MainWindow"
-        Title="MainWindow" Height="350" Width="525" ResizeMode="CanResizeWithGrip">
-    <Grid x:Name="main" MouseDown="drag">
+        Title="MainWindow" Height="700" Width="1000" ResizeMode="CanResizeWithGrip" Style="{DynamicResource WindowStyle}">
+	<Window.Resources>
+		<DataTemplate x:Key="ListTreeDataTemplate">
+			<Border Padding="10">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="auto"/>
+						<RowDefinition Height="17"/>
+						<RowDefinition Height="17"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="auto"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<Image Margin="0,10,10,10"/>
+					<Grid Grid.Column="1">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition Width="auto"/>
+						</Grid.ColumnDefinitions>
+						<TextBlock Text="Eva Green" Style="{DynamicResource H2}"/>
+						<TextBlock Text="23" Style="{DynamicResource H2}" Grid.Column="2"/>
+					</Grid>
+					<TextBlock Text="102436579456" Style="{DynamicResource Sub}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"/>
+					<Grid Grid.Column="1" Grid.Row="2">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition Width="auto"/>
+						</Grid.ColumnDefinitions>
+						<TextBlock Text="2016.1.15" Style="{DynamicResource Sub}"/>
+						<StackPanel Grid.Column="1" Orientation="Horizontal">
+							<Button BorderThickness="0" Height="16" Width="16"/>
+							<Button BorderThickness="0" Height="16" Width="16"/>
+						</StackPanel>
+					</Grid>
+				</Grid>
+			</Border>
+		</DataTemplate>
+		<DataTemplate x:Key="ListSubTreeDataTemplate">
+			<Border>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="80"/>
+						<ColumnDefinition/>
+					</Grid.ColumnDefinitions>
+					<TextBlock Text="23" Style="{DynamicResource FontSub}"/>
+					<TextBlock Text="Eva Green" Style="{DynamicResource Content}" Grid.Column="1"/>
+				</Grid>
+			</Border>
+		</DataTemplate>
+	</Window.Resources>
+    <Grid MouseDown="drag">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <TextBlock TextWrapping="Wrap" Text="Title" VerticalAlignment="Center" Margin="10,0,0,0"/>
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Click="close">
+        <Button HorizontalAlignment="Right" VerticalAlignment="Center" Click="close" BorderThickness="0" Padding="10,0">
             <Path Data="M0,2 L2,0 8,6 14,0 16,2 10,8 16,14 14,16 8,10 2,16 0,14 6,8 z" Fill="#FFF4F4F5" Stretch="Fill" Width="14" Height="14"/>
         </Button>
         <Separator VerticalAlignment="Bottom"/>
@@ -24,35 +74,46 @@
             </Grid.RowDefinitions>
             <TabControl TabStripPlacement="{Binding SelectionBoxItem, ElementName=TabStripPlacement}" Margin="10">
                 <TabItem Header="Public">
-                    <UniformGrid>
+                    <UniformGrid Background="#FF162127">
                         <Button Content="Button" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="123"/>
                         <Button Content="Button" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="123" ContentTemplate="{StaticResource DataTemplate}" Uid="3"/>
                         <Button Content="Button" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="123" Style="{StaticResource HighlightButton}"/>
-                        <RepeatButton Content="Button" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <RepeatButton Content="Button" VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="0"/>
                         <ToggleButton Content="ToggleButton" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         <ToggleButton VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource ToggleButton}" IsChecked="True"/>
+                        <RadioButton Content="RadioButton" Style="{DynamicResource NoBGRadioButton}"/>
+						<ToggleButton Content="ToggleButton" Style="{DynamicResource NoBGToggleButton}"/>
+						<ComboBox Style="{DynamicResource NoBGComboBox}" SelectedIndex="0">
+							<ComboBoxItem Content="ComboBoxItem"/>
+							<ComboBoxItem Content="ComboBoxItem"/>
+							<ComboBoxItem Content="ComboBoxItem"/>
+						</ComboBox>
+                        <ToggleButton Content="ToggleButton" Style="{StaticResource UpDownToggleButton}" IsEnabled="False"/>
                         <RadioButton Content="RadioButton" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         <RadioButton Content="RadioButton" VerticalAlignment="Center" Style="{StaticResource Button_RadioStyle}" HorizontalAlignment="Center"/>
                         <CheckBox Content="CheckBox" VerticalAlignment="Center" HorizontalAlignment="Center" IsThreeState="True"/>
-                        <TextBox TextWrapping="NoWrap" VerticalAlignment="Center" Tag="123">
-                            <!--带有ContextMenu的TextBox-->
-                            <TextBox.ContextMenu>
-                                <ContextMenu>
-                                    <MenuItem Header="复制1" IsCheckable="True" IsChecked="True" IsEnabled="False" InputGestureText="sdf"/>
-                                    <MenuItem Command="ApplicationCommands.Copy"/>
-                                    <MenuItem Header="复制3" IsCheckable="True" InputGestureText="sdf"/>
-                                    <MenuItem Header="复制&gt;">
-                                        <MenuItem Header="复制"/>
-                                        <MenuItem Header="选择" InputGestureText="123" IsCheckable="True">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Padding="0,30,0,0"/>
+                            <TextBox TextWrapping="NoWrap" VerticalAlignment="Top" Tag="123">
+                                <!--带有ContextMenu的TextBox-->
+                                <TextBox.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="复制1" IsCheckable="True" IsChecked="True" IsEnabled="False" InputGestureText="sdf"/>
+                                        <MenuItem Command="ApplicationCommands.Copy"/>
+                                        <MenuItem Header="复制3" IsCheckable="True" InputGestureText="sdf"/>
+                                        <MenuItem Header="复制&gt;">
                                             <MenuItem Header="复制"/>
+                                            <MenuItem Header="选择" InputGestureText="123" IsCheckable="True">
+                                                <MenuItem Header="复制"/>
+                                            </MenuItem>
                                         </MenuItem>
-                                    </MenuItem>
-                                    <MenuItem Header="粘贴" InputGestureText="Ctrl+V"/>
-                                    <Separator/>
-                                    <MenuItem Header="复制" IsCheckable="False"/>
-                                </ContextMenu>
-                            </TextBox.ContextMenu>
-                        </TextBox>
+                                        <MenuItem Header="粘贴" InputGestureText="Ctrl+V"/>
+                                        <Separator/>
+                                        <MenuItem Header="复制" IsCheckable="False"/>
+                                    </ContextMenu>
+                                </TextBox.ContextMenu>
+                            </TextBox>
+                        </StackPanel>
                         <RichTextBox>
                             <FlowDocument>
                                 <Paragraph>
@@ -62,18 +123,15 @@
                         </RichTextBox>
                         <Label Content="Label" VerticalAlignment="Center"/>
                         <AccessText Text="accesstext"/>
-                        <StackPanel Margin="20,0" Orientation="Vertical">
-                            <TextBlock Text="Kalimbadd asdf-副本.mp3" HorizontalAlignment="Center" VerticalAlignment="Center" TextOptions.TextRenderingMode="ClearType" MaxHeight="44" TextTrimming="WordEllipsis" TextWrapping="WrapWithOverflow" Height="40"/>
-                            <ComboBox x:Name="trimming" SelectedIndex="0" IsEditable="True">
-                                <ComboBoxItem Content="WordEllipsis"/>
-                                <ComboBoxItem Content="CharacterEllipsis"/>
-                            </ComboBox>
-                            <ComboBox x:Name="TextWrapping" SelectedIndex="0">
-                                <ComboBoxItem Content="WrapWithOverflow"/>
-                                <ComboBoxItem Content="Wrap"/>
-                                <ComboBoxItem Content="NoWrap"/>
-                            </ComboBox>
-                        </StackPanel>
+						<TextBlock Text="Text" Style="{DynamicResource Content}"/>
+						<TextBlock Text="Text" Style="{DynamicResource FontSub}"/>
+						<TextBlock Text="Text" Style="{DynamicResource H1}"/>
+						<TextBlock Text="Text" Style="{DynamicResource H2}"/>
+						<TextBlock Text="Text" Style="{DynamicResource ListHeader}"/>
+						<TextBlock Text="Text" Style="{DynamicResource Sub}"/>
+						<TextBlock Text="Text" Style="{DynamicResource Tip}"/>
+						<TextBlock Text="Text" Style="{DynamicResource Title}"/>
+						<TextBox Grid.Column="1" VerticalAlignment="Center" Uid="请输入用户名" Tag="mm"></TextBox>
                         <PasswordBox x:Name="pw" Password="password"/>
                         <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="0">
                             <ComboBoxItem Content="ComboBoxItem"/>
@@ -81,8 +139,14 @@
                             <Separator/>
                             <ComboBoxItem Content="ComboBoxItem"/>
                         </ComboBox>
+                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource NoBGComboBox}" SelectedIndex="0">
+                            <ComboBoxItem Content="RIS"/>
+                            <ComboBoxItem Content="LOCAL"/>
+                            <Separator/>
+                            <ComboBoxItem Content="ComboBoxItem"/>
+                        </ComboBox>
                         <ProgressBar Height="20" Value="71"/>
-                        <Expander Header="Expander" IsExpanded="True" Foreground="White" VerticalAlignment="Top">
+                        <Expander Header="Hide" IsExpanded="True" Foreground="White" VerticalAlignment="Top">
                             <Grid Height="50">
                                 <Rectangle Fill="#33ffffff" Height="1" VerticalAlignment="Top"/>
                                 <Rectangle Stroke="Black" Width="50">
@@ -108,13 +172,17 @@
                         </GroupBox>
                         <Separator VerticalAlignment="Bottom"/>
                         <Separator FlowDirection="RightToLeft"/>
-                        <GridSplitter Height="44.833" VerticalAlignment="Top" Width="5" Margin="0,0,118,0" />
+                        <GridSplitter Height="44.833" VerticalAlignment="Top" Width="10" Margin="0,0,118,0" Background="Transparent"/>
 
                         <DockPanel>
                             <ScrollBar IsEnabled="{Binding IsChecked, ElementName=ScrollBarEnabled}" DockPanel.Dock="Bottom" Orientation="Horizontal" ViewportSize="6" Maximum="10" Value="6"/>
                             <CheckBox x:Name="ScrollBarEnabled" Content="IsEnabled" IsChecked="True"/>
                             <ScrollBar IsEnabled="{Binding IsChecked, ElementName=ScrollBarEnabled}" DockPanel.Dock="Right" Maximum="100" ViewportSize="100"/>
                         </DockPanel>
+                        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="24">
+                            <Ellipse Height="20" Width="20" VerticalAlignment="Top" HorizontalAlignment="Left" Stroke="Black" StrokeThickness="2"/>
+                            <Path Data="M1.5,0 L8,6.5 6.5,8 0,1.5 z" Fill="Black" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                        </Grid>
                     </UniformGrid>
                 </TabItem>
                 <TabItem Header="Color&amp;Type">
@@ -139,7 +207,7 @@
                 </TabItem>
                 <TabItem Header="Slider ProgressBar">
                     <StackPanel>
-                        <Slider Margin="0,0,0,10" Value="26"/>
+                        <Slider Margin="0,0,0,10" Value="26" VerticalAlignment="Bottom"/>
                         <Grid Margin="0,6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
@@ -154,7 +222,7 @@
                                 <ComboBoxItem Content="Both"/>
                             </ComboBox>
                         </Grid>
-                        <Slider x:Name="slider1" Margin="0,0,0,10" Maximum="{Binding Minimum, ElementName=slider2}" Minimum="-50" TickPlacement="Both"/>
+                        <Slider x:Name="slider1" Margin="0,0,10,10" Maximum="{Binding Minimum, ElementName=slider2}" Minimum="-50" TickPlacement="Both"/>
                         <Slider x:Name="slider2" Margin="0,0,0,10" Maximum="50" Minimum="{Binding Maximum, ElementName=slider1}" TickPlacement="Both"/>
                         <ProgressBar Margin="0,0,0,10" Value="73"/>
                         <Grid>
@@ -185,14 +253,14 @@
                                 <DataGridTemplateColumn Header="title">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="{Binding Property1}" IsReadOnly="True"/>
+                                            <TextBox Text="{Binding name}" IsReadOnly="True"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <DataGridTemplateColumn Header="Property2" IsReadOnly="True">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <CheckBox IsChecked="{Binding Property2}"/>
+                                            <CheckBox IsChecked="{Binding toggle}"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -224,18 +292,14 @@
                             </TreeViewItem>
                             <TreeViewItem Header="TreeViewItem"/>
                         </TreeView>
-                        <TreeView Style="{StaticResource ListTreeStyle}" Height="300" Margin="10,0,0,0">
-                            <TreeViewItem Header="TreeViewItem" IsExpanded="True" AllowDrop="True">
-                                <TreeViewItem Header="TreeViewItem"/>
-                                <TreeViewItem Header="TreeViewItem" HorizontalAlignment="Left"/>
-                                <TreeViewItem Header="TreeViewItem" HorizontalAlignment="Left"/>
-                                <TreeViewItem Header="TreeViewItem" HorizontalAlignment="Left"/>
-                                <TreeViewItem Header="TreeViewItem" HorizontalAlignment="Left"/>
-                                <TreeViewItem Header="TreeViewItem" HorizontalAlignment="Left"/>
-                                <TreeViewItem Header="TreeViewItem" HorizontalAlignment="Left"/>
+                        <TreeView Style="{DynamicResource ListTreeStyle}">
+                            <TreeViewItem HeaderTemplate="{DynamicResource ListTreeDataTemplate}"/>
+                            <TreeViewItem HeaderTemplate="{DynamicResource ListTreeDataTemplate}" IsExpanded="True">
+                                <TreeViewItem HeaderTemplate="{DynamicResource ListSubTreeDataTemplate}"/>
+                                <TreeViewItem HeaderTemplate="{DynamicResource ListSubTreeDataTemplate}"/>
                             </TreeViewItem>
-                            <TreeViewItem Header="TreeViewItem" IsExpanded="True" AllowDrop="True"/>
-                            <TreeViewItem Header="TreeViewItem" IsExpanded="True" AllowDrop="True"/>
+                            <TreeViewItem HeaderTemplate="{DynamicResource ListTreeDataTemplate}"/>
+                            <TreeViewItem Header="TreeViewItem"/>
                             <TreeViewItem Header="TreeViewItem"/>
                         </TreeView>
                         <Calendar Style="{StaticResource CalendarStyle}" HorizontalAlignment="Left" Margin="10,0,0,0"/>
@@ -247,12 +311,12 @@
                 </TabItem>
                 <TabItem Header="ListBox">
                     <UniformGrid>
-                        <ListBox ItemsSource="{Binding Collection/Property1}"/>
+                        <ListBox ItemsSource="{Binding Collection/name}"/>
                         <ListBox ItemsSource="{Binding Collection}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <Border>
-                                        <TextBox Text="{Binding Property1}" Background="{StaticResource black10_Color}" BorderBrush="Transparent" Margin="0,0,0,2"/>
+                                        <TextBox Text="{Binding name}" Background="{StaticResource black10_Color}" BorderBrush="Transparent" Margin="0,0,0,2"/>
                                     </Border>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -264,7 +328,7 @@
                                         <GridViewColumn.CellTemplate>
                                             <DataTemplate>
                                                 <Border>
-                                                    <CheckBox IsChecked="{Binding Property2}"/>
+                                                    <CheckBox IsChecked="{Binding toggle}"/>
                                                 </Border>
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
@@ -272,23 +336,13 @@
                                             <CheckBox IsThreeState="True" Content="选择"/>
                                         </GridViewColumnHeader>
                                     </GridViewColumn>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Property1}" Header="Property1"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding name}" Header="Property1"/>
                                 </GridView>
                             </ListView.View>
                         </ListView>
                     </UniformGrid>
                 </TabItem>
-                <TabItem x:Name="tabItem" IsSelected="{Binding IsChecked, ElementName=menuItem}">
-                    <TabItem.Header>
-                        <Menu>
-                            <MenuItem x:Name="menuItem" Header="TabPanel">
-                                <MenuItem Header="Tab Exam"/>
-                                <MenuItem Header="Exam Review"/>
-                                <Separator/>
-                                <MenuItem Header="234"/>
-                            </MenuItem>
-                        </Menu>
-                    </TabItem.Header>
+                <TabItem x:Name="tabItem" IsSelected="{Binding IsChecked, ElementName=menuItem}" Header="Tab">
                     <ContentControl x:Name="LevelContent"/>
                 </TabItem>
             </TabControl>

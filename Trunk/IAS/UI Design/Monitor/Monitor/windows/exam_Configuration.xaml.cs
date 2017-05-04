@@ -22,5 +22,15 @@ namespace Monitor.windows
         {
             InitializeComponent();
         }
+
+        private void drag(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            this.DragMove();// 在此处添加事件处理程序实现。
+        }
+
+        private void Close_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Window.Close();
+        }
     }
 }

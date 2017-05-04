@@ -5,17 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:XuanYuanUI="clr-namespace:Monitor.Review"
              mc:Ignorable="d" 
-             d:DesignWidth="280" d:DesignHeight="1440" Width="280">
-    <!--<UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/monitor.Theme;component/Path_Color.xaml"/>
-                <ResourceDictionary Source="/monitor.Theme;component/WinStyle.xaml"/>
-                <ResourceDictionary Source="/monitor.Theme;component/Public.xaml"/>
-                <ResourceDictionary Source="/monitor.Theme;component/C_Style.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </UserControl.Resources>-->
+             Height="1440" 
+             Width="280">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
@@ -27,6 +18,7 @@
         <ComboBox Style="{DynamicResource Logo_ComboBox}">
             <ComboBoxItem Content="About"/>
             <ComboBoxItem Content="ShutDown"/>
+			<ComboBoxItem Content="MaxinWindow" MouseDown="MainWindow"/>
         </ComboBox>
         <Label Content="REVIEW" Grid.Row="1" FontWeight="Normal" Margin="0,30" HorizontalContentAlignment="Center" />
         <Button  Margin="20,0,20,20"  Grid.Row="2" Name="ShowImageBroswerBtn" ContentTemplate="{StaticResource DataTemplate}" 

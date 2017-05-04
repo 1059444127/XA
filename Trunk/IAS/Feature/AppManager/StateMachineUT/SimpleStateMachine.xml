@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StateMachine ActionPackage="UIH.XA.StateMachineUT.TestActions, UIH.XA.StateMachineUT">
+  <States>
+    <State ID="Initial" Category="INITIAL">
+      <ActionsOnEntry>
+        <Action Class="EnterInitialAction"></Action>
+      </ActionsOnEntry>
+    </State>
+    <State ID="Idle">
+      <ActionsOnEntry>
+        <Action Class="MyAction"></Action>
+      </ActionsOnEntry>
+    </State>
+    <State ID="InPA"></State>
+    <State ID="InExam"></State>
+    <State ID="Examming"></State>
+    <State ID="InService"></State>
+    <State ID="InShutDown"></State>
+    <State ID="Final" Category="FINAL"></State>
+  </States>
+  <Transitions>
+    <Transition ID="ready" From="Initial" To="Idle">
+      <Actions>
+        <Action Class="MyAction"></Action>
+      </Actions>
+    </Transition>
+    <Transition ID="emergency" From="Idle" To="InExam"></Transition>
+    <Transition ID="pa" From="Idle" To="InPA"></Transition>
+    <Transition ID="pa" From="InExam" To="InPA"></Transition>
+    <Transition ID="service" From="InExam" To="InService"></Transition>
+    <Transition ID="close" From="InPA" To="InExam"></Transition>
+    <Transition ID="load study" From="InPA" To="InExam"></Transition>
+    <Transition ID="close" From="InService" To="InExam"></Transition>
+    <Transition ID="shutdown" From="*" To="InShutDown"></Transition>
+    <Transition ID="begin exposure" From="InExam" To="Examming"></Transition>
+    <Transition ID="end exposure" From="Examming" To="InExam"></Transition>
+    <Transition ID="end" From="InShutDown" To="Final"></Transition>
+    <Transition ID="froze" From="*" To="*"></Transition>
+  </Transitions>
+</StateMachine>

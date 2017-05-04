@@ -8,5 +8,6 @@
     <ComboBox Style="{DynamicResource Logo_ComboBox}">
         <ComboBoxItem Content="About"/>
         <ComboBoxItem Content="ShutDown"/>
+        <ComboBoxItem Content="MaxinWindow" MouseDown="MainWindow"/>
     </ComboBox>
 </UserControl>

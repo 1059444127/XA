@@ -26,5 +26,9 @@ namespace Monitor.windows
         {
             this.DragMove();// 在此处添加事件处理程序实现。
         }
+        private void Close_OnClick(object sender, RoutedEventArgs e)
+        {
+           this.Window.Close();
+        }
     }
 }

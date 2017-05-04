@@ -29,48 +29,150 @@ namespace Monitor.windows
             this.DragMove();// 在此处添加事件处理程序实现。
         }
 
-        private void ComparedBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            //var windows = Application.Current.Windows;
-            //foreach (var item in windows)
-            //{
-            //    var itemWindow = item as Window;
-            //    if (itemWindow == null)
-            //    {
-            //        continue;
-            //    }
-            //    if (itemWindow.Title.Equals("exam")
-            //        || itemWindow.Title.Equals("exam_Reference"))
-            //    {
-            //        itemWindow.Close();
-            //    }
-            //}
-            //foreach (var item in windows)
-            //{
-            //    var itemWindow = item as Window;
-            //    if (itemWindow == null)
-            //    {
-            //        continue;
-            //    }
-            //    if (itemWindow.Title.Equals("exam_Compared"))
-            //    {
-            //        return;
-            //    }
-            //}
-
-            //var examCompared = new exam_Compared();
-            //examCompared.WindowStartupLocation = WindowStartupLocation.Manual;
-            //Rect workArea = SystemParameters.WorkArea;
-            //examCompared.Width = SystemParameters.PrimaryScreenWidth * 2;
-            //examCompared.Height = workArea.Bottom;
-            //examCompared.Left = Screen.AllScreens[1].WorkingArea.Left;
-            //examCompared.Top = Screen.AllScreens[1].WorkingArea.Top;
-            //examCompared.Show();
-        }
-
         private void SelectBtn_OnClick(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Close_OnClick(object sender, RoutedEventArgs e)
+        {
+            this.Window.Close();
+        }
+
+        private void ComparedBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            var windows = Application.Current.Windows;
+            foreach (var item in windows)
+            {
+                var itemWindow = item as Window;
+                if (itemWindow == null)
+                {
+                    continue;
+                }
+                if (itemWindow.Title.Equals("exam")
+                    || itemWindow.Title.Equals("exam_Reference") || itemWindow.Title.Equals("exam_ImageBroswer"))
+                {
+                    itemWindow.Close();
+                }
+            }
+            foreach (var item in windows)
+            {
+                var itemWindow = item as Window;
+                if (itemWindow == null)
+                {
+                    continue;
+                }
+                if (itemWindow.Title.Equals("exam_Compared"))
+                {
+                    return;
+                }
+            }
+
+            var screen = Screen.AllScreens;
+            var examCompared = new exam_Compared();
+            examCompared.WindowStartupLocation = WindowStartupLocation.Manual;
+            if (screen.Count() == 1)
+            {
+                var bound = screen.FirstOrDefault().Bounds;
+                examCompared.Width = bound.Width;
+                examCompared.Height = bound.Height;
+                examCompared.Left = bound.Left;
+                examCompared.Top = bound.Top;
+                examCompared.Show();
+            }
+            else
+            {
+                var bound = screen.Where(x => x.Primary.Equals(true)).FirstOrDefault().Bounds;
+                examCompared.Width = bound.Width * 2;
+                examCompared.Height = bound.Height;
+                examCompared.Left = bound.Left;
+                examCompared.Top = bound.Top;
+                examCompared.Show();
+            }
+        }
+
+        private void Icon_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+           if (e.ClickCount == 2)
+           {
+               var windows = Application.Current.Windows;
+               foreach (var item in windows)
+               {
+                   var itemWindow = item as Window;
+                   if (itemWindow.Title.Equals("exam_Reference")
+                       || itemWindow.Title.Equals("exam_Review"))
+                   {
+                       itemWindow.Close();
+                   }
+               }
+
+               var screens = Screen.AllScreens;
+               var review = new exam_Review();
+               review.WindowStartupLocation = WindowStartupLocation.Manual;
+
+               if (screens.Count() == 1)
+               {
+                   var bound = screens.FirstOrDefault().Bounds;
+                   review.Top = bound.Top;
+                   review.Left = bound.Width / 2.0;
+                   review.Height = bound.Height;
+                   review.Width = bound.Width / 2.0;
+                   review.Show();
+               }
+               else
+               {
+                   var primaryScreen = screens[1];
+                   var primaryWorkingArea = primaryScreen.Bounds;
+
+                   review.Top = primaryWorkingArea.Top;
+                   review.Left = primaryWorkingArea.Left;
+                   review.Height = primaryWorkingArea.Height;
+                   review.Width = primaryWorkingArea.Width;
+                   review.Show();
+               }
+           }
+        }
+
+        private void Referenceicon_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                var windows = Application.Current.Windows;
+                foreach (var item in windows)
+                {
+                    var itemWindow = item as Window;
+                    if (itemWindow.Title.Equals("exam_Reference")
+                        || itemWindow.Title.Equals("exam_Review"))
+                    {
+                        itemWindow.Close();
+                    }
+                }
+
+                var screens = Screen.AllScreens;
+                var review = new exam_Review();
+                review.WindowStartupLocation = WindowStartupLocation.Manual;
+
+                if (screens.Count() == 1)
+                {
+                    var bound = screens.FirstOrDefault().Bounds;
+                    review.Top = bound.Top;
+                    review.Left = bound.Width / 2.0;
+                    review.Height = bound.Height;
+                    review.Width = bound.Width / 2.0;
+                    review.Show();
+                }
+                else
+                {
+                    var primaryScreen = screens[1];
+                    var primaryWorkingArea = primaryScreen.Bounds;
+
+                    review.Top = primaryWorkingArea.Top;
+                    review.Left = primaryWorkingArea.Left;
+                    review.Height = primaryWorkingArea.Height;
+                    review.Width = primaryWorkingArea.Width;
+                    review.Show();
+                }
+            }
         }
     }
 }

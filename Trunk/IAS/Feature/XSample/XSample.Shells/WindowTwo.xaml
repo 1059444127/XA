@@ -1,0 +1,10 @@
+﻿<local:XShell x:Class="UIH.XA.XSample.Shells.WindowTwo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:UIH.XA.XSample.Shells"  
+        xmlns:prism="http://www.codeplex.com/prism" xmlns:Core="clr-namespace:UIH.XA.Core;assembly=UIH.XA.XBoot"
+              Title="WindowTwo" Height="400" Width="450">
+    <Grid>
+        <ContentControl Core:XAppRegionRegister.RegionName="RegionWindowTwo" Grid.Column="1"></ContentControl>
+    </Grid>
+</local:XShell>

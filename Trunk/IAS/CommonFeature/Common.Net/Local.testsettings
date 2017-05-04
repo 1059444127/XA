@@ -25,9 +25,9 @@
           <Configuration>
             <CodeCoverage xmlns="">
               <Regular>
-                <CodeCoverageItem binaryFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XR.Utility.dll" pdbFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XR.Utility.pdb" instrumentInPlace="true" />
-                <CodeCoverageItem binaryFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XR.GlobalParameter.dll" pdbFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XR.GlobalParameter.pdb" instrumentInPlace="true" />
-                <CodeCoverageItem binaryFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XR.Common.dll" pdbFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XR.Common.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XA.Utility.dll" pdbFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XA.Utility.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XA.GlobalParameter.dll" pdbFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XA.GlobalParameter.pdb" instrumentInPlace="true" />
+                <CodeCoverageItem binaryFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XA.Common.dll" pdbFile="E:\XR\X-SW\XA\Trunk\UIH\bin\UIH.XA.Common.pdb" instrumentInPlace="true" />
               </Regular>
             </CodeCoverage>
           </Configuration>

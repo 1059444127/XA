@@ -28,14 +28,54 @@ namespace Monitor.Exam
 
         private void ShowPaWindowBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            //var window = Utilities.FindAncestor<Window>(e.OriginalSource as DependencyObject);
+            var window = Utilities.FindAncestor<Window>(e.OriginalSource as DependencyObject);
 
-            //if (window.Title.Equals("exam"))
-            //{
-            //    var paExam = new exam_PA();
-            //    paExam.Topmost = true;
-            //    paExam.Show();
-            //}
+            foreach (var item in Application.Current.Windows)
+            {
+                var itemWindow = item as Window;
+                if (itemWindow.Title.Equals("exam_PA"))
+                {
+                    return;
+                }
+            }
+            if (window.Title.Equals("exam"))
+            {
+                var paExam = new exam_PA();
+                paExam.Topmost = true;
+                paExam.Show();
+            }
+        }
+
+        private void SystemSettingBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in Application.Current.Windows)
+            {
+                var itemWindow = item as Window;
+                if (itemWindow.Title.Equals("exam_Configuration"))
+                {
+                    return;
+                }
+            }
+
+            var configuration = new exam_Configuration();
+            configuration.Topmost = true;
+            configuration.Show();
+        }
+
+        private void InformationBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in Application.Current.Windows)
+            {
+                var itemWindow = item as Window;
+                if (itemWindow.Title.Equals("exam_Infomation"))
+                {
+                    return;
+                }
+            }
+
+            var Infomation = new exam_Infomation();
+            Infomation.Topmost = true;
+            Infomation.Show();
         }
     }
 }

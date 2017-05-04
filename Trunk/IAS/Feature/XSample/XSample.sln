@@ -1,31 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.Views", "UIH.XR.XSample.Views\UIH.XR.XSample.Views.csproj", "{86D330B3-BA0F-4321-A10B-52C76F474FB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.Views", "XSample.Views\XSample.Views.csproj", "{86D330B3-BA0F-4321-A10B-52C76F474FB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample", "UIH.XR.XSample\UIH.XR.XSample.csproj", "{C4E7E2AB-B623-44D2-BD82-392B114A3B14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample", "XSample\XSample.csproj", "{C4E7E2AB-B623-44D2-BD82-392B114A3B14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.Shells", "UIH.XR.XSample.Shells\UIH.XR.XSample.Shells.csproj", "{9104548F-42D1-4722-B4FF-9BF9EF56CBA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.Shells", "XSample.Shells\XSample.Shells.csproj", "{9104548F-42D1-4722-B4FF-9BF9EF56CBA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.ViewModels", "UIH.XR.XSample.ViewModels\UIH.XR.XSample.ViewModels.csproj", "{DB358A4D-8646-4750-9743-EA6AD524EA03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.ViewModels", "XSample.ViewModels\XSample.ViewModels.csproj", "{DB358A4D-8646-4750-9743-EA6AD524EA03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.BusinessLogicInterface", "UIH.XR.XSample.BusinessInterface\UIH.XR.XSample.BusinessLogicInterface.csproj", "{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.BusinessLogicInterface", "XSample.BusinessInterface\XSample.BusinessLogicInterface.csproj", "{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.BusinessLogicExcutor", "UIH.XR.XSample.BusinessLogicExcutor\UIH.XR.XSample.BusinessLogicExcutor.csproj", "{C67939FC-7637-49A2-934F-9037DE434B8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.BusinessLogicExcutor", "XSample.BusinessLogicExcutor\XSample.BusinessLogicExcutor.csproj", "{C67939FC-7637-49A2-934F-9037DE434B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.Models", "UIH.XR.XSample.Models\UIH.XR.XSample.Models.csproj", "{288F3887-BDE1-4264-AB4E-3A60E2DD0658}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.Models", "XSample.Models\XSample.Models.csproj", "{288F3887-BDE1-4264-AB4E-3A60E2DD0658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.Web", "UIH.XR.XSample.Web\UIH.XR.XSample.Web.csproj", "{547694EF-B1E6-478C-B597-8C7B6129D6D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.Web", "XSample.Web\XSample.Web.csproj", "{547694EF-B1E6-478C-B597-8C7B6129D6D5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{786F2B13-B013-4074-9AE0-4CD231EB1AC1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF_Prism", "WPF_Prism", "{BEB55E90-102B-4AEB-97CD-9A05ED175F34}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonModel", "CommonModel", "{76F68A10-F1C0-41E9-B768-8AC471481959}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{12F1AA55-D66E-4E48-B7E5-65818B7C138F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XSample.Utility", "UIH.XR.XSample.Utility\UIH.XR.XSample.Utility.csproj", "{020E2230-6221-4569-A118-E0A916E89716}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSample.Utility", "XSample.Utility\XSample.Utility.csproj", "{020E2230-6221-4569-A118-E0A916E89716}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -33,41 +29,36 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = UIH.XR.XSample.Views\\UIH.XR.XSample.Views.csproj
-		SccProjectTopLevelParentUniqueName1 = XSample.sln
-		SccProjectName1 = UIH.XR.XSample.Views
-		SccLocalPath1 = UIH.XR.XSample.Views
-		SccProjectUniqueName2 = UIH.XR.XSample\\UIH.XR.XSample.csproj
-		SccProjectTopLevelParentUniqueName2 = XSample.sln
-		SccProjectName2 = UIH.XR.XSample
-		SccLocalPath2 = UIH.XR.XSample
-		SccProjectUniqueName3 = UIH.XR.XSample.Shells\\UIH.XR.XSample.Shells.csproj
-		SccProjectTopLevelParentUniqueName3 = XSample.sln
-		SccProjectName3 = UIH.XR.XSample.Shells
-		SccLocalPath3 = UIH.XR.XSample.Shells
-		SccProjectUniqueName4 = UIH.XR.XSample.ViewModels\\UIH.XR.XSample.ViewModels.csproj
-		SccProjectTopLevelParentUniqueName4 = XSample.sln
-		SccProjectName4 = UIH.XR.XSample.ViewModels
-		SccLocalPath4 = UIH.XR.XSample.ViewModels
-		SccProjectUniqueName5 = UIH.XR.XSample.BusinessLogicExcutor\\UIH.XR.XSample.BusinessLogicExcutor.csproj
-		SccProjectTopLevelParentUniqueName5 = XSample.sln
-		SccProjectName5 = UIH.XR.XSample.BusinessLogicExcutor
-		SccLocalPath5 = UIH.XR.XSample.BusinessLogicExcutor
-		SccProjectUniqueName6 = UIH.XR.XSample.BusinessInterface\\UIH.XR.XSample.BusinessLogicInterface.csproj
-		SccProjectTopLevelParentUniqueName6 = XSample.sln
-		SccProjectName6 = UIH.XR.XSample.BusinessInterface
-		SccLocalPath6 = UIH.XR.XSample.BusinessInterface
-		SccProjectUniqueName7 = UIH.XR.XSample.Models\\UIH.XR.XSample.Models.csproj
+		SccProjectUniqueName1 = XSample\\XSample.csproj
+		SccProjectName1 = XSample
+		SccLocalPath1 = XSample
+		SccProjectUniqueName2 = XSample.Models\\XSample.Models.csproj
+		SccProjectName2 = XSample.Models
+		SccLocalPath2 = XSample.Models
+		SccProjectUniqueName3 = XSample.ViewModels\\XSample.ViewModels.csproj
+		SccProjectName3 = XSample.ViewModels
+		SccLocalPath3 = XSample.ViewModels
+		SccProjectUniqueName4 = XSample.Utility\\XSample.Utility.csproj
+		SccProjectName4 = XSample.Utility
+		SccLocalPath4 = XSample.Utility
+		SccProjectUniqueName5 = XSample.Shells\\XSample.Shells.csproj
+		SccProjectName5 = XSample.Shells
+		SccLocalPath5 = XSample.Shells
+		SccProjectUniqueName6 = XSample.Views\\XSample.Views.csproj
+		SccProjectName6 = XSample.Views
+		SccLocalPath6 = XSample.Views
+		SccProjectUniqueName7 = XSample.Web\\XSample.Web.csproj
 		SccProjectTopLevelParentUniqueName7 = XSample.sln
-		SccProjectName7 = UIH.XR.XSample.Models
-		SccLocalPath7 = UIH.XR.XSample.Models
-		SccProjectUniqueName8 = UIH.XR.XSample.Web\\UIH.XR.XSample.Web.csproj
+		SccProjectName7 = XSample.Web
+		SccLocalPath7 = XSample.Web
+		SccProjectUniqueName8 = XSample.BusinessInterface\\XSample.BusinessLogicInterface.csproj
 		SccProjectTopLevelParentUniqueName8 = XSample.sln
-		SccProjectName8 = UIH.XR.XSample.Web
-		SccLocalPath8 = UIH.XR.XSample.Web
-		SccProjectUniqueName9 = UIH.XR.XSample.Utility\\UIH.XR.XSample.Utility.csproj
-		SccProjectName9 = UIH.XR.XSample.Utility
-		SccLocalPath9 = UIH.XR.XSample.Utility
+		SccProjectName8 = XSample.BusinessInterface
+		SccLocalPath8 = XSample.BusinessInterface
+		SccProjectUniqueName9 = XSample.BusinessLogicExcutor\\XSample.BusinessLogicExcutor.csproj
+		SccProjectTopLevelParentUniqueName9 = XSample.sln
+		SccProjectName9 = XSample.BusinessLogicExcutor
+		SccLocalPath9 = XSample.BusinessLogicExcutor
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,68 +95,43 @@ Global
 		{DB358A4D-8646-4750-9743-EA6AD524EA03}.Release|x86.ActiveCfg = Release|Any CPU
 		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660}.Release|x86.ActiveCfg = Release|Any CPU
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C67939FC-7637-49A2-934F-9037DE434B8A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{C67939FC-7637-49A2-934F-9037DE434B8A}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Debug|x86.ActiveCfg = Debug|x86
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Debug|x86.Build.0 = Debug|x86
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C67939FC-7637-49A2-934F-9037DE434B8A}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{C67939FC-7637-49A2-934F-9037DE434B8A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Release|x86.ActiveCfg = Release|x86
 		{C67939FC-7637-49A2-934F-9037DE434B8A}.Release|x86.Build.0 = Release|x86
 		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Release|Any CPU.Build.0 = Release|Any CPU
-		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{288F3887-BDE1-4264-AB4E-3A60E2DD0658}.Release|x86.ActiveCfg = Release|Any CPU
 		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{547694EF-B1E6-478C-B597-8C7B6129D6D5}.Release|x86.ActiveCfg = Release|Any CPU
 		{020E2230-6221-4569-A118-E0A916E89716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{020E2230-6221-4569-A118-E0A916E89716}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{020E2230-6221-4569-A118-E0A916E89716}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{020E2230-6221-4569-A118-E0A916E89716}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{020E2230-6221-4569-A118-E0A916E89716}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{020E2230-6221-4569-A118-E0A916E89716}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{020E2230-6221-4569-A118-E0A916E89716}.Release|Any CPU.Build.0 = Release|Any CPU
-		{020E2230-6221-4569-A118-E0A916E89716}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{020E2230-6221-4569-A118-E0A916E89716}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{020E2230-6221-4569-A118-E0A916E89716}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C4E7E2AB-B623-44D2-BD82-392B114A3B14} = {BEB55E90-102B-4AEB-97CD-9A05ED175F34}
-		{9104548F-42D1-4722-B4FF-9BF9EF56CBA1} = {BEB55E90-102B-4AEB-97CD-9A05ED175F34}
-		{DB358A4D-8646-4750-9743-EA6AD524EA03} = {BEB55E90-102B-4AEB-97CD-9A05ED175F34}
-		{86D330B3-BA0F-4321-A10B-52C76F474FB4} = {BEB55E90-102B-4AEB-97CD-9A05ED175F34}
 		{C67939FC-7637-49A2-934F-9037DE434B8A} = {786F2B13-B013-4074-9AE0-4CD231EB1AC1}
 		{A8CDB6FE-89B2-4E27-94E4-700B0FB6B660} = {786F2B13-B013-4074-9AE0-4CD231EB1AC1}
-		{288F3887-BDE1-4264-AB4E-3A60E2DD0658} = {76F68A10-F1C0-41E9-B768-8AC471481959}
 		{547694EF-B1E6-478C-B597-8C7B6129D6D5} = {12F1AA55-D66E-4E48-B7E5-65818B7C138F}
 	EndGlobalSection
 EndGlobal

@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Core", "UIH.XR.Core\UIH.XR.Core.csproj", "{0728F070-23BE-4F16-AB5D-6B024966B768}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{0728F070-23BE-4F16-AB5D-6B024966B768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Core.XApp", "UIH.XR.Core.XApp\UIH.XR.Core.XApp.csproj", "{2254C665-9115-4A0F-B9E9-D0E81F104F92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.XApp", "Core.XApp\Core.XApp.csproj", "{2254C665-9115-4A0F-B9E9-D0E81F104F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.Core.Test", "UIH.XR.Core.Test\UIH.XR.Core.Test.csproj", "{076408E8-7570-4BFC-B4A8-932E459BAC0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Test", "Core.Test\Core.Test.csproj", "{076408E8-7570-4BFC-B4A8-932E459BAC0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.XBoot", "UIH.XR.XBoot\UIH.XR.XBoot.csproj", "{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XBoot", "XBoot\XBoot.csproj", "{A63CE010-464B-4D6F-B43C-D30FDF7EDA5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.MiniBoot", "UIH.XR.MiniBoot\UIH.XR.MiniBoot.csproj", "{D373010C-1B0A-4E19-9768-ED1B400DE247}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniBoot", "MiniBoot\MiniBoot.csproj", "{D373010C-1B0A-4E19-9768-ED1B400DE247}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
@@ -17,21 +17,21 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = UIH.XR.Core\\UIH.XR.Core.csproj
-		SccProjectName1 = UIH.XR.Core
-		SccLocalPath1 = UIH.XR.Core
-		SccProjectUniqueName2 = UIH.XR.Core.Test\\UIH.XR.Core.Test.csproj
-		SccProjectName2 = UIH.XR.Core.Test
-		SccLocalPath2 = UIH.XR.Core.Test
-		SccProjectUniqueName3 = UIH.XR.XBoot\\UIH.XR.XBoot.csproj
-		SccProjectName3 = UIH.XR.XBoot
-		SccLocalPath3 = UIH.XR.XBoot
-		SccProjectUniqueName4 = UIH.XR.Core.XApp\\UIH.XR.Core.XApp.csproj
-		SccProjectName4 = UIH.XR.Core.XApp
-		SccLocalPath4 = UIH.XR.Core.XApp
-		SccProjectUniqueName5 = UIH.XR.MiniBoot\\UIH.XR.MiniBoot.csproj
-		SccProjectName5 = UIH.XR.MiniBoot
-		SccLocalPath5 = UIH.XR.MiniBoot
+		SccProjectUniqueName1 = Core\\Core.csproj
+		SccProjectName1 = Core
+		SccLocalPath1 = Core
+		SccProjectUniqueName2 = Core.Test\\Core.Test.csproj
+		SccProjectName2 = Core.Test
+		SccLocalPath2 = Core.Test
+		SccProjectUniqueName3 = XBoot\\XBoot.csproj
+		SccProjectName3 = XBoot
+		SccLocalPath3 = XBoot
+		SccProjectUniqueName4 = Core.XApp\\Core.XApp.csproj
+		SccProjectName4 = Core.XApp
+		SccLocalPath4 = Core.XApp
+		SccProjectUniqueName5 = MiniBoot\\MiniBoot.csproj
+		SccProjectName5 = MiniBoot
+		SccLocalPath5 = MiniBoot
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -3,48 +3,57 @@
 	    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:Monitor.ViewModel" 
+         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"  
         xmlns:PA="clr-namespace:Monitor.PA"
         Title="exam_PA"
          mc:Ignorable="d"
-        Style="{StaticResource WindowStyle}"
-        d:DesignWidth="1720" 
-        d:DesignHeight="1440"
+         Style="{StaticResource WindowStyle}"
+        Width="1404" 
+        Height="1124"
         x:Name="Window"
 	    WindowStartupLocation="CenterScreen"
         MouseDown="drag"
         ResizeMode="CanResizeWithGrip">
-    <Border Padding="15">
+    <Window.DataContext>
+        <viewModel:PaViewModel></viewModel:PaViewModel>
+    </Window.DataContext>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
-                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <!--Header-->
-            <Grid x:Name="Header">
+		<!--Header-->
+		<!--content-->
+		<!--foot-->
+        <!--Header-->
+		<Grid x:Name="Header" Margin="15,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Tools" Margin="0,0,10,0"/>
+                    <Button Content="Tools" Margin="0,0,2,0" BorderThickness="0">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
                 </StackPanel>
-                <TextBlock x:Name="Title" Grid.Column="1" Text="Title" Style="{StaticResource H1}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button x:Name="close" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" BorderThickness="0" Padding="10,0">
+			<TextBlock x:Name="PatientList" Grid.Column="1" Text="Patient List" Style="{StaticResource H2}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="close" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" BorderThickness="0" Padding="10,0" Click="Close_OnClick">
                     <Path Data="M0,2 L2,0 8,6 14,0 16,2 10,8 16,14 14,16 8,10 2,16 0,14 6,8 z" Fill="#FFF4F4F5" Stretch="Fill" Width="14" Height="14"/>
                 </Button>
             </Grid>
-            <!--Header-->
+		<Separator VerticalAlignment="Bottom" Margin="15,3,15,0"/>
             <!--content-->
-            <Grid x:Name="content" Grid.Row="1" Margin="0,15">
-                <PA:PatientList/>
-                <PA:PatientAdmin/>
+		<Grid x:Name="content" Grid.Row="1" Margin="15">
+                <PA:PatientListAdmin Visibility="{Binding PatientListAdminVisibility}"/>
+                <PA:PatientAdmin Visibility="{Binding PatientAdminVisibility}"/>
             </Grid>
-            <!--content-->
             <!--foot-->
-            <Grid x:Name="Foot"/>
-            <!--foot-->
+		<Grid x:Name="Foot" Grid.Row="2"/>
         </Grid>
-    </Border>
 </Window>

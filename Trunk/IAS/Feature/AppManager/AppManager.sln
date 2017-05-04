@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.AppManager", "UIH.XR.AppManager\UIH.XR.AppManager.csproj", "{25592661-EABE-462C-8AAA-BE0C13508B4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppManager", "AppManager\AppManager.csproj", "{25592661-EABE-462C-8AAA-BE0C13508B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.StateMachine", "UIH.XR.StateMachine\UIH.XR.StateMachine.csproj", "{045B1BBE-E6B3-47B4-AC18-C2295D483294}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachine", "StateMachine\StateMachine.csproj", "{045B1BBE-E6B3-47B4-AC18-C2295D483294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.StateMachineUT", "UIH.XR.StateMachineUT\UIH.XR.StateMachineUT.csproj", "{191E6CCA-7E86-4C25-9937-341D2964386D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachineUT", "StateMachineUT\StateMachineUT.csproj", "{191E6CCA-7E86-4C25-9937-341D2964386D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63896FD5-DE01-4B29-9436-7B6CB200D26B}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.AppManagerUT", "UIH.XR.AppManagerUT\UIH.XR.AppManagerUT.csproj", "{02E4E55E-26B6-49F0-9A4B-D2FB5517365E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppManagerUT", "AppManagerUT\AppManagerUT.csproj", "{02E4E55E-26B6-49F0-9A4B-D2FB5517365E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{25592661-EABE-462C-8AAA-BE0C13508B4E} = {25592661-EABE-462C-8AAA-BE0C13508B4E}
 		{045B1BBE-E6B3-47B4-AC18-C2295D483294} = {045B1BBE-E6B3-47B4-AC18-C2295D483294}
@@ -24,20 +24,20 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 5
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs.united-imaging.com:8080/tfs/defaultcollection
+		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = UIH.XR.AppManager\\UIH.XR.AppManager.csproj
-		SccProjectName1 = UIH.XR.AppManager
-		SccLocalPath1 = UIH.XR.AppManager
-		SccProjectUniqueName2 = UIH.XR.StateMachine\\UIH.XR.StateMachine.csproj
-		SccProjectName2 = UIH.XR.StateMachine
-		SccLocalPath2 = UIH.XR.StateMachine
-		SccProjectUniqueName3 = UIH.XR.StateMachineUT\\UIH.XR.StateMachineUT.csproj
-		SccProjectName3 = UIH.XR.StateMachineUT
-		SccLocalPath3 = UIH.XR.StateMachineUT
-		SccProjectUniqueName4 = UIH.XR.AppManagerUT\\UIH.XR.AppManagerUT.csproj
-		SccProjectName4 = UIH.XR.AppManagerUT
-		SccLocalPath4 = UIH.XR.AppManagerUT
+		SccProjectUniqueName1 = AppManager\\AppManager.csproj
+		SccProjectName1 = AppManager
+		SccLocalPath1 = AppManager
+		SccProjectUniqueName2 = AppManagerUT\\AppManagerUT.csproj
+		SccProjectName2 = AppManagerUT
+		SccLocalPath2 = AppManagerUT
+		SccProjectUniqueName3 = StateMachine\\StateMachine.csproj
+		SccProjectName3 = StateMachine
+		SccLocalPath3 = StateMachine
+		SccProjectUniqueName4 = StateMachineUT\\StateMachineUT.csproj
+		SccProjectName4 = StateMachineUT
+		SccLocalPath4 = StateMachineUT
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = AppManager.vsmdi

@@ -1,33 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.SessionManager", "UIH.XR.SessionManager\UIH.XR.SessionManager.csproj", "{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.ProcessCacheProxy", "UIH.XA.ProcessCacheProxy\UIH.XA.ProcessCacheProxy.csproj", "{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}"
 	ProjectSection(ProjectDependencies) = postProject
 		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.ProcessCacheProxy", "UIH.XR.ProcessCacheProxy\UIH.XR.ProcessCacheProxy.csproj", "{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.SessionUtility", "UIH.XA.SessionUtility\UIH.XA.SessionUtility.csproj", "{587B2535-9AB3-4B8D-B8DC-5012E31653C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.SystemCacheProxy", "UIH.XA.SystemCacheProxy\UIH.XA.SystemCacheProxy.csproj", "{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.SessionUtility", "UIH.XR.SessionUtility\UIH.XR.SessionUtility.csproj", "{587B2535-9AB3-4B8D-B8DC-5012E31653C6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XR.SystemCacheProxy", "UIH.XR.SystemCacheProxy\UIH.XR.SystemCacheProxy.csproj", "{C05EF3A5-C7FD-40FA-8B3E-A39B545D9AA4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAProcessCacheProxy", "XAProcessCacheProxy\XAProcessCacheProxy.vcxproj", "{D1C9914A-E603-4AF4-98DD-236DE1421166}"
 	ProjectSection(ProjectDependencies) = postProject
 		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XRProcessCacheProxy", "XRProcessCacheProxy\XRProcessCacheProxy.vcxproj", "{D1C9914A-E603-4AF4-98DD-236DE1421166}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XASessionUtility", "XASessionUtility\XASessionUtility.vcxproj", "{14B66605-0581-4F21-BE78-8E5A4F926070}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XASystemCacheProxy", "XASystemCacheProxy\XASystemCacheProxy.vcxproj", "{F95773BB-5555-45C6-89C0-6885A3E65BC7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XRSessionUtility", "XRSessionUtility\XRSessionUtility.vcxproj", "{14B66605-0581-4F21-BE78-8E5A4F926070}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XRSystemCacheProxy", "XRSystemCacheProxy\XRSystemCacheProxy.vcxproj", "{F95773BB-5555-45C6-89C0-6885A3E65BC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIH.XA.SessionManager", "UIH.XA.SessionManager\UIH.XA.SessionManager.csproj", "{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}"
 	ProjectSection(ProjectDependencies) = postProject
-		{D1C9914A-E603-4AF4-98DD-236DE1421166} = {D1C9914A-E603-4AF4-98DD-236DE1421166}
+		{14B66605-0581-4F21-BE78-8E5A4F926070} = {14B66605-0581-4F21-BE78-8E5A4F926070}
 	EndProjectSection
 EndProject
 Global
@@ -36,27 +36,27 @@ Global
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs.united-imaging.com:8080/tfs/defaultcollection
 		SccLocalPath0 = .
-		SccProjectUniqueName1 = UIH.XR.ProcessCacheProxy\\UIH.XR.ProcessCacheProxy.csproj
-		SccProjectName1 = UIH.XR.ProcessCacheProxy
-		SccLocalPath1 = UIH.XR.ProcessCacheProxy
-		SccProjectUniqueName2 = UIH.XR.SessionManager\\UIH.XR.SessionManager.csproj
-		SccProjectName2 = UIH.XR.SessionManager
-		SccLocalPath2 = UIH.XR.SessionManager
-		SccProjectUniqueName3 = UIH.XR.SessionUtility\\UIH.XR.SessionUtility.csproj
-		SccProjectName3 = UIH.XR.SessionUtility
-		SccLocalPath3 = UIH.XR.SessionUtility
-		SccProjectUniqueName4 = UIH.XR.SystemCacheProxy\\UIH.XR.SystemCacheProxy.csproj
-		SccProjectName4 = UIH.XR.SystemCacheProxy
-		SccLocalPath4 = UIH.XR.SystemCacheProxy
-		SccProjectUniqueName5 = XRProcessCacheProxy\\XRProcessCacheProxy.vcxproj
-		SccProjectName5 = XRProcessCacheProxy
-		SccLocalPath5 = XRProcessCacheProxy
-		SccProjectUniqueName6 = XRSessionUtility\\XRSessionUtility.vcxproj
-		SccProjectName6 = XRSessionUtility
-		SccLocalPath6 = XRSessionUtility
-		SccProjectUniqueName7 = XRSystemCacheProxy\\XRSystemCacheProxy.vcxproj
-		SccProjectName7 = XRSystemCacheProxy
-		SccLocalPath7 = XRSystemCacheProxy
+		SccProjectUniqueName1 = UIH.XA.ProcessCacheProxy\\UIH.XA.ProcessCacheProxy.csproj
+		SccProjectName1 = UIH.XA.ProcessCacheProxy
+		SccLocalPath1 = UIH.XA.ProcessCacheProxy
+		SccProjectUniqueName2 = UIH.XA.SessionUtility\\UIH.XA.SessionUtility.csproj
+		SccProjectName2 = UIH.XA.SessionUtility
+		SccLocalPath2 = UIH.XA.SessionUtility
+		SccProjectUniqueName3 = UIH.XA.SystemCacheProxy\\UIH.XA.SystemCacheProxy.csproj
+		SccProjectName3 = UIH.XA.SystemCacheProxy
+		SccLocalPath3 = UIH.XA.SystemCacheProxy
+		SccProjectUniqueName4 = XAProcessCacheProxy\\XAProcessCacheProxy.vcxproj
+		SccProjectName4 = XAProcessCacheProxy
+		SccLocalPath4 = XAProcessCacheProxy
+		SccProjectUniqueName5 = XASessionUtility\\XASessionUtility.vcxproj
+		SccProjectName5 = XASessionUtility
+		SccLocalPath5 = XASessionUtility
+		SccProjectUniqueName6 = XASystemCacheProxy\\XASystemCacheProxy.vcxproj
+		SccProjectName6 = XASystemCacheProxy
+		SccLocalPath6 = XASystemCacheProxy
+		SccProjectUniqueName7 = UIH.XA.SessionManager\\UIH.XA.SessionManager.csproj
+		SccProjectName7 = UIH.XA.SessionManager
+		SccLocalPath7 = UIH.XA.SessionManager
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,14 +67,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Win32.ActiveCfg = Release|Any CPU
 		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FCD9C8B-1595-443F-B462-29E2A1AAEA79}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -123,6 +115,14 @@ Global
 		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Release|Any CPU.Build.0 = Release|x64
 		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Release|Mixed Platforms.ActiveCfg = Release|Win32
 		{F95773BB-5555-45C6-89C0-6885A3E65BC7}.Release|Win32.ActiveCfg = Release|Win32
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C97BB532-74F8-4216-8DF8-F6FC5ADF7D90}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

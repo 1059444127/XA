@@ -19,6 +19,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <ExpressionBlendVersion>12.0.41002.1</ExpressionBlendVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -44,6 +45,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\..\..\..\..\..\DX\Trunk\UIH\bin\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,6 +66,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PA\AddItem.cs" />
+    <Compile Include="PA\DataTemplateItem.cs" />
+    <Compile Include="PA\ImageItem.cs" />
+    <Compile Include="PA\ListItemDataTemplateSelector.cs" />
+    <Compile Include="PA\PatientInformationExpander.xaml.cs">
+      <DependentUpon>PatientInformationExpander.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Review\ButtonItem.cs" />
+    <Compile Include="Review\ComBoxItem.cs" />
+    <Compile Include="Review\IDataItem.cs" />
+    <Compile Include="Review\Item.cs" />
+    <Compile Include="Review\ToggleButtonItem.cs" />
+    <Compile Include="SampleData\SampleDataSource\SampleDataSource.xaml.cs">
+      <DependentUpon>SampleDataSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\BasicModel.cs" />
     <Compile Include="PA\PatientAdmin.xaml.cs">
       <DependentUpon>PatientAdmin.xaml</DependentUpon>
     </Compile>
@@ -69,6 +90,9 @@
     </Compile>
     <Compile Include="PA\PatientList.xaml.cs">
       <DependentUpon>PatientList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PA\PatientListAdmin.xaml.cs">
+      <DependentUpon>PatientListAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="PA\PatientPanel.xaml.cs">
       <DependentUpon>PatientPanel.xaml</DependentUpon>
@@ -91,6 +115,15 @@
       <DependentUpon>Logo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
+    <Compile Include="ViewModel\ComBoxItem.cs" />
+    <Compile Include="ViewModel\ImageBroswerViewModel.cs" />
+    <Compile Include="ViewModel\ListItem.cs" />
+    <Compile Include="ViewModel\PatientAdminViewModel.cs" />
+    <Compile Include="ViewModel\PatientInformationExpanderViewModel.cs" />
+    <Compile Include="ViewModel\PatientPanelViewModel.cs" />
+    <Compile Include="ViewModel\PaViewModel.cs" />
+    <Compile Include="ViewModel\StudyItem.cs" />
+    <Compile Include="ViewModel\StudyModel.cs" />
     <Compile Include="windows\exam.xaml.cs">
       <DependentUpon>exam.xaml</DependentUpon>
     </Compile>
@@ -124,6 +157,7 @@
     <Compile Include="windows\ImageCompared.xaml.cs">
       <DependentUpon>ImageCompared.xaml</DependentUpon>
     </Compile>
+    <Compile Include="windows\ItemImage.cs" />
     <Compile Include="windows\Reference.xaml.cs">
       <DependentUpon>Reference.xaml</DependentUpon>
     </Compile>
@@ -154,9 +188,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PA\PatientInformationExpander.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PA\PatientList.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PA\PatientListAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PA\PatientPanel.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +211,10 @@
     <Page Include="Review\ViewerToolBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SampleData\SampleDataSource\SampleDataSource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="SubWindow\EHC.xaml">
       <SubType>Designer</SubType>
@@ -259,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\delivery.JPG" />
+    <DesignTimeOnly Include="SampleData\SampleDataSource\SampleDataSource.xsd" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Fluorscop.JPG" />
