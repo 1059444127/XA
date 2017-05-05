@@ -2,7 +2,7 @@
 
 namespace UIH.XA.ViewerToolKit.Interface
 {
-    public interface IToolBoxModel
+    public interface IViewerToolBoxModel
     {
         void Register(IViewDisplay viewDisplay);
         IViewerTool CreateTool(XElement xTool);

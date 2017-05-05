@@ -6,15 +6,14 @@ using System.Xml.Linq;
 using UIH.XA.Common.MVVM;
 using UIH.XA.ViewerToolKit.Config;
 using UIH.XA.ViewerToolKit.Interface;
-using VieweToolKit.Utility;
+using UIH.XA.ViewerToolKit.Utility;
 
 namespace UIH.XA.ViewerToolKit.ViewModel
 {
     public abstract class ViewerToolBoxViewModel : NotificationObject
     {
-        [Import("ViewerToolBoxConfig", typeof(string))]
-        private string _configPath;
-        [Import] protected IToolBoxModel _model;
+        [Import("ViewerToolBoxConfig", typeof (string))] private string _configPath;
+        [Import] protected IViewerToolBoxModel _model;
         protected string _name;
         private ObservableCollection<ToolViewModel> _tools;
 
@@ -26,8 +25,12 @@ namespace UIH.XA.ViewerToolKit.ViewModel
         private IEnumerable<ToolViewModel> CreateTools()
         {
             var xDoc = XDocument.Load(_configPath);
-            //TODO: ViewerToolBoxViewModel.CreateTools() needed to be tested
-            var xViewerToolBox = xDoc.Descendants().FirstOrDefault(e=> e.Name.LocalName == ViewerToolBoxName.ViewerToolBox && e.GetAttribute(ViewerToolBoxName.NameAttribute) == _name);
+            var xViewerToolBox =
+                xDoc.Descendants()
+                    .FirstOrDefault(
+                        e =>
+                            e.Name.LocalName == ViewerToolBoxName.ViewerToolBox &&
+                            e.GetAttribute(ViewerToolBoxName.NameAttribute) == _name);
 
 
             var tools = new List<ToolViewModel>();

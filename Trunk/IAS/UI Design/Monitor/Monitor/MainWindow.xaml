@@ -72,7 +72,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <TabControl TabStripPlacement="{Binding SelectionBoxItem, ElementName=TabStripPlacement}" Margin="10">
+            <TabControl TabStripPlacement="{Binding SelectionBoxItem, ElementName=TabStripPlacement}" Margin="10" DataContext="{Binding Source={StaticResource SampleDataSource}}">
                 <TabItem Header="Public">
                     <UniformGrid Background="#FF162127">
                         <Button Content="Button" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="123"/>
@@ -123,20 +123,22 @@
                         </RichTextBox>
                         <Label Content="Label" VerticalAlignment="Center"/>
                         <AccessText Text="accesstext"/>
-						<TextBlock Text="Text" Style="{DynamicResource Content}"/>
-						<TextBlock Text="Text" Style="{DynamicResource FontSub}"/>
-						<TextBlock Text="Text" Style="{DynamicResource H1}"/>
-						<TextBlock Text="Text" Style="{DynamicResource H2}"/>
-						<TextBlock Text="Text" Style="{DynamicResource ListHeader}"/>
-						<TextBlock Text="Text" Style="{DynamicResource Sub}"/>
-						<TextBlock Text="Text" Style="{DynamicResource Tip}"/>
-						<TextBlock Text="Text" Style="{DynamicResource Title}"/>
+						<ListBox VerticalAlignment="Top">
+                            <TextBlock Text="Text" Style="{DynamicResource Content}"/>
+							<TextBlock Text="Text" Style="{DynamicResource FontSub}"/>
+							<TextBlock Text="Text" Style="{DynamicResource H1}"/>
+							<TextBlock Text="Text" Style="{DynamicResource H2}"/>
+							<TextBlock Text="Text" Style="{DynamicResource ListHeader}"/>
+							<TextBlock Text="Text" Style="{DynamicResource Sub}"/>
+							<TextBlock Text="Text" Style="{DynamicResource Tip}"/>
+							<TextBlock Text="Text" Style="{DynamicResource Title}"/>
+                        </ListBox>
 						<TextBox Grid.Column="1" VerticalAlignment="Center" Uid="请输入用户名" Tag="mm"></TextBox>
                         <PasswordBox x:Name="pw" Password="password"/>
-                        <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" SelectedIndex="0">
+                        <ComboBox>
                             <ComboBoxItem Content="ComboBoxItem"/>
                             <ComboBoxItem Content="ComboBox"/>
-                            <Separator/>
+                            <Separator Style="{DynamicResource Hr}"/>
                             <ComboBoxItem Content="ComboBoxItem"/>
                         </ComboBox>
                         <ComboBox VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource NoBGComboBox}" SelectedIndex="0">
@@ -187,13 +189,6 @@
                 </TabItem>
                 <TabItem Header="Color&amp;Type">
                     <UniformGrid Columns="6">
-                        <ListBox VerticalAlignment="Top">
-                            <TextBlock Text="H1" Style="{StaticResource H1}"/>
-                            <TextBlock Text="H2" Style="{StaticResource H2}"/>
-                            <TextBlock Text="Tips" Style="{StaticResource Tip}"/>
-                            <TextBlock Text="Title" Style="{StaticResource Title}"/>
-                            <TextBlock Text="Sub" Style="{StaticResource Sub}"/>
-                        </ListBox>
                         <Border BorderBrush="Black" BorderThickness="1" Style="{StaticResource DialogStyle}">
                             <Label Content="PanelStyle" AllowDrop="True"/>
                         </Border>
@@ -304,14 +299,14 @@
                         </TreeView>
                         <Calendar Style="{StaticResource CalendarStyle}" HorizontalAlignment="Left" Margin="10,0,0,0"/>
                         <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
-                        <ItemsControl Width="100">
-                            <ItemsPresenter/>
-                        </ItemsControl>
+                        <ItemsControl ItemsSource="{Binding Collection}"/>
                     </StackPanel>
                 </TabItem>
                 <TabItem Header="ListBox">
                     <UniformGrid>
-                        <ListBox ItemsSource="{Binding Collection/name}"/>
+                        <ListBox Style="{DynamicResource ListImgStyle}">
+                        	<ListBoxItem Content="ListBoxItem" ContentTemplate="{DynamicResource ListSubTreeDataTemplate}"/>
+                        </ListBox>
                         <ListBox ItemsSource="{Binding Collection}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>

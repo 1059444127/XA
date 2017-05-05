@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace VieweToolKit.Utility
+namespace UIH.XA.ViewerToolKit.Utility
 {
     public static class XElementExtension
     {

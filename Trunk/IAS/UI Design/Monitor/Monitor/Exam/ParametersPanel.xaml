@@ -17,11 +17,11 @@
         <StackPanel Orientation="Vertical" Margin="14,20,14,0">
             <Button ContentTemplate="{DynamicResource DataTemplate}" Content="Patient List"
                     Name="ShowPaWindowBtn" Click="ShowPaWindowBtn_OnClick"/>
-            <DockPanel>
+            <DockPanel Margin="0,10">
                 <Label Content="Eva Green" FontWeight="Bold"/>
                 <AccessText HorizontalAlignment="Right" Text="M23" DockPanel.Dock="Right" FontSize="24"/>
             </DockPanel>
-            <TextBlock Text="1024563578" Style="{DynamicResource FontSub}" HorizontalAlignment="Stretch"/>
+            <TextBlock Text="1024563578" Style="{DynamicResource FontSub}" HorizontalAlignment="Stretch" Margin="0,0,0,10"/>
             <Border CornerRadius="2" Background="#FF0D191E" Margin="0,10">
                 <StackPanel >
                     <Image Height="100" Margin="0,20" HorizontalAlignment="Center" Source="/Image/delivery.JPG"/>

@@ -28,42 +28,42 @@
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Name" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Name" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <TextBox Grid.Column="1" VerticalAlignment="Center"></TextBox>
-                <TextBlock Text="Data Of Birth" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Data Of Birth" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <TextBox Grid.Column="4"></TextBox>
 
-                <TextBlock Text="ID" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                <TextBlock Text="ID" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"/>
                 <TextBox Grid.Row="1" Grid.Column="1"></TextBox>
-                <TextBlock Text="Age" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                <TextBlock Text="Age" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"/>
                 <TextBox Grid.Row="1" Grid.Column="4"></TextBox>
 
-                <TextBlock Text="Gender" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Gender" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
                     <RadioButton GroupName="Gender">Male</RadioButton>
                     <RadioButton GroupName="Gender">Female</RadioButton>
                     <RadioButton GroupName="Gender">Other</RadioButton>
                 </StackPanel>
-                <TextBlock Text="Heigth" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Heigth" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <StackPanel Grid.Row="2" Grid.Column="4">
                     <TextBox></TextBox>
                     <Image></Image>
                 </StackPanel>
 
-                <TextBlock Text="Study ID" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Study ID" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <TextBlock Grid.Row="3" Grid.Column="1" Text="124214353252" Margin="15,0,0,0"></TextBlock>
-                <TextBlock Text="Weight" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Weight" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <StackPanel Grid.Row="3" Grid.Column="4">
                     <TextBox></TextBox>
                     <Image></Image>
                 </StackPanel>
 
-                <TextBlock Text="PID" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="PID" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <TextBox Grid.Row="4" Grid.Column="1"></TextBox>
-                <TextBlock Text="Annotation" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Annotation" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <RichTextBox Grid.Row="4" Grid.Column="4" Grid.RowSpan="2"></RichTextBox>
 
-                <TextBlock Text="Accession NO" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Accession NO" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <TextBox Grid.Row="6" Grid.Column="1"></TextBox>
             </Grid>
         </GroupBox>
@@ -81,14 +81,14 @@
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Hospital Name" HorizontalAlignment="Right" Grid.Column="0" Margin="0,0,10,0"/>
-                <TextBlock Grid.Column="1" Text="ZHOU SHAN" Margin="15,0,0,0"></TextBlock>
-                <TextBlock Text="Departments" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Hospital Name" HorizontalAlignment="Right" Grid.Column="0" Margin="0,0,10,0" Style="{DynamicResource LabelName}"/>
+                <TextBlock Grid.Column="1" Text="ZHOU SHAN" Margin="15,0,0,0" VerticalAlignment="Center" Style="{DynamicResource Label}"/>
+                <TextBlock Text="Departments" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <TextBox Grid.Column="4"></TextBox>
 
-                <TextBlock Text="Physician" Grid.Row="1" HorizontalAlignment="Right" Grid.Column="0" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Physician" Grid.Row="1" HorizontalAlignment="Right" Grid.Column="0" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <TextBox Grid.Row="1"  Grid.Column="1" VerticalAlignment="Center"/>
-                <TextBlock Text="Technician" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0"></TextBlock>
+                <TextBlock Text="Technician" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" Style="{DynamicResource LabelName}"></TextBlock>
                 <ComboBox Grid.Row="1"  Grid.Column="4" VerticalAlignment="Center"/>
             </Grid>
         </GroupBox>

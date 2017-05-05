@@ -13,13 +13,13 @@
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Image Height="30" Width="30" Margin="16,0" Source="/Image/Icon.JPG"></Image>
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Margin="0,12">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                    <TextBlock Text="XXXXXXXX" Style="{DynamicResource Title}" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Text="XXXXXXXX" VerticalAlignment="Center" Margin="0,0,10,0" FontWeight="Bold" Style="{DynamicResource Content}"/>
                     <TextBlock Text="XXXXXX" Style="{DynamicResource Sub}" Margin="0,0,10,0" VerticalAlignment="Bottom"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center">
@@ -34,9 +34,9 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Button Content="Close" Name="CloseBtn" Click="CloseBtn_OnClick" Height="Auto" BorderThickness="0" HorizontalAlignment="Center"></Button>
+                <Button Content="Close" Name="CloseBtn" Click="CloseBtn_OnClick" Height="Auto" BorderThickness="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                 <Rectangle Fill="#33FFFFFF" Height="1" Margin="4,0" Grid.Row="1"/>
-                <Button Content="Solve" Name="SolveBtn" Click="SolveBtn_OnClick" Height="Auto" BorderThickness="0" Grid.Row="2" HorizontalAlignment="Center"></Button>
+                <Button Content="Solve" Name="SolveBtn" Click="SolveBtn_OnClick" Height="Auto" BorderThickness="0" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
             </Grid>
         </Grid>
     </ItemsControl>

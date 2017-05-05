@@ -124,6 +124,14 @@
                 </TreeView.Resources>
             </TreeView>
         </Grid>
+        <Rectangle Grid.Row="1" VerticalAlignment="Bottom" Height="22">
+        	<Rectangle.Fill>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#7F0B1418" Offset="1"/>
+        			<GradientStop Color="#00121D23"/>
+        		</LinearGradientBrush>
+        	</Rectangle.Fill>
+        </Rectangle>
         <Button Grid.Row="2" Content="Emergency" Name="Emergency" Click="Emergency_OnClick"
                 BorderThickness="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF121D23" Foreground="#FFF26565"/>
     </Grid>

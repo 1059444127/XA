@@ -58,13 +58,13 @@
 		<Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
 		<Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
 		<Setter Property="WindowStyle" Value="None"/>
-		<Setter Property="FontSize" Value="14"/>
+		<Setter Property="FontSize" Value="20"/>
 		<Setter Property="SnapsToDevicePixels" Value="True"/>
         <!--该参数导致截屏时在win7 basic主题或更低版本windows上截取不到当前程序界面（在win7 areo主题上无问题），因此禁用-->
 		<!--<Setter Property="AllowsTransparency" Value="True"/>-->
 		<Setter Property="Focusable" Value="False"/>
 		<Setter Property="ResizeMode" Value="NoResize"/>
-		<Setter Property="Background" Value="#FF1C2930"/>
+		<Setter Property="Background" Value="#FF162127"/>
 		<Setter Property="AllowsTransparency" Value="True"/>
 		<Setter Property="Effect">
 			<Setter.Value>
@@ -217,9 +217,9 @@
 		<Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
 		<Setter Property="TextOptions.TextHintingMode" Value="Auto"/>
 		<Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
-		<Setter Property="FontSize" Value="14"/>
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="FontSize" Value="14"/>
         <Setter Property="KeyboardNavigation.IsTabStop" Value="False"/>
         <Setter Property="Foreground" Value="#FF828D93"/>
 	</Style>
@@ -248,24 +248,21 @@
 		<Setter Property="Foreground" Value="#999999"/>
         <Setter Property="KeyboardNavigation.IsTabStop" Value="False"></Setter>
 	</Style>
-	<Style x:Key="Title" TargetType="{x:Type TextBlock}">
+	<Style x:Key="Label" TargetType="{x:Type TextBlock}">
 		<Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
 		<Setter Property="TextOptions.TextHintingMode" Value="Auto"/>
 		<Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
-		<Setter Property="FontSize" Value="20px"/>
-		<Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="KeyboardNavigation.IsTabStop" Value="False"></Setter>
 		<Setter Property="Foreground" Value="{StaticResource white}"/>
 	</Style>
-	<Style x:Key="ListHeader" TargetType="{x:Type TextBlock}">
+	<Style x:Key="LabelName" TargetType="{x:Type TextBlock}">
 		<Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
 		<Setter Property="TextOptions.TextHintingMode" Value="Auto"/>
 		<Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
-		<Setter Property="FontSize" Value="20"/>
         <Setter Property="KeyboardNavigation.IsTabStop" Value="False"/>
-		<Setter Property="Foreground" Value="#608faa"/>
+		<Setter Property="Foreground" Value="#FF828D93"/>
 		<Setter Property="SnapsToDevicePixels" Value="True"/>
-		<Setter Property="Padding" Value="20,4"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
 	</Style>
 	<Style x:Key="Content" TargetType="{x:Type TextBlock}">
 		<Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
@@ -284,31 +281,28 @@
         <Setter Property="KeyboardNavigation.IsTabStop" Value="False"></Setter>
 	</Style>
 	<ControlTemplate x:Key="TP_Separator" TargetType="{x:Type Separator}">
-		<Border SnapsToDevicePixels="True" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Height="1"/>
+		<Border SnapsToDevicePixels="True" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
 	</ControlTemplate>
 	<Style TargetType="{x:Type Separator}">
-		<Setter Property="Margin" Value="3"/>
-		<Setter Property="Height" Value="2"/>
-		<Setter Property="Width" Value="auto"/>
-		<Setter Property="Background" Value="{StaticResource white10_Color}"/>
-		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-		<Setter Property="VerticalContentAlignment" Value="Stretch"/>
-		<Setter Property="Template">
-			<Setter.Value>
-				<ControlTemplate>
-					<Border BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"/>
-				</ControlTemplate>
-			</Setter.Value>
-		</Setter>
 		<Style.Triggers>
 			<Trigger Property="FrameworkElement.FlowDirection" Value="RightToLeft">
 				<Setter Property="Height" Value="Auto"/>
-				<Setter Property="Width" Value="2"/>
+				<Setter Property="Width" Value="1"/>
 			</Trigger>
 		</Style.Triggers>
+		<Setter Property="Template" Value="{StaticResource TP_Separator}"/>
+		<Setter Property="Margin" Value="3"/>
+		<Setter Property="Height" Value="1"/>
+		<Setter Property="Width" Value="auto"/>
+		<Setter Property="Background" Value="{StaticResource white10_Color}"/>
+	</Style>
+	<Style x:Key="Hr" BasedOn="{StaticResource {x:Type Separator}}" TargetType="{x:Type Separator}">
+		<Setter Property="Template" Value="{StaticResource TP_Separator}"/>
+		<Setter Property="Background" Value="#33182931"/>
+		<Setter Property="SnapsToDevicePixels" Value="True"/>
 	</Style>
 	<!--ContextMenu Style-->
-	<Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" BasedOn="{StaticResource {x:Type Separator}}" TargetType="{x:Type Separator}">
+	<Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" BasedOn="{StaticResource Hr}" TargetType="{x:Type Separator}">
 		<Setter Property="Template" Value="{StaticResource TP_Separator}"/>
 		<Setter Property="SnapsToDevicePixels" Value="True"/>
 	</Style>

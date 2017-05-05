@@ -24,6 +24,8 @@ namespace UIH.XA.ViewerToolKit.ViewerTool
 
         #region [--Protected Template--]
 
+        protected string _name;
+
         public IList<IViewDisplay> ViewDisplays { protected get; set; }
 
         protected void RaiseCanActChangedEvent()

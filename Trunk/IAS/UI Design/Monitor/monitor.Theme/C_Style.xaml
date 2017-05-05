@@ -582,9 +582,9 @@
 	<Style x:Key="ListImgStyle" TargetType="{x:Type ListBox}">
 		<Setter Property="Background" Value="#FF18242A"/>
 		<Setter Property="BorderThickness" Value="0"/>
-		<Setter Property="Padding" Value="0,10,10,10"/>
+		<Setter Property="Padding" Value="0,0,10,20"/>
 		<Setter Property="Foreground" Value="{StaticResource white70_Font}"/>
-		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
 		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
 		<Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
 		<Setter Property="ScrollViewer.PanningMode" Value="Both"/>
@@ -594,7 +594,7 @@
 			<Setter.Value>
 				<Style TargetType="{x:Type ListBoxItem}">
 					<Setter Property="Background" Value="#CC1B2E37"/>
-					<Setter Property="Margin" Value="10,0,0,0"/>
+					<Setter Property="Margin" Value="10,20,0,0"/>
 					<Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
 					<Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
 					<Setter Property="BorderThickness" Value="1"/>
