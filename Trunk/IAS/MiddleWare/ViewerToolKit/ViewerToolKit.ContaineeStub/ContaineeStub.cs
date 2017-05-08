@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using UIH.Mcsf.Core;
 
-namespace ViewerToolKit.ContaineeStub
+namespace UIH.XA.ViewerToolKit.ContaineeStub
 {
     public class ContaineeStub : CLRContaineeBase
     {

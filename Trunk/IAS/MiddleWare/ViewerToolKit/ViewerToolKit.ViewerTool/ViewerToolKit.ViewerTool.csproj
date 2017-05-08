@@ -43,14 +43,19 @@
   <ItemGroup>
     <Compile Include="Layout.cs" />
     <Compile Include="LLabel.cs" />
+    <Compile Include="NullTool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewerToolBoxModelBase.cs" />
+    <Compile Include="ViewerToolFactoryBase.cs" />
     <Compile Include="ViewerTool.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewerToolKit.Interface\ViewerToolKit.Interface.csproj">
       <Project>{E23BBF6E-8CF8-4E31-8EDF-1A9E802C91AE}</Project>
       <Name>ViewerToolKit.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VieweToolKit.Utility\ViewerToolKit.Utility.csproj">
+      <Project>{04386291-56EB-4526-9DE6-FAE7D2914DDB}</Project>
+      <Name>ViewerToolKit.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

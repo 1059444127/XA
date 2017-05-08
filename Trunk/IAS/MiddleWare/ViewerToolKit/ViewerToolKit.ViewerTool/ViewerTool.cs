@@ -8,7 +8,7 @@ namespace UIH.XA.ViewerToolKit.ViewerTool
     {
         #region Implementation of IViewerTool
 
-        public abstract string Name { get; }
+        public virtual string Name { get { return _name; } set { _name = value; } }
 
         public void Act()
         {

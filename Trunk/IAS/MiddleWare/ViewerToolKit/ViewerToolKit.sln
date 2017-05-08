@@ -28,15 +28,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ViewerProxy", "ViewerToolKit.ViewerProxy\ViewerToolKit.ViewerProxy.csproj", "{A9BB8249-4D14-4A7B-8265-FA124EECCB98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ViewerToolModel", "ViewerToolKit.ViewerToolModel\ViewerToolKit.ViewerToolModel.csproj", "{2F870CD6-E913-48B2-A64C-8199A847C837}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.AppViewerToolModel", "ViewerToolKit.AppViewerToolModel\ViewerToolKit.AppViewerToolModel.csproj", "{5A34D8CF-728D-43ED-8A67-C5A404BD0AC9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.Utility", "VieweToolKit.Utility\ViewerToolKit.Utility.csproj", "{04386291-56EB-4526-9DE6-FAE7D2914DDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ViewerToolTest", "ViewerToolKit.ViewerToolTest\ViewerToolKit.ViewerToolTest.csproj", "{DD7997E7-AB6B-43C1-9A06-D35CE1DF8FA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.ViewerToolFactory", "ViewerToolKit.ViewerToolFactory\ViewerToolKit.ViewerToolFactory.csproj", "{16E96114-A558-4E06-9906-276D1C5995A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerToolKit.AppViewerToolFactory", "ViewerToolKit.AppViewerToolFactory\ViewerToolKit.AppViewerToolFactory.csproj", "{8A77899E-1A7A-4860-ADC2-5A390BF1A66D}"
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 14
+		SccNumberOfProjects = 15
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
@@ -70,15 +72,18 @@ Global
 		SccProjectUniqueName10 = ViewerToolKit.ViewerProxy\\ViewerToolKit.ViewerProxy.csproj
 		SccProjectName10 = ViewerToolKit.ViewerProxy
 		SccLocalPath10 = ViewerToolKit.ViewerProxy
-		SccProjectUniqueName11 = ViewerToolKit.ViewerToolModel\\ViewerToolKit.ViewerToolModel.csproj
-		SccProjectName11 = ViewerToolKit.ViewerToolModel
-		SccLocalPath11 = ViewerToolKit.ViewerToolModel
-		SccProjectUniqueName12 = ViewerToolKit.AppViewerToolModel\\ViewerToolKit.AppViewerToolModel.csproj
-		SccProjectName12 = ViewerToolKit.AppViewerToolModel
-		SccLocalPath12 = ViewerToolKit.AppViewerToolModel
-		SccProjectUniqueName13 = VieweToolKit.Utility\\ViewerToolKit.Utility.csproj
-		SccProjectName13 = VieweToolKit.Utility
-		SccLocalPath13 = VieweToolKit.Utility
+		SccProjectUniqueName11 = VieweToolKit.Utility\\ViewerToolKit.Utility.csproj
+		SccProjectName11 = VieweToolKit.Utility
+		SccLocalPath11 = VieweToolKit.Utility
+		SccProjectUniqueName12 = ViewerToolKit.ViewerToolTest\\ViewerToolKit.ViewerToolTest.csproj
+		SccProjectName12 = ViewerToolKit.ViewerToolTest
+		SccLocalPath12 = ViewerToolKit.ViewerToolTest
+		SccProjectUniqueName13 = ViewerToolKit.ViewerToolFactory\\ViewerToolKit.ViewerToolFactory.csproj
+		SccProjectName13 = ViewerToolKit.ViewerToolFactory
+		SccLocalPath13 = ViewerToolKit.ViewerToolFactory
+		SccProjectUniqueName14 = ViewerToolKit.AppViewerToolFactory\\ViewerToolKit.AppViewerToolFactory.csproj
+		SccProjectName14 = ViewerToolKit.AppViewerToolFactory
+		SccLocalPath14 = ViewerToolKit.AppViewerToolFactory
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ViewerToolKit.vsmdi
@@ -128,18 +133,22 @@ Global
 		{A9BB8249-4D14-4A7B-8265-FA124EECCB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9BB8249-4D14-4A7B-8265-FA124EECCB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9BB8249-4D14-4A7B-8265-FA124EECCB98}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F870CD6-E913-48B2-A64C-8199A847C837}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F870CD6-E913-48B2-A64C-8199A847C837}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F870CD6-E913-48B2-A64C-8199A847C837}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F870CD6-E913-48B2-A64C-8199A847C837}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A34D8CF-728D-43ED-8A67-C5A404BD0AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A34D8CF-728D-43ED-8A67-C5A404BD0AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A34D8CF-728D-43ED-8A67-C5A404BD0AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A34D8CF-728D-43ED-8A67-C5A404BD0AC9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04386291-56EB-4526-9DE6-FAE7D2914DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7997E7-AB6B-43C1-9A06-D35CE1DF8FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7997E7-AB6B-43C1-9A06-D35CE1DF8FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7997E7-AB6B-43C1-9A06-D35CE1DF8FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7997E7-AB6B-43C1-9A06-D35CE1DF8FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16E96114-A558-4E06-9906-276D1C5995A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16E96114-A558-4E06-9906-276D1C5995A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16E96114-A558-4E06-9906-276D1C5995A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16E96114-A558-4E06-9906-276D1C5995A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A77899E-1A7A-4860-ADC2-5A390BF1A66D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A77899E-1A7A-4860-ADC2-5A390BF1A66D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A77899E-1A7A-4860-ADC2-5A390BF1A66D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A77899E-1A7A-4860-ADC2-5A390BF1A66D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

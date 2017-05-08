@@ -1,0 +1,10 @@
+﻿<shells:PaShell x:Class="UIH.XA.PatientAdmin.Shells.PAShellWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:shells="clr-namespace:UIH.XA.PatientAdmin.Shells"
+        xmlns:prism="http://www.codeplex.com/prism"
+        Title="PAShellWindow" Height="350" Width="525">
+    <Grid>
+        <ContentControl prism:RegionManager.RegionName="PrView"></ContentControl>
+    </Grid>
+</shells:PaShell>

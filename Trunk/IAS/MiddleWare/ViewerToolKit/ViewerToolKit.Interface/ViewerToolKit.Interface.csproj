@@ -45,7 +45,7 @@
     <Compile Include="IViewDisplay.cs" />
     <Compile Include="IViewerProxy.cs" />
     <Compile Include="IViewerTool.cs" />
-    <Compile Include="IViewerToolBoxModel.cs" />
+    <Compile Include="IViewerToolFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

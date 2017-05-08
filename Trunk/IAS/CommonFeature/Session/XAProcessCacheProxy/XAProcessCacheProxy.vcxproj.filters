@@ -17,9 +17,6 @@
     <ClInclude Include="CSerializableBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SessiongManager_Logger.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="XAProcessCacheProxy.h">
       <Filter>Header Files</Filter>
     </ClInclude>

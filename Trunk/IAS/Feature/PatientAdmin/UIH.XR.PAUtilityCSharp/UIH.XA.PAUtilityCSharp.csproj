@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14CA0797-9AE4-4101-8398-73DD67D3E200}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIH.XA.PAUtilityCSharp</RootNamespace>
+    <AssemblyName>UIH.XA.PAUtilityCSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin_debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\UIH\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIH.Mcsf.Core.File.Parser, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.File.Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.NetBase, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.Wrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Log.Logger, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Log.Logger.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.NLS, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.NLS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commons\ClassExtend.cs" />
+    <Compile Include="Commons\CommonConfigRelate\AbStractConfigManager.cs" />
+    <Compile Include="Commons\CommonConfigRelate\ConfigManager.cs" />
+    <Compile Include="Commons\CommonConfigRelate\ConfigPathHelper.cs" />
+    <Compile Include="Commons\CommonConfigRelate\ConfigurePath.cs" />
+    <Compile Include="Commons\CommonConfigRelate\FileParserWrapper.cs" />
+    <Compile Include="Commons\LockCommentDefinition.cs" />
+    <Compile Include="Commons\Logger.cs" />
+    <Compile Include="Commons\SerializableDictionary.cs" />
+    <Compile Include="Commons\SerializeHelper.cs" />
+    <Compile Include="Commons\TaskSchedulerExtension\DynamicDataQueryQueueScheduler.cs" />
+    <Compile Include="Commons\TaskSchedulerExtension\DynamicQueueScheduler.cs" />
+    <Compile Include="Commons\TaskSchedulerExtension\IScheduler.cs" />
+    <Compile Include="Commons\TaskSchedulerExtension\TaskSchedulerBase.cs" />
+    <Compile Include="Commons\UIDCreatManager.cs" />
+    <Compile Include="Communication\ContaineeUtility.cs" />
+    <Compile Include="Communication\FECommandCallbackHandler.cs" />
+    <Compile Include="Communication\FECommandHandler.cs" />
+    <Compile Include="Communication\FEEventHandler.cs" />
+    <Compile Include="Communication\ICommunicationMap.cs" />
+    <Compile Include="Converter\AgeNumberToPatientAgeConverter.cs" />
+    <Compile Include="Converter\GenderToBoolConverter.cs" />
+    <Compile Include="Converter\PatientNameConverter.cs" />
+    <Compile Include="Database\DataAccessHelper.cs" />
+    <Compile Include="Database\DataConverterHelper.cs" />
+    <Compile Include="Database\ProtectHelper.cs" />
+    <Compile Include="Database\RecycleBinHelper.cs" />
+    <Compile Include="Database\Transaction.cs" />
+    <Compile Include="Enumeration\CommunicationID.cs" />
+    <Compile Include="Enumeration\GlobalEnum.cs" />
+    <Compile Include="Enumeration\PaConfigType.cs" />
+    <Compile Include="Events\PaSelectChangeEvent.cs" />
+    <Compile Include="Global\ExpressionExtensions.cs" />
+    <Compile Include="Global\GlobalDefinition.cs" />
+    <Compile Include="Global\ThreadHelper.cs" />
+    <Compile Include="Models\AgeWithUnit.cs" />
+    <Compile Include="Models\ConfigRelate\IDGeneratorParam.cs" />
+    <Compile Include="Models\ConfigRelate\UserDataPhysicianOption.cs" />
+    <Compile Include="Models\HeightWithUnit.cs" />
+    <Compile Include="Models\IArchive.cs" />
+    <Compile Include="Models\ICommonProperty.cs" />
+    <Compile Include="Models\ImageInfoModel.cs" />
+    <Compile Include="Models\PatientInfoModel.cs" />
+    <Compile Include="Models\SeriesInfoModel.cs" />
+    <Compile Include="Models\StudyInfoModel.cs" />
+    <Compile Include="Models\ViewModelBase.cs" />
+    <Compile Include="Models\WeightWithUnit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ValidationRules\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

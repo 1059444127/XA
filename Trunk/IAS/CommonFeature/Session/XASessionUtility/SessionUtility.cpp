@@ -1,6 +1,5 @@
 // This is the main DLL file.
 
-#include "stdafx.h"
 #include "McsfDataHeader/mcsf_data_header_common.h"
 #include "SessionUtility.h"
 
@@ -32,15 +31,13 @@ string CSessionUtility::RequestCommandProtoBuffer(int commandID, vector<string>&
 {
 	UIH::XR::Basis::Proto::SessionRequestCommand sRequestCommand;
 	sRequestCommand.set_commandid(commandID);
-	 printf("pVector.size()=%d\n",pVector.size());
 
 	 for (vector<string>::iterator  iter =pVector.begin(); iter != pVector.end(); iter++)
     {
 		std::string str = *iter;
-		std::cout << "str = " << str << std::endl;
 		sRequestCommand.add_parameters(str);
     }
-	string sRequestCommandString= "";
+	string sRequestCommandString("");
 	sRequestCommand.SerializeToString(&sRequestCommandString);
 	return sRequestCommandString;
 }

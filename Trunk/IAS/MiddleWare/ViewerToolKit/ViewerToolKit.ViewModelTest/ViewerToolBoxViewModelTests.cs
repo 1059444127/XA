@@ -17,8 +17,8 @@ namespace UIH.XA.ViewerToolKit.ViewModelTest
         [Export("ViewerToolBoxConfig", typeof (string))] private const string ConfigPath = @"config\ViewerToolBox.xml";
         [Import] private ToolsToolBoxViewModel _viewModel;
         private readonly Mock<IViewerTool> _viewerToolMock = new Mock<IViewerTool>();
-        private readonly Mock<IViewerToolBoxModel> _toolBoxModelMock = new Mock<IViewerToolBoxModel>();
-        [Export] private IViewerToolBoxModel _model;// = new Mock<IViewerToolBoxModel>().Setup(itbm=>itbm.CreateTool(It.IsAny<XElement>())).Returns()
+        private readonly Mock<IViewerToolFactory> _toolBoxModelMock = new Mock<IViewerToolFactory>();
+        [Export] private IViewerToolFactory _model;// = new Mock<IViewerToolFactory>().Setup(itbm=>itbm.CreateTool(It.IsAny<XElement>())).Returns()
 
         public ViewerToolBoxViewModelTests ()
         {

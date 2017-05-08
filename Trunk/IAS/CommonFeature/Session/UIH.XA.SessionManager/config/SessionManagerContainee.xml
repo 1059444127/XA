@@ -9,5 +9,5 @@
   <Containee>
     <Library CustomizedConfigFile="xxx.xml">UIH.XA.SessionManager</Library>
   </Containee>
-  <LogConfigFile>xsample/config/XSampleLogger.xml</LogConfigFile>
+  <LogConfigFile></LogConfigFile>
 </Container>

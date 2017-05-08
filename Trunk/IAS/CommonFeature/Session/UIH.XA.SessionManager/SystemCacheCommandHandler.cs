@@ -87,14 +87,9 @@ namespace UIH.XA.SessionManager
             {
                 if (_dataHead.Contains(dAttribute.Tag))
                 {
-                    string value = null;
-                    dAttribute.GetString(0, out value);
-                    _dataHead[dAttribute.Tag.Value].SetString(0, value);
+                    _dataHead.RemoveDicomAttribute(dAttribute);
                 }
-                else
-                {
-                    _dataHead.AddDicomAttribute(dAttribute);
-                }
+                _dataHead.AddDicomAttribute(dAttribute);
             }
             return new byte[] { };
         }

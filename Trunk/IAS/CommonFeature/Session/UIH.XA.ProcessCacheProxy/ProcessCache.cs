@@ -13,7 +13,6 @@ namespace UIH.XA.SessionManager
         private ICommunicationProxy _processCommunicationProxy;
         public DicomAttributeCollection _dataHead { get;private set; }
         private string _proxyName;
-
         /// <summary>
         /// private construcr
         /// </summary>
@@ -54,6 +53,15 @@ namespace UIH.XA.SessionManager
         }
 
         /// <summary>
+        /// 提前处理datahead的序列化，解决性能问题
+        /// </summary>
+        private void PreExecute()
+        {
+            Commit();
+            Refresh();
+        }
+
+        /// <summary>
         /// Init proxy
         /// </summary>
         /// <param name="processCommunicationProxy">proxy object</param>
@@ -67,6 +75,7 @@ namespace UIH.XA.SessionManager
             }
             _processCommunicationProxy = processCommunicationProxy;
             _proxyName = _processCommunicationProxy.GetName();
+            PreExecute();
             return true;
         }
 
@@ -80,17 +89,22 @@ namespace UIH.XA.SessionManager
             {
                 CLRLogger.GetInstance().LogDevError("SerializableBase is null.");
             }
+
             foreach (DicomAttribute dicomAttr in serializedObj._dataHead)
             {
-                if (_dataHead.Contains(dicomAttr.Tag))
-                {
-                    string value = null;
-                    dicomAttr.GetString(0, out value);
-                    _dataHead[dicomAttr.Tag.Value].SetString(0, value);
-                }
-                else
+                if (!_dataHead.Contains(dicomAttr.Tag))
                 {
                     _dataHead.AddDicomAttribute(dicomAttr);
+                    continue;
+                }
+
+                for (int i = 0; i < dicomAttr.ValueCount; i++)
+                {
+                    string value = null;
+                    if (dicomAttr.GetString(i, out value))
+                    {
+                        _dataHead[dicomAttr.Tag.Value].SetString(i, value);
+                    }
                 }
             }
         }

@@ -8,7 +8,7 @@ namespace UIH.XA.ViewerToolKit.ViewerTool
 
         public override string Name
         {
-            get { throw new System.NotImplementedException(); }
+            get { return string.Format("{0}{1}X{2}", _name, Row, Col); }
         }
 
         public override bool CanAct
@@ -23,7 +23,7 @@ namespace UIH.XA.ViewerToolKit.ViewerTool
 
         #endregion
 
-        private int _row;
-        private int _col;
+        public int Row { get; private set; }
+        public int Col { get; private set; }
     }
 }

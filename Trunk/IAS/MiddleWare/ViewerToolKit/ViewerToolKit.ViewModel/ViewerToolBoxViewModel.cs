@@ -13,7 +13,7 @@ namespace UIH.XA.ViewerToolKit.ViewModel
     public abstract class ViewerToolBoxViewModel : NotificationObject
     {
         [Import("ViewerToolBoxConfig", typeof (string))] private string _configPath;
-        [Import] protected IViewerToolBoxModel _model;
+        [Import] protected IViewerToolFactory _model;
         protected string _name;
         private ObservableCollection<ToolViewModel> _tools;
 

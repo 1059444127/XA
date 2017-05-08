@@ -1,4 +1,4 @@
-// XRProcessStatusProxy.h
+
 #ifndef XR_PROCESS_CACHE_PROXY
 #define XR_PROCESS_CACHE_PROXY
 
@@ -8,10 +8,9 @@
 #define UIHDLLEXPORT __declspec(dllimport)
 #endif 
 
-#include <iostream>  
+
 #include <string>
 #include <vector>
-#include <hash_map>
 #include "McsfDataHeader/mcsf_data_header_element_map_interface.h"
 #include "McsfDataHeader/mcsf_data_header_element_interface.h"
 #include "McsfNetBase/mcsf_communication_proxy.h"
@@ -24,7 +23,7 @@
 using namespace std;
 
 
-MCSF_DATAHEADER_BEGIN_NAMESPACE // begin namespace
+MCSF_DATAHEADER_BEGIN_NAMESPACE 
 class UIHDLLEXPORT CProcessCacheProxy
 {
 public:
@@ -42,5 +41,5 @@ private:
 	ICommunicationProxy *m_proxy;
 	string m_proxyName;
 };
-MCSF_DATAHEADER_END_NAMESPACE // end namespace Mcsf
+MCSF_DATAHEADER_END_NAMESPACE 
 #endif 

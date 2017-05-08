@@ -1,19 +1,10 @@
-#include "StdAfx.h"
-#include "XAProcessCacheProxy.h"
-#include "SessiongManager_Logger.h"
-#include "McsfDataHeader/mcsf_data_header_common.h"
-#include "mcsf_systemenvironment_factory.h"
-#include "mcsf_isystemenvironment_config.h"
-#include <io.h>
-#include <fstream>
-#include <algorithm>
 
-#include<vector>
+#include "XAProcessCacheProxy.h"
+#include "McsfDataHeader/mcsf_data_header_common.h"
+#include <windows.h>
 using namespace std;
 
 MCSF_DATAHEADER_BEGIN_NAMESPACE
-
-static string SessionManager=SystemSessionManager;
 
 CProcessCacheProxy::CProcessCacheProxy()
 {  
@@ -35,16 +26,18 @@ CProcessCacheProxy* CProcessCacheProxy::GetInstance()
 void CProcessCacheProxy::Commit()
 {
 	string serializedDataHead=CSessionUtility::SerializeDataHead(m_pDataHeaderElemMap);
+
 	vector<string> paras;
 	paras.push_back(m_proxyName);
 	paras.push_back(serializedDataHead);
+
 	string buf=CSessionUtility::RequestCommandProtoBuffer(UpdateProcessStatusID,paras);
 	Mcsf::CommandContext* context = CSessionUtility::CreateCommandContext(SystemSessionManager,XA_SYSTEMSESSION_PROCESS_CACHE,buf);
 	string sResponse("");
 	int iRet = m_proxy->SyncSendCommand(context, sResponse);
 	if(iRet!=0)
 	{
-		LOG_ERROR("CProcessCacheProxy::Commit failed, iRet = " <<iRet);	
+		//log
 	}
 }
 
@@ -52,7 +45,7 @@ bool CProcessCacheProxy::Initialize(Mcsf::ICommunicationProxy *proxy)
 {
 	if(!proxy)
 	{
-		LOG_ERROR("CProcessCacheProxy::Initialize false, proxy is NULL.");	
+		//log	
 		return false;
 	}
 	m_proxy=proxy;
@@ -64,23 +57,16 @@ void CProcessCacheProxy::Add(CSerializableBase *serializedObj)
 {
 	if(!serializedObj)
 	{
-		LOG_ERROR("CProcessCacheProxy::Add false, serializedObj is NULL.");	
+		//log
 		return;
 	}
-//	serializedObj->m_pDataHeaderElemMap->Clone(&m_pDataHeaderElemMap);//此处有问题？
 
     auto pDataHeaderElemMap = serializedObj->m_pDataHeaderElemMap;
-    //Tag itag = 0x00080008;//这个tag是干什么用的
-    //ConstString pStr = "UIH2";
-    //int iStrSize = 4;
-    //pDataHeaderElemMap->InsertStringByTag(itag, pStr, iStrSize);
-
     IDataHeaderElement* pElement = nullptr;
     if (!pDataHeaderElemMap->GetFirstElement(&pElement))
     {
         return;
     }
-	//此处是否可以释放pImageHeader？
     while(nullptr != pElement)
     {
         InsertSrcElementToMap(pElement, m_pDataHeaderElemMap);

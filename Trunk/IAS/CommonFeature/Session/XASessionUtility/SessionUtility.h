@@ -10,7 +10,6 @@
 
 #include "McsfDataHeader/mcsf_data_header_element_map_interface.h"
 #include "McsfNetBase/mcsf_communication_proxy.h"
-#include <algorithm>
 #include "SessionRequestCommand.pb.h"
 #include<vector>
 #pragma once
